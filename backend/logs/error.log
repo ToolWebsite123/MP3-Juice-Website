@@ -1,0 +1,218 @@
+[2025-12-22 16:32:30] [31MERROR[39M: Error: Request timeout after 10 seconds
+    at Timeout._onTimeout (file:///D:/tool-websitess/backend/src/controllers/videoController.js:159:22)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+[2025-12-22 16:33:11] [31MERROR[39M: ❌ [MERGE] Error:
+[2025-12-22 16:55:02] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2025-12-22 17:59:38] [31MERROR[39M: ❌ [MERGE] Error:
+[2025-12-22 17:59:53] [31MERROR[39M: ❌ [MERGE] Error:
+[2025-12-22 18:19:13] [31MERROR[39M: ❌ [MERGE] Error:
+[2025-12-22 18:19:13] [31MERROR[39M: ❌ [MERGE] Stack:
+[2025-12-24 16:22:51] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:23:00] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:23:14] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:23:33] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:23:39] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:24:21] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:24:29] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:28:50] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:29:02] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:29:11] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:33:14] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:33:39] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:33:49] [31MERROR[39M: ❌ [STREAM] Error:
+[2025-12-24 16:36:49] [31MERROR[39M: ❌ [STREAM] Error:
+[2026-01-06 19:40:27] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-01-10 20:34:35] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1280p
+[2026-01-10 20:34:35] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-10 20:34:35] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1280p. Please try a different quality.
+[2026-01-10 20:34:35] [31MERROR[39M: ❌ [PROXY] Failed to get URL: videoId is not defined
+[2026-01-10 20:34:58] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1280p
+[2026-01-10 20:34:58] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-10 20:34:58] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1280p. Please try a different quality.
+[2026-01-10 20:34:58] [31MERROR[39M: ❌ [PROXY] Failed to get URL: videoId is not defined
+[2026-01-10 20:43:50] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1280p
+[2026-01-10 20:43:50] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-10 20:43:50] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1280p. Please try a different quality.
+[2026-01-10 20:43:50] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: uCLw07FhWL8
+[2026-01-10 20:44:24] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-10 20:44:24] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-10 20:44:24] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1080p. Please try a different quality.
+[2026-01-10 20:44:24] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: dwtEbx-1W7c
+[2026-01-10 20:54:14] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:19] [31MERROR[39M: ❌ [URL] yt-dlp failed for 1440p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --format bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:19] [31MERROR[39M:    Format string: bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:54:19] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:19] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: BJcxx5cW5ps
+[2026-01-10 20:54:19] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:19] [31MERROR[39M:    VideoId: BJcxx5cW5ps, Quality: 1440, Format: mp4
+[2026-01-10 20:54:35] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:41] [31MERROR[39M: ❌ [URL] yt-dlp failed for 1080p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --format bestvideo[height<=1080][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:41] [31MERROR[39M:    Format string: bestvideo[height<=1080][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:54:41] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:41] [31MERROR[39M:    Quality: 1080, Format: mp4, Video ID: BJcxx5cW5ps
+[2026-01-10 20:54:41] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:41] [31MERROR[39M:    VideoId: BJcxx5cW5ps, Quality: 1080, Format: mp4
+[2026-01-10 20:54:48] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:53] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 5 minutes
+null
+[2026-01-10 20:54:53] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:54:53] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:53] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: BJcxx5cW5ps
+[2026-01-10 20:54:53] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:54:53] [31MERROR[39M:    VideoId: BJcxx5cW5ps, Quality: 720, Format: mp4
+[2026-01-10 20:55:03] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 4 minutes
+null
+[2026-01-10 20:55:08] [31MERROR[39M: ❌ [URL] yt-dlp failed for 360p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --format best[height=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 4 minutes
+null
+[2026-01-10 20:55:08] [31MERROR[39M:    Format string: best[height=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:55:08] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:55:08] [31MERROR[39M:    Quality: 360, Format: mp4, Video ID: BJcxx5cW5ps
+[2026-01-10 20:55:08] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:55:08] [31MERROR[39M:    VideoId: BJcxx5cW5ps, Quality: 360, Format: mp4
+[2026-01-10 20:55:31] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 4 minutes
+null
+[2026-01-10 20:55:36] [31MERROR[39M: ❌ [URL] yt-dlp failed for 1080p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=BJcxx5cW5ps --dump-single-json --format bestvideo[height<=1080][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] BJcxx5cW5ps: Premieres in 4 minutes
+null
+[2026-01-10 20:55:36] [31MERROR[39M:    Format string: bestvideo[height<=1080][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:55:36] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:55:36] [31MERROR[39M:    Quality: 1080, Format: mp4, Video ID: BJcxx5cW5ps
+[2026-01-10 20:55:36] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:55:36] [31MERROR[39M:    VideoId: BJcxx5cW5ps, Quality: 1080, Format: mp4
+[2026-01-10 20:58:22] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=cDjFXMxSk_Y --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] cDjFXMxSk_Y: Unable to download API page: <urllib3.connection.HTTPSConnection object at 0x0000021E87901840>: Failed to resolve 'www.youtube.com' ([Errno 11001] getaddrinfo failed) (caused by TransportError("<urllib3.connection.HTTPSConnection object at 0x0000021E87901840>: Failed to resolve 'www.youtube.com' ([Errno 11001] getaddrinfo failed)"))
+null
+[2026-01-10 20:58:25] [31MERROR[39M: ❌ [URL] yt-dlp failed for 1440p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=cDjFXMxSk_Y --dump-single-json --format bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] cDjFXMxSk_Y: Unable to download API page: <urllib3.connection.HTTPSConnection object at 0x000002688749AB30>: Failed to resolve 'www.youtube.com' ([Errno 11001] getaddrinfo failed) (caused by TransportError("<urllib3.connection.HTTPSConnection object at 0x000002688749AB30>: Failed to resolve 'www.youtube.com' ([Errno 11001] getaddrinfo failed)"))
+null
+[2026-01-10 20:58:25] [31MERROR[39M:    Format string: bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-10 20:58:25] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:58:25] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: cDjFXMxSk_Y
+[2026-01-10 20:58:25] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-01-10 20:58:25] [31MERROR[39M:    VideoId: cDjFXMxSk_Y, Quality: 1440, Format: mp4
+[2026-01-11 08:25:10] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 08:25:10] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:25:10] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities may include 1080p. Please try a different quality.
+[2026-01-11 08:25:10] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: 8yCiID8qzlg
+[2026-01-11 08:26:11] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 08:26:11] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:26:11] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1080p. Please try a different quality.
+[2026-01-11 08:26:11] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: 8yCiID8qzlg
+[2026-01-11 08:39:34] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 08:39:34] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:39:34] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities may include 1080p. Please try a different quality.
+[2026-01-11 08:39:34] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: 8yCiID8qzlg
+[2026-01-11 08:45:14] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 08:45:14] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:45:14] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 08:45:14] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: nYvwY9yLNSA
+[2026-01-11 08:50:17] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 08:50:18] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:50:18] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 08:50:18] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: HsuhDZ1m4Wc
+[2026-01-11 08:53:14] [31MERROR[39M: ❌ Suggestion fetch failed: Unknown error
+[2026-01-11 08:53:48] [31MERROR[39M: ❌ [URL] yt-dlp failed for 1440p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=HsuhDZ1m4Wc --dump-single-json --format bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] HsuhDZ1m4Wc: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-01-11 08:53:48] [31MERROR[39M:    Format string: bestvideo[height<=1440][ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[protocol!=m3u8_native][protocol!=m3u8]
+[2026-01-11 08:53:48] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Please try a different quality.
+[2026-01-11 08:53:48] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: HsuhDZ1m4Wc
+[2026-01-11 08:58:03] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 08:58:03] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:58:03] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 08:58:03] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: dwtEbx-1W7c
+[2026-01-11 08:58:47] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 08:58:47] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 08:58:47] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 08:58:47] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: 4zliUGt7FgQ
+[2026-01-11 09:02:29] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 09:02:29] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:02:29] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:02:29] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: HsuhDZ1m4Wc
+[2026-01-11 09:03:16] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 09:03:16] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:03:16] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:03:16] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: JFfieGgGfj4
+[2026-01-11 09:06:08] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 09:06:08] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:06:08] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:06:08] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: _bE80xa-JBc
+[2026-01-11 09:08:01] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1920p
+[2026-01-11 09:08:01] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:08:01] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1920p, 1280p, 1080p, 854p, 720p, 640p, 480p, 426p, 360p, 256p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:08:01] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: drfirvkztzQ
+[2026-01-11 09:09:01] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 09:09:01] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:09:01] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:09:01] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: aKzp9sz0v10
+[2026-01-11 09:10:09] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 09:10:09] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:10:09] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:10:09] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: Kb3EGEkY_hE
+[2026-01-11 09:10:32] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 09:10:32] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:10:32] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:10:32] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: 8yCiID8qzlg
+[2026-01-11 09:32:07] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 09:32:07] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:32:07] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 09:32:07] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: EDPoISxfG1g
+[2026-01-11 09:54:16] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1280p
+[2026-01-11 09:54:16] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:54:16] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1920p, 1280p, 1080p, 854p, 640p, 426p, 256p. Please try a different quality.
+[2026-01-11 09:54:16] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: x7kN3VGT0bY
+[2026-01-11 09:54:41] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1920p
+[2026-01-11 09:54:41] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:54:41] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1920p, 1280p, 1080p, 854p, 640p, 426p, 256p. Please try a different quality.
+[2026-01-11 09:54:41] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: x7kN3VGT0bY
+[2026-01-11 09:57:51] [31MERROR[39M: ❌ [URL] Progressive quality mismatch: requested 720p, got 640p
+[2026-01-11 09:57:51] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 09:57:51] [31MERROR[39M: ❌ [URL] Failed: The requested quality (720p) is not available for this video. Available qualities: 1920p, 1280p, 1080p, 854p, 640p, 426p, 256p. Please try a different quality.
+[2026-01-11 09:57:51] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: x7kN3VGT0bY
+[2026-01-11 10:09:19] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 10:09:19] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 10:09:19] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 10:09:19] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: Kb3EGEkY_hE
+[2026-01-11 10:47:29] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 10:47:29] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 10:47:29] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 10:47:29] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: Gqk0-Nb787A
+[2026-01-11 10:48:10] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 10:48:10] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 10:48:10] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 10:48:10] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: Gqk0-Nb787A
+[2026-01-11 10:49:15] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 10:49:15] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 10:49:15] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 10:49:15] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: Gqk0-Nb787A
+[2026-01-11 11:06:17] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 11:06:17] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 11:06:17] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 11:06:17] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: Gqk0-Nb787A
+[2026-01-11 11:13:56] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 1080p
+[2026-01-11 11:13:56] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 11:13:56] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 11:13:56] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: aOqpliiQYJk
+[2026-01-11 11:14:15] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-01-11 11:14:15] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 11:14:15] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 11:14:15] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: aOqpliiQYJk
+[2026-01-11 11:18:13] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 2160p, got 720p
+[2026-01-11 11:18:13] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-01-11 11:18:13] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-01-11 11:18:13] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: Zhv15cGQYcI

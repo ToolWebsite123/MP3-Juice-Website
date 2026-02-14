@@ -1,0 +1,5 @@
+# Netlify/Vercel SPA Redirect Configuration
+# This tells the server to serve index.html for all routes
+# so React Router can handle client-side routing
+
+/* /index.html 200

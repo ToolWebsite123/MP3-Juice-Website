@@ -1,0 +1,503 @@
+[2026-01-19 09:40:43] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:40:45] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:40:46] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:40:48] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:41:02] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=sf6ZOBmzhGQ&quality=256&format=mp3 [32m200[0m 308.230 ms - 9811642[0m
+[2026-01-19 09:42:52] [32MINFO[39M: 📊 [Health] Queue Status:
+[2026-01-19 09:42:52] [32MINFO[39M:    ⏳ Waiting: 0
+[2026-01-19 09:42:52] [32MINFO[39M:    ⚙️ Active: 0
+[2026-01-19 09:42:52] [32MINFO[39M:    ✅ Completed: 17
+[2026-01-19 09:42:52] [32MINFO[39M:    ❌ Failed: 6
+[2026-01-19 09:42:52] [32MINFO[39M:    ⏰ Delayed: 0
+[2026-01-19 09:42:52] [32MINFO[39M:    🗄️ MongoDB: ✅ Connected
+[2026-01-19 09:42:52] [32MINFO[39M:    💾 Memory: 38 MB
+[2026-01-19 09:43:02] [32MINFO[39M: ℹ️ Video info request: https://youtu.be/sf6ZOBmzhGQ?si=D3b-GG2PIQ4kqGBY...
+[2026-01-19 09:43:02] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:02] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:02] [32MINFO[39M: ⚡ [Cache] Using cached video info: Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics
+[2026-01-19 09:43:02] [32MINFO[39M: ✅ Video info fetched: "Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics"
+[2026-01-19 09:43:02] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:43:02] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Which Pays More: Data Science or Data Analytics? |"
+[2026-01-19 09:43:02] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Which Pays More: Data Science or Data A...
+[2026-01-19 09:43:02] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:43:02] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:02] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:43:02] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 123.712 ms - -[0m
+[2026-01-19 09:43:04] [32MINFO[39M: ℹ️ Video info request: https://youtu.be/sf6ZOBmzhGQ?si=D3b-GG2PIQ4kqGBY...
+[2026-01-19 09:43:04] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:04] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:04] [32MINFO[39M: ⚡ [Cache] Using cached video info: Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics
+[2026-01-19 09:43:04] [32MINFO[39M: ✅ Video info fetched: "Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics"
+[2026-01-19 09:43:04] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:43:04] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Which Pays More: Data Science or Data Analytics? |"
+[2026-01-19 09:43:04] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Which Pays More: Data Science or Data A...
+[2026-01-19 09:43:04] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:43:04] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:04] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:43:04] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 129.452 ms - -[0m
+[2026-01-19 09:43:06] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:06] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:06] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:43:06] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:06] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:06] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 1440p (will merge)
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [Y2MATE] Format (1440p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:43:06] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:43:06] [32MINFO[39M: 📺 Title: Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics
+[2026-01-19 09:43:06] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=sf6ZOBmzhGQ&quality=1440&forma...
+[2026-01-19 09:43:06] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=sf6ZOBmzhGQ&quality=1440&format=mp4 [32m200[0m 156.238 ms - 646[0m
+[2026-01-19 09:43:06] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:06] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:06] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:06] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:43:06] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:06] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M: 🔀 [STREAM] DASH format detected (1440p) - needs merge: true
+[2026-01-19 09:43:06] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 1440p DASH format...
+[2026-01-19 09:43:06] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:43:06] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Which_Pays_More__Data_Science_or_Data_Analytics____Data_Science_vs_Data_Analytic_1440p.mp4
+[2026-01-19 09:43:06] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:43:06] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:06] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:43:06] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr1---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:43:07] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:07] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:07] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:07] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:43:07] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:07] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:43:08] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.00 (streaming to browser...)
+[2026-01-19 09:43:08] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.12 (streaming to browser...)
+[2026-01-19 09:43:09] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.04 (streaming to browser...)
+[2026-01-19 09:43:09] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.60 (streaming to browser...)
+[2026-01-19 09:43:10] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:04.48 (streaming to browser...)
+[2026-01-19 09:43:10] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:04.96 (streaming to browser...)
+[2026-01-19 09:43:11] [32MINFO[39M: ℹ️ Video info request: https://youtu.be/sf6ZOBmzhGQ?si=D3b-GG2PIQ4kqGBY...
+[2026-01-19 09:43:11] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:11] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:11] [32MINFO[39M: ⚡ [Cache] Using cached video info: Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics
+[2026-01-19 09:43:11] [32MINFO[39M: ✅ Video info fetched: "Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics"
+[2026-01-19 09:43:11] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:43:11] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Which Pays More: Data Science or Data Analytics? |"
+[2026-01-19 09:43:11] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Which Pays More: Data Science or Data A...
+[2026-01-19 09:43:11] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:43:11] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:11] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:43:11] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:05.88 (streaming to browser...)
+[2026-01-19 09:43:11] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 144.480 ms - -[0m
+[2026-01-19 09:43:12] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:06.44 (streaming to browser...)
+[2026-01-19 09:43:12] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:43:12] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:12] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:12] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:43:12] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:12] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:12] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 2160p (will merge)
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [Y2MATE] Format (2160p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:43:12] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:43:12] [32MINFO[39M: 📺 Title: Which Pays More: Data Science or Data Analytics? | Data Science vs Data Analytics
+[2026-01-19 09:43:12] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=sf6ZOBmzhGQ&quality=2160&forma...
+[2026-01-19 09:43:12] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=sf6ZOBmzhGQ&quality=2160&format=mp4 [32m200[0m 153.391 ms - 646[0m
+[2026-01-19 09:43:12] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:sf6ZOBmzhGQ...
+[2026-01-19 09:43:12] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:12] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:12] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:43:12] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:12] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M: 🔀 [STREAM] DASH format detected (2160p) - needs merge: true
+[2026-01-19 09:43:12] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 2160p DASH format...
+[2026-01-19 09:43:12] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:43:12] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Which_Pays_More__Data_Science_or_Data_Analytics____Data_Science_vs_Data_Analytic_2160p.mp4
+[2026-01-19 09:43:12] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:43:12] [32MINFO[39M:    Video URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M:    Audio URL: https://rr1---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:12] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:43:12] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr1---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:43:12] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:07.48 (streaming to browser...)
+[2026-01-19 09:43:13] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:08.44 (streaming to browser...)
+[2026-01-19 09:43:13] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:13] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:13] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:13] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:43:13] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:13] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:43:13] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:09.40 (streaming to browser...)
+[2026-01-19 09:43:14] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.64 (streaming to browser...)
+[2026-01-19 09:43:14] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:43:14] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:10.20 (streaming to browser...)
+[2026-01-19 09:43:14] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:43:14] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.32 (streaming to browser...)
+[2026-01-19 09:43:14] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:10.84 (streaming to browser...)
+[2026-01-19 09:43:15] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.48 (streaming to browser...)
+[2026-01-19 09:43:15] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:11.28 (streaming to browser...)
+[2026-01-19 09:43:16] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.96 (streaming to browser...)
+[2026-01-19 09:43:16] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:43:16] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.44 (streaming to browser...)
+[2026-01-19 09:43:16] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:11.60 (streaming to browser...)
+[2026-01-19 09:43:17] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.72 (streaming to browser...)
+[2026-01-19 09:43:17] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:12.48 (streaming to browser...)
+[2026-01-19 09:43:17] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:13.32 (streaming to browser...)
+[2026-01-19 09:43:17] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.00 (streaming to browser...)
+[2026-01-19 09:43:18] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:14.00 (streaming to browser...)
+[2026-01-19 09:43:18] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.04 (streaming to browser...)
+[2026-01-19 09:43:18] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:14.96 (streaming to browser...)
+[2026-01-19 09:43:18] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.24 (streaming to browser...)
+[2026-01-19 09:43:19] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:15.92 (streaming to browser...)
+[2026-01-19 09:43:19] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:17.16 (streaming to browser...)
+[2026-01-19 09:43:20] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:17.88 (streaming to browser...)
+[2026-01-19 09:43:20] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.52 (streaming to browser...)
+[2026-01-19 09:43:20] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:18.20 (streaming to browser...)
+[2026-01-19 09:43:21] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:19.56 (streaming to browser...)
+[2026-01-19 09:43:21] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:04.00 (streaming to browser...)
+[2026-01-19 09:43:21] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:43:21] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:43:21] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=sf6ZOBmzhGQ&quality=2160&format=mp4 [32m200[0m 49.450 ms - -[0m
+[2026-01-19 09:43:21] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:43:21] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:21.00 (streaming to browser...)
+[2026-01-19 09:43:22] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:22.92 (streaming to browser...)
+[2026-01-19 09:43:23] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:23.52 (streaming to browser...)
+[2026-01-19 09:43:23] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:43:23] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:43:23] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=sf6ZOBmzhGQ&quality=1440&format=mp4 [32m200[0m 89.458 ms - -[0m
+[2026-01-19 09:43:23] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:43:27] [32MINFO[39M: 🔍 Fetching YouTube suggestions for: "ma"
+[2026-01-19 09:43:28] [32MINFO[39M: ✅ Suggestions fetched successfully (10 results)
+[2026-01-19 09:43:28] [32MHTTP[39M: [0mGET /api/v1/video/suggestions?q=ma [32m200[0m 567.951 ms - 214[0m
+[2026-01-19 09:43:29] [32MINFO[39M: 🔍 Fetching YouTube suggestions for: "m"
+[2026-01-19 09:43:29] [32MINFO[39M: ✅ Suggestions fetched successfully (10 results)
+[2026-01-19 09:43:29] [32MHTTP[39M: [0mGET /api/v1/video/suggestions?q=m [36m304[0m 247.685 ms - -[0m
+[2026-01-19 09:43:30] [32MINFO[39M: 🔍 Search request received: "meri zindagi hai tu"
+[2026-01-19 09:43:30] [32MINFO[39M: 🔎 Searching YouTube for: "meri zindagi hai tu"
+[2026-01-19 09:43:30] [32MINFO[39M: ✅ [CACHE] HIT: yt:search:meri zindagi hai tu:20...
+[2026-01-19 09:43:30] [32MINFO[39M: ⚡ [SEARCH] From cache - INSTANT
+[2026-01-19 09:43:30] [32MINFO[39M: ✅ Found 19 results for: "meri zindagi hai tu"
+[2026-01-19 09:43:30] [32MHTTP[39M: [0mGET /api/v1/video/search?query=meri%20zindagi%20hai%20tu&limit=20 [32m200[0m 12.306 ms - -[0m
+[2026-01-19 09:43:30] [32MINFO[39M: 🔍 Fetching YouTube suggestions for: "meri zindagi hai tu"
+[2026-01-19 09:43:31] [32MINFO[39M: ✅ Suggestions fetched successfully (10 results)
+[2026-01-19 09:43:31] [32MHTTP[39M: [0mGET /api/v1/video/suggestions?q=meri%20zindagi%20hai%20tu [36m304[0m 338.694 ms - -[0m
+[2026-01-19 09:43:33] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=I_KSKlS41jE...
+[2026-01-19 09:43:33] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=I_KSKlS41jE
+[2026-01-19 09:43:33] [34MDEBUG[39M: ℹ️ [INFO] Cookie rotation skipped for fast response
+[2026-01-19 09:43:34] [32MINFO[39M: 🔄 Fetching fresh video metadata...
+[2026-01-19 09:43:34] [32MINFO[39M: 🔄 [INFO] Request already in-flight for I_KSKlS41jE, reusing promise
+[2026-01-19 09:43:35] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:43:35] [32MINFO[39M: 🔄 [INFO] Request already in-flight for I_KSKlS41jE, reusing promise
+[2026-01-19 09:43:43] [32MHTTP[39M: [0mPOST /api/v1/video/info [0m-[0m - ms - -[0m
+[2026-01-19 09:43:43] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=I_KSKlS41jE...
+[2026-01-19 09:43:43] [32MINFO[39M: 🔄 [INFO] Request already in-flight for I_KSKlS41jE, reusing promise
+[2026-01-19 09:43:44] [32MINFO[39M: 🔄 Fetching fresh video metadata...
+[2026-01-19 09:43:44] [32MINFO[39M: 🔄 [INFO] Request already in-flight for I_KSKlS41jE, reusing promise
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [INFO] Success (single yt-dlp call)
+[2026-01-19 09:43:45] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:43:45] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:45] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:45] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 1440p (will merge)
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [Y2MATE] Format (1440p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:43:45] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:43:45] [32MINFO[39M: 📺 Title: Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital
+[2026-01-19 09:43:45] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=I_KSKlS41jE&quality=1440&forma...
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ Video info fetched: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital"
+[2026-01-19 09:43:45] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:43:45] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG"
+[2026-01-19 09:43:45] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=I_KSKlS41jE&quality=1440&format=mp4 [32m200[0m 10404.650 ms - 662[0m
+[2026-01-19 09:43:45] [32MINFO[39M: 🔎 [RELATED] Searching for: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG" (limit: 15)
+[2026-01-19 09:43:45] [32MINFO[39M: 🔎 [SEARCH] Query: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital" (limit 15) - Fast HTTP search
+[2026-01-19 09:43:45] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:I_KSKlS41jE...
+[2026-01-19 09:43:45] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:45] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:45] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:43:45] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:45] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M: 🔀 [STREAM] DASH format detected (1440p) - needs merge: true
+[2026-01-19 09:43:45] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 1440p DASH format...
+[2026-01-19 09:43:45] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:43:45] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Meri_Zindagi_Hai_Tu_Episode_22___17_JAN_2026___ENG_SUB___Hania_Aamir___Bilal_Abb_1440p.mp4
+[2026-01-19 09:43:45] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:43:45] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:45] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:43:45] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr2---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:43:46] [32MINFO[39M: ✅ [SEARCH] Found 15 results (fast HTTP)
+[2026-01-19 09:43:46] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:46] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:46] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:43:46] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 3445.070 ms - -[0m
+[2026-01-19 09:43:47] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:47] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:47] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:47] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:43:47] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:43:47] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:48] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.60 (streaming to browser...)
+[2026-01-19 09:43:48] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.48 (streaming to browser...)
+[2026-01-19 09:43:49] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.40 (streaming to browser...)
+[2026-01-19 09:43:49] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:04.12 (streaming to browser...)
+[2026-01-19 09:43:50] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:04.76 (streaming to browser...)
+[2026-01-19 09:43:50] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:43:50] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:43:50] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=I_KSKlS41jE&quality=1440&format=mp4 [32m200[0m 21.723 ms - -[0m
+[2026-01-19 09:43:51] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=I_KSKlS41jE...
+[2026-01-19 09:43:51] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:I_KSKlS41jE...
+[2026-01-19 09:43:51] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:51] [32MINFO[39M: ⚡ [Cache] Using cached video info: Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital
+[2026-01-19 09:43:52] [32MINFO[39M: ✅ Video info fetched: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital"
+[2026-01-19 09:43:52] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:43:52] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG"
+[2026-01-19 09:43:52] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Meri Zindagi Hai Tu Episode 22 | 17 JAN...
+[2026-01-19 09:43:52] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:43:52] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:43:52] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:43:52] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 213.160 ms - -[0m
+[2026-01-19 09:43:53] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:I_KSKlS41jE...
+[2026-01-19 09:43:53] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:53] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:43:53] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:53] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:53] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 2160p (will merge)
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [Y2MATE] Format (2160p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:43:53] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:43:53] [32MINFO[39M: 📺 Title: Meri Zindagi Hai Tu Episode 22 | 17 JAN 2026 | ENG SUB | Hania Aamir | Bilal Abbas  | ARY Digital
+[2026-01-19 09:43:53] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=I_KSKlS41jE&quality=2160&forma...
+[2026-01-19 09:43:53] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=I_KSKlS41jE&quality=2160&format=mp4 [32m200[0m 179.631 ms - 662[0m
+[2026-01-19 09:43:53] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:I_KSKlS41jE...
+[2026-01-19 09:43:53] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:43:53] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:53] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:43:53] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:43:53] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M: 🔀 [STREAM] DASH format detected (2160p) - needs merge: true
+[2026-01-19 09:43:53] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 2160p DASH format...
+[2026-01-19 09:43:53] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:43:53] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Meri_Zindagi_Hai_Tu_Episode_22___17_JAN_2026___ENG_SUB___Hania_Aamir___Bilal_Abb_2160p.mp4
+[2026-01-19 09:43:53] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:43:53] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:43:53] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:43:53] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr2---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:43:54] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:54] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:55] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:55] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:43:55] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:43:55] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:43:55] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:43:56] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:43:56] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:43:56] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=I_KSKlS41jE&quality=2160&format=mp4 [32m200[0m 32.965 ms - -[0m
+[2026-01-19 09:43:57] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:44:00] [33MWARN[39M: ⏱️ [SEARCH] Timeout after 15s - returning partial results
+[2026-01-19 09:44:02] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:44:04] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:45:00] [32MINFO[39M: 💾 [Storage] ✅ 0.00 GB (0.0%) - 0 files
+[2026-01-19 09:45:01] [32MINFO[39M: 🔍 Fetching YouTube suggestions for: "sa"
+[2026-01-19 09:45:01] [32MINFO[39M: ✅ Suggestions fetched successfully (10 results)
+[2026-01-19 09:45:01] [32MHTTP[39M: [0mGET /api/v1/video/suggestions?q=sa [32m200[0m 474.541 ms - 225[0m
+[2026-01-19 09:45:03] [32MINFO[39M: 🔍 Search request received: "sanwal yaar piya"
+[2026-01-19 09:45:03] [32MINFO[39M: 🔎 Searching YouTube for: "sanwal yaar piya"
+[2026-01-19 09:45:03] [32MINFO[39M: 🔎 [SEARCH] Query: "sanwal yaar piya" (limit 20) - Fast HTTP search
+[2026-01-19 09:45:03] [32MINFO[39M: 🔍 Fetching YouTube suggestions for: "sanwal yaar piya"
+[2026-01-19 09:45:04] [32MINFO[39M: ✅ Suggestions fetched successfully (10 results)
+[2026-01-19 09:45:04] [32MHTTP[39M: [0mGET /api/v1/video/suggestions?q=sanwal%20yaar%20piya [32m200[0m 225.814 ms - 328[0m
+[2026-01-19 09:45:04] [32MINFO[39M: ✅ [SEARCH] Found 19 results (fast HTTP)
+[2026-01-19 09:45:04] [32MINFO[39M: ✅ Found 19 results for: "sanwal yaar piya"
+[2026-01-19 09:45:04] [32MHTTP[39M: [0mGET /api/v1/video/search?query=sanwal%20yaar%20piya&limit=20 [32m200[0m 967.836 ms - -[0m
+[2026-01-19 09:45:08] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=rkz3gnwQ_BI...
+[2026-01-19 09:45:08] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=rkz3gnwQ_BI
+[2026-01-19 09:45:08] [34MDEBUG[39M: ℹ️ [INFO] Cookie rotation skipped for fast response
+[2026-01-19 09:45:09] [32MINFO[39M: 🔄 Fetching fresh video metadata...
+[2026-01-19 09:45:09] [32MINFO[39M: 🔄 [INFO] Request already in-flight for rkz3gnwQ_BI, reusing promise
+[2026-01-19 09:45:10] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:45:10] [32MINFO[39M: 🔄 [INFO] Request already in-flight for rkz3gnwQ_BI, reusing promise
+[2026-01-19 09:45:18] [33MWARN[39M: ⏱️ [SEARCH] Timeout after 15s - returning partial results
+[2026-01-19 09:45:18] [32MHTTP[39M: [0mPOST /api/v1/video/info [0m-[0m - ms - -[0m
+[2026-01-19 09:45:18] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=rkz3gnwQ_BI...
+[2026-01-19 09:45:18] [32MINFO[39M: 🔄 [INFO] Request already in-flight for rkz3gnwQ_BI, reusing promise
+[2026-01-19 09:45:19] [32MINFO[39M: 🔄 Fetching fresh video metadata...
+[2026-01-19 09:45:19] [32MINFO[39M: 🔄 [INFO] Request already in-flight for rkz3gnwQ_BI, reusing promise
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [INFO] Success (single yt-dlp call)
+[2026-01-19 09:45:21] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:45:21] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:45:21] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:45:21] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 1440p (will merge)
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [Y2MATE] Format (1440p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:45:21] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:45:21] [32MINFO[39M: 📺 Title: Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​
+[2026-01-19 09:45:21] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=rkz3gnwQ_BI&quality=1440&forma...
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ Video info fetched: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​"
+[2026-01-19 09:45:21] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:45:21] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by"
+[2026-01-19 09:45:21] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=rkz3gnwQ_BI&quality=1440&format=mp4 [32m200[0m 11294.402 ms - 662[0m
+[2026-01-19 09:45:21] [32MINFO[39M: 🔎 [RELATED] Searching for: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by" (limit: 15)
+[2026-01-19 09:45:21] [32MINFO[39M: 🔎 [SEARCH] Query: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​" (limit 15) - Fast HTTP search
+[2026-01-19 09:45:21] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:rkz3gnwQ_BI...
+[2026-01-19 09:45:21] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:45:21] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:45:21] [34MDEBUG[39M: ✅ [MATCH] Found format with height 1440 (requested: 1440)
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 1440p
+[2026-01-19 09:45:21] [32MINFO[39M: ✅ [Y2MATE] Selected format: 1440p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:45:21] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M: 🔀 [STREAM] DASH format detected (1440p) - needs merge: true
+[2026-01-19 09:45:21] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 1440p DASH format...
+[2026-01-19 09:45:21] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:45:21] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Sanwal_Yaar_Piya_Episode_36__Eng_Sub__Presented_by_Hello_Hair_-_Master_Paints____1440p.mp4
+[2026-01-19 09:45:21] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:45:21] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:21] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:45:21] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr2---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:45:22] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:22] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:22] [32MINFO[39M: ✅ [SEARCH] Found 15 results (fast HTTP)
+[2026-01-19 09:45:22] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:45:22] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:45:22] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:45:22] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 4044.103 ms - -[0m
+[2026-01-19 09:45:22] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:22] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:45:22] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:22] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:45:23] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.12 (streaming to browser...)
+[2026-01-19 09:45:24] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.69 (streaming to browser...)
+[2026-01-19 09:45:24] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.76 (streaming to browser...)
+[2026-01-19 09:45:25] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:45:25] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:45:25] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=rkz3gnwQ_BI&quality=1440&format=mp4 [32m200[0m 59.384 ms - -[0m
+[2026-01-19 09:45:26] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=rkz3gnwQ_BI...
+[2026-01-19 09:45:26] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:rkz3gnwQ_BI...
+[2026-01-19 09:45:26] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:45:26] [32MINFO[39M: ⚡ [Cache] Using cached video info: Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​
+[2026-01-19 09:45:26] [32MINFO[39M: ✅ Video info fetched: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​"
+[2026-01-19 09:45:26] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:45:26] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by"
+[2026-01-19 09:45:26] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Sanwal Yaar Piya Episode 36 [Eng Sub] P...
+[2026-01-19 09:45:26] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:45:26] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:45:26] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:45:26] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 184.697 ms - -[0m
+[2026-01-19 09:45:27] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:rkz3gnwQ_BI...
+[2026-01-19 09:45:27] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:45:27] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-01-19 09:45:27] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:45:27] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:45:27] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 2160p (will merge)
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [Y2MATE] Format (2160p) - returning streaming endpoint (bypasses CORS)
+[2026-01-19 09:45:27] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-01-19 09:45:27] [32MINFO[39M: 📺 Title: Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​
+[2026-01-19 09:45:27] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=rkz3gnwQ_BI&quality=2160&forma...
+[2026-01-19 09:45:27] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=rkz3gnwQ_BI&quality=2160&format=mp4 [32m200[0m 146.225 ms - 662[0m
+[2026-01-19 09:45:27] [32MINFO[39M: 📡 [STREAM] Streaming video request:
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:rkz3gnwQ_BI...
+[2026-01-19 09:45:27] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:45:27] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:45:27] [34MDEBUG[39M: ✅ [MATCH] Found format with height 2160 (requested: 2160)
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [Y2MATE] Found 2 format(s) matching 2160p
+[2026-01-19 09:45:27] [32MINFO[39M: ✅ [Y2MATE] Selected format: 2160p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-01-19 09:45:27] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M: 🔀 [STREAM] DASH format detected (2160p) - needs merge: true
+[2026-01-19 09:45:27] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M: 🔀 [STREAM] Starting FFmpeg merge for 2160p DASH format...
+[2026-01-19 09:45:27] [32MINFO[39M: 📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...
+[2026-01-19 09:45:27] [32MINFO[39M: ⚡ [DASH MERGE] Starting PROGRESSIVE merge for: Sanwal_Yaar_Piya_Episode_36__Eng_Sub__Presented_by_Hello_Hair_-_Master_Paints____2160p.mp4
+[2026-01-19 09:45:27] [32MINFO[39M:    🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!
+[2026-01-19 09:45:27] [32MINFO[39M:    Video URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M:    Audio URL: https://rr2---sn-f5uxxo23-aixs.googlevideo.com/videoplayback...
+[2026-01-19 09:45:27] [32MINFO[39M:    🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...
+[2026-01-19 09:45:27] [32MINFO[39M:    🎬 FFmpeg command: D:\Project\Mp3 Juice Tool\backend\node_modules\ffmpeg-static\ffmpeg.exe -headers User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+Referer: https://www.youtube.com/
+ -i https://rr2---sn-f5uxxo23-aixs.googlevideo.com/vid... -headers User-Agent: Moz...
+[2026-01-19 09:45:28] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:28] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:29] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:29] [32MINFO[39M:    ⚡ First chunk received! FFmpeg is streaming data to browser...
+[2026-01-19 09:45:29] [34MDEBUG[39M:    📡 FFmpeg processing HTTP streams...
+[2026-01-19 09:45:29] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:00.00 (streaming to browser...)
+[2026-01-19 09:45:30] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:01.00 (streaming to browser...)
+[2026-01-19 09:45:31] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:02.69 (streaming to browser...)
+[2026-01-19 09:45:31] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:45:31] [34MDEBUG[39M:    ⏳ FFmpeg merge progress: 00:00:03.88 (streaming to browser...)
+[2026-01-19 09:45:32] [33MWARN[39M: ⚠️ [DASH MERGE] Client disconnected during merge
+[2026-01-19 09:45:32] [32MINFO[39M:    🛑 FFmpeg process killed due to client disconnect
+[2026-01-19 09:45:32] [32MHTTP[39M: [0mGET /api/v1/video/stream?videoId=rkz3gnwQ_BI&quality=2160&format=mp4 [32m200[0m 43.148 ms - -[0m
+[2026-01-19 09:45:33] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:45:35] [32MINFO[39M: ℹ️ Video info request: https://www.youtube.com/watch?v=rkz3gnwQ_BI...
+[2026-01-19 09:45:35] [32MINFO[39M: ✅ [CACHE] HIT: yt:info:rkz3gnwQ_BI...
+[2026-01-19 09:45:35] [32MINFO[39M: ⚡ [INFO] From cache
+[2026-01-19 09:45:35] [32MINFO[39M: ⚡ [Cache] Using cached video info: Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​
+[2026-01-19 09:45:35] [32MINFO[39M: ✅ Video info fetched: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by Hello Hair - Master Paints & Nisa Cosmetics​"
+[2026-01-19 09:45:35] [32MINFO[39M: 📊 Formats - Audio: 2, Video: 7
+[2026-01-19 09:45:35] [32MINFO[39M: 🔍 [RELATED] Fetching related videos for: "Sanwal Yaar Piya Episode 36 [Eng Sub] Presented by"
+[2026-01-19 09:45:35] [32MINFO[39M: ✅ [CACHE] HIT: yt:related:Sanwal Yaar Piya Episode 36 [Eng Sub] P...
+[2026-01-19 09:45:35] [32MINFO[39M: ⚡ [RELATED] From cache - INSTANT
+[2026-01-19 09:45:35] [32MINFO[39M: ✅ [RELATED] Found 14 related videos
+[2026-01-19 09:45:35] [32MINFO[39M: 📦 [Y2MATE] Built 8 video formats, 5 audio formats
+[2026-01-19 09:45:35] [32MHTTP[39M: [0mPOST /api/v1/video/info [32m200[0m 88.012 ms - -[0m
+[2026-01-19 09:45:36] [33MWARN[39M: ⏱️ [SEARCH] Timeout after 15s - returning partial results
+[2026-01-19 09:45:36] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:45:38] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
+[2026-01-19 09:45:45] [33MWARN[39M: ⏱️ [RELATED] Search timeout, returning empty
+[2026-01-19 09:45:47] [33MWARN[39M: ⏱️ [RELATED] Timeout waiting for related videos
