@@ -7,6 +7,7 @@ import VideoCard from "../components/search/VideoCard";
 import SearchBar from "../components/search/SearchBar";
 import SocialShareWidget from "../components/home/SocialShareWidget";
 import useVideoInfoCache from "../hooks/useVideoInfoCache";
+import SEO from "../components/common/SEO";
 
 export default function SearchResults() {
   const location = useLocation();
@@ -207,6 +208,10 @@ export default function SearchResults() {
   // 🔥 MP3JUICE STYLE SEARCH VIEW WITH BLUE BACKGROUND
   return (
     <div className="min-h-screen bg-[#1676C2] relative">
+      <SEO 
+        title={query ? `Search: ${query}` : "Search Music & Videos"}
+        description={`Search results for ${query || "music"}. Download MP3 audio or MP4 videos free on MP3Juice.`}
+      />
       {/* Social Share Widget */}
       <SocialShareWidget />
 

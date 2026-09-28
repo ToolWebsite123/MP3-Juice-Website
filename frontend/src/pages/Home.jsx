@@ -4,10 +4,16 @@ import SearchBar from "../components/search/SearchBar";
 import HomeInfoContent from "../components/home/HomeInfoContent";
 import SocialShareWidget from "../components/home/SocialShareWidget";
 import HomeFooter from "../components/home/HomeFooter";
+import SEO from "../components/common/SEO";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#1676C2] flex flex-col relative">
+      <SEO 
+        title="MP3Juice - Free MP3 Music Downloads & YouTube Converter"
+        description="Search, stream, and download free MP3 music and MP4 videos instantly with MP3Juice. Fast, clean, and free audio converter."
+        keywords="mp3 juice, mp3juices, free mp3 download, youtube to mp3, music downloader, audio converter"
+      />
       {/* Social Share Widget - Fixed on left side */}
       <SocialShareWidget />
 

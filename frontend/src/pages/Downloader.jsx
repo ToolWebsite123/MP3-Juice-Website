@@ -1,5 +1,3 @@
-/* ✨ FINAL PERFECT: Downloader Component - NO RELOAD! */
-
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getVideoInfo, getDownloadInfo } from "../lib/api";
@@ -7,6 +5,7 @@ import useDownload from "../hooks/useDownload";
 import useVideoInfoCache from "../hooks/useVideoInfoCache";
 import FormatTable from "../components/download/FormatTable";
 import SearchBar from "../components/search/SearchBar";
+import SEO from "../components/common/SEO";
 
 export default function Downloader() {
   const location = useLocation();
@@ -24,6 +23,8 @@ export default function Downloader() {
   const [loading, setLoading] = useState(!passedVideoData && !!url);
   const [error, setError] = useState(null);
 
+  const pageTitle = videoData?.title ? `Download ${videoData.title}` : (preTitle ? `Download ${preTitle}` : "Download MP3 & MP4");
+
   const {
     isDownloading,
     error: downloadError,
@@ -33,15 +34,13 @@ export default function Downloader() {
     closePopup,
   } = useDownload();
 
-  // 🔥 Y2MATE MODE: Format options (exactly like Y2Mate)
+  // 🔥 MP3 JUICE MODE: Format options (exactly like MP3 Juice)
   const defaultAudioFormats = [
     { quality: "320", label: "MP3 - 320kbps", recommended: true },
     { quality: "128", label: "MP3 - 128kbps" },
   ];
 
   const defaultVideoFormats = [
-    { quality: "2160", label: "2160p (.mp4)" },
-    { quality: "1440", label: "1440p (.mp4)" },
     { quality: "1080", label: "1080p (.mp4)", recommended: true },
     { quality: "720", label: "720p (.mp4)" },
     { quality: "480", label: "480p (.mp4)" },
@@ -76,7 +75,7 @@ export default function Downloader() {
   } = useVideoInfoCache();
 
   /**
-   * ✅ Y2MATE BEHAVIOR: Fetch video info ONLY ONCE per video
+   * ✅ MP3 JUICE BEHAVIOR: Fetch video info ONLY ONCE per video
    * 
    * WHY FETCH ONLY ONCE:
    * - Video info (title, formats, URLs) doesn't change during session
@@ -116,7 +115,7 @@ export default function Downloader() {
     );
 
     if (passedVideoData && hasPassedFormats) {
-      // ✅ Y2MATE: Use passed data immediately, NO API call
+      // ✅ MP3 JUICE: Use passed data immediately, NO API call
       setVideoData(passedVideoData);
       setLoading(false);
       return; // ✅ CRITICAL: Don't fetch if we have complete data
@@ -127,7 +126,7 @@ export default function Downloader() {
     // RESULT: Direct paste link → instant quality display
     const cached = getVideoInfoFromCache(cacheKey);
     if (cached && (cached.audioFormats?.length || cached.videoFormats?.length)) {
-      // ✅ Y2MATE: Use cached data instantly, NO API call
+      // ✅ MP3 JUICE: Use cached data instantly, NO API call
       setVideoData(cached);
       setLoading(false);
       return; // ✅ CRITICAL: Don't fetch if cached
@@ -152,7 +151,7 @@ export default function Downloader() {
       }, 45000); // 45 second timeout
 
       try {
-        // ✅ Y2MATE: Single API call via getOrFetchVideoInfo
+        // ✅ MP3 JUICE: Single API call via getOrFetchVideoInfo
         // getOrFetchVideoInfo handles:
         // - Single-flight (reuses in-flight promise)
         // - Caching (stores result for future)
@@ -167,7 +166,7 @@ export default function Downloader() {
               throw new Error('Request cancelled - URL changed');
             }
 
-            // ✅ Y2MATE: Single API call via getVideoInfo
+            // ✅ MP3 JUICE: Single API call via getVideoInfo
             // ✅ CRITICAL: NO signal - request must complete even if component unmounts
             // WHY: Component unmount ≠ cancel request (cache result for next mount)
             // api.js handles v1/legacy fallback internally (single fallback, no retry loop)
@@ -197,7 +196,7 @@ export default function Downloader() {
 
         setVideoData(normalizedVideoData);
 
-        // ✅ Y2MATE: Formats are included in response
+        // ✅ MP3 JUICE: Formats are included in response
         if (normalizedVideoData.videoFormats || normalizedVideoData.audioFormats) {
         }
 
@@ -210,7 +209,7 @@ export default function Downloader() {
         if (!isMounted || currentUrl !== url) {
           return;
         }
-        console.error("❌ [Y2MATE] Error fetching video:", err);
+        console.error("❌ [MP3 JUICE] Error fetching video:", err);
         setError(err.message || "Failed to load video information");
         setLoading(false); // ✅ CRITICAL: Always clear loading on error
       } finally {
@@ -294,7 +293,7 @@ export default function Downloader() {
 
   // Formats are now loaded from /api/download/info with direct URLs
 
-  // No URL provided - Y2Mate Style
+  // No URL provided - MP3 Juice Style
   if (!url) {
     return (
       <div className="min-h-screen bg-white">
@@ -320,7 +319,7 @@ export default function Downloader() {
     );
   }
 
-  // Loading state - Y2Mate Style
+  // Loading state - MP3 Juice Style
   if (loading) {
     return (
       <div className="min-h-screen bg-white">
@@ -340,7 +339,7 @@ export default function Downloader() {
     );
   }
 
-  // Error state - Y2Mate Style
+  // Error state - MP3 Juice Style
   if (error) {
     return (
       <div className="min-h-screen bg-white">
@@ -374,13 +373,17 @@ export default function Downloader() {
   }
 
   // No video data
-  // ✅ Y2MATE: Show FormatTable immediately if we have videoData (even if loading)
+  // ✅ MP3 JUICE: Show FormatTable immediately if we have videoData (even if loading)
   // WHY: User should see quality list instantly, loading happens in background
   const showFormats = videoData && (videoData.videoFormats?.length > 0 || videoData.audioFormats?.length > 0);
 
-  // Main downloader UI - Y2Mate Style
+  // Main downloader UI - MP3 Juice Style
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={pageTitle}
+        description={`Download ${videoData?.title || "video"} in MP3 audio or MP4 video format instantly on MP3Juice.`}
+      />
       <SearchBar />
 
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -442,14 +445,14 @@ export default function Downloader() {
           </div>
         )}
 
-        {/* Video Info & Download Options - Y2Mate Layout - Show immediately if formats available - Responsive */}
+        {/* Video Info & Download Options - MP3 Juice Layout - Show immediately if formats available - Responsive */}
         {showFormats && (
           <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-4 sm:gap-6 mb-6">
 
-          {/* Video Thumbnail Card - Y2Mate Style (No Video Player) */}
+          {/* Video Thumbnail Card - MP3 Juice Style (No Video Player) */}
           <div className="bg-white">
             <div className="relative w-full aspect-video bg-gray-100">
-              {/* Y2Mate Style: Show only thumbnail, NO video player */}
+              {/* MP3 Juice Style: Show only thumbnail, NO video player */}
               <img
                 src={videoData.thumbnail}
                 alt={videoData.title}
@@ -466,7 +469,7 @@ export default function Downloader() {
             </div>
           </div>
 
-          {/* Format Selection Table - Y2Mate Style */}
+          {/* Format Selection Table - MP3 Juice Style */}
           <div className="bg-white border border-gray-200">
             <FormatTable
               videoFormats={videoData.videoFormats || []}

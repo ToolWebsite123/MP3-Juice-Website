@@ -55,15 +55,15 @@ router.get('/api/download/proxy', (req, res) => {
   });
 });
 
-// Deprecated: /api/y2mate/info → /api/v1/video/info
-router.all('/api/y2mate/info', (req, res) => {
+// Deprecated: /api/mp3juice/info → /api/v1/video/info
+router.all('/api/mp3juice/info', (req, res) => {
   res.status(410).json({
     success: false,
     deprecated: true,
     error: 'This endpoint is deprecated',
     message: 'Please use POST /api/v1/video/info instead',
     migration: {
-      old: 'GET/POST /api/y2mate/info?url=...',
+      old: 'GET/POST /api/mp3juice/info?url=...',
       new: 'POST /api/v1/video/info',
       body: { url: req.query.url || req.body.url }
     },

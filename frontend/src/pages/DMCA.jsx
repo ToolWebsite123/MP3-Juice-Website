@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialShareWidget from "../components/home/SocialShareWidget";
 import HomeFooter from "../components/home/HomeFooter";
+import SEO from "../components/common/SEO";
 
 export default function DMCA() {
   return (
     <div className="min-h-screen bg-[#1676C2] flex flex-col relative">
+      <SEO 
+        title="DMCA Copyright Policy - MP3Juice"
+        description="Digital Millennium Copyright Act (DMCA) policy for MP3Juice."
+      />
       {/* Social Share Widget - Fixed on left side */}
       <SocialShareWidget />
 
@@ -187,8 +192,8 @@ export default function DMCA() {
               <p>
                 If you would like to notify us of the infringing material or activity, you may send
                 an email to the address below or contact us using the contact form at{" "}
-                <Link to="/contact" className="underline hover:opacity-80">
-                  https://mp3juice.za.com/contact.php
+                <Link to="/contact" className="underline hover:opacity-80 font-semibold">
+                  Contact Form
                 </Link>
                 .
               </p>

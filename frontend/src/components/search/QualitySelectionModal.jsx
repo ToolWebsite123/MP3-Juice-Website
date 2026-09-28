@@ -121,8 +121,6 @@ export default function QualitySelectionModal({
 
   // MP4 Quality Options with colors
   const mp4Qualities = [
-    { quality: '2160', label: 'MP4 2160p', color: 'bg-blue-400' },
-    { quality: '1440', label: 'MP4 1440p', color: 'bg-blue-500' },
     { quality: '1080', label: 'MP4 1080p', color: 'bg-blue-600' },
     { quality: '720', label: 'MP4 720p', color: 'bg-cyan-400' },
     { quality: '480', label: 'MP4 480p', color: 'bg-teal-400' },
@@ -226,7 +224,7 @@ export default function QualitySelectionModal({
         .substring(0, 200);
 
 
-      // ✅ STEP 3: Trigger browser native download - Original Y2Mate Style
+      // ✅ STEP 3: Trigger browser native download - Original MP3 Juice Style
       if (data.needsMerge && data.mergeEndpoint) {
         // ✅ DASH Format (1080p+): Use iframe (original method)
         

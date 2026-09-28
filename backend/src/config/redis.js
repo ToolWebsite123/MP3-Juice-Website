@@ -39,12 +39,9 @@ export const getRedisConfig = () => {
 
     retryStrategy(times) {
       if (times > 5) {
-        logger.warn(`⚠️ [Redis] Max retry attempts reached - stopping reconnection`);
-        return null; // Stop retrying after 5 attempts
+        return false; // Stop retrying after 5 attempts
       }
-      const delay = Math.min(times * 2000, 10000);
-      logger.debug(`🔁 [Redis] Reconnecting in ${delay / 1000}s... (attempt ${times}/5)`);
-      return delay;
+      return Math.min(times * 2000, 10000);
     },
   };
 
@@ -65,7 +62,10 @@ const redisClient = new Redis(redisConfig);
    🧩 Event Listeners
 ---------------------------------------------------------- */
 
+let hasLoggedRedisConnError = false;
+
 redisClient.on("connect", () => {
+  hasLoggedRedisConnError = false;
   const authStatus = hasPassword ? "with authentication" : "without authentication";
   logger.info(`✅ [Redis] Connected successfully (${authStatus})`);
 });
@@ -75,20 +75,21 @@ redisClient.on("ready", () => {
 });
 
 redisClient.on("error", (err) => {
-  // ✅ Filter out password warning - this shouldn't happen with proper config
-  if (err.message && err.message.includes("password was supplied")) {
-    logger.debug(`⚠️ [Redis] Password warning suppressed (password not required)`);
+  const msg = err?.message || String(err || "");
+  // Filter out non-critical redis warnings when Redis is not installed locally
+  if (
+    msg.includes("password was supplied") ||
+    msg.includes("Reconnect strategy") ||
+    msg.includes("ECONNREFUSED")
+  ) {
+    if (!hasLoggedRedisConnError && msg.includes("ECONNREFUSED")) {
+      logger.warn(`⚠️ [Redis] Server not running locally - continuing with in-memory fallback`);
+      hasLoggedRedisConnError = true;
+    }
     return;
   }
   
-  // ✅ Filter out connection refused errors (Redis not running)
-  if (err.message && err.message.includes("ECONNREFUSED")) {
-    logger.warn(`⚠️ [Redis] Connection refused - Redis server may not be running`);
-    logger.warn(`   Server will continue without Redis caching`);
-    return;
-  }
-  
-  logger.error(`❌ [Redis] Connection error: ${err.message}`);
+  logger.error(`❌ [Redis] Connection error: ${msg}`);
 });
 
 redisClient.on("end", () => {

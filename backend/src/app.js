@@ -15,7 +15,7 @@ import jobRoutes from "./routes/jobRoutes.js";
 import infoRoutes from "./routes/infoRoutes.js";
 import cleanupRoutes from "./routes/cleanupRoutes.js";
 import downloadRoutes from "./routes/download.js";
-import y2mateRoutes from "./routes/y2mateRoutes.js";
+import mp3juiceRoutes from "./routes/mp3juiceRoutes.js";
 
 import globalErrorHandler, { clientDisconnectHandler, asyncHandler } from "./middleware/errorHandler.js";
 import AppError from "./utils/AppError.js";
@@ -204,7 +204,7 @@ app.get("/health", async (req, res) => {
         realtimeTracking: true,
         autoCleanup: process.env.ENABLE_AUTO_CLEANUP !== "false",
         directDownload: true, // ✅ NEW
-        y2mateStyle: true, // ✅ NEW
+        mp3juiceStyle: true, // ✅ NEW
       },
       cleanup: {
         enabled: process.env.ENABLE_AUTO_CLEANUP !== "false",
@@ -224,7 +224,7 @@ app.get("/health", async (req, res) => {
       features: {
         sseProgress: true,
         directDownload: true,
-        y2mateStyle: true,
+        mp3juiceStyle: true,
       },
     });
   }
@@ -233,14 +233,14 @@ app.get("/health", async (req, res) => {
 app.get("/", (req, res) => {
   res.status(200).json({
     status: "success",
-    message: "🎬 YouTube Downloader API - Y2mate Style",
+    message: "🎬 YouTube Downloader API - MP3 Juice Style",
     version: "3.0.0",
     storage: "Local",
     features: {
       videoDownload: true,
       audioDownload: true,
       directDownload: true, // ✅ NEW
-      y2mateStyle: true, // ✅ NEW
+      mp3juiceStyle: true, // ✅ NEW
       noProgressPage: true, // ✅ NEW
       qualitySelection: true,
       rangeSupport: true,
@@ -281,8 +281,8 @@ try {
 // ✅ Register download routes (legacy)
 app.use("/api/download", downloadRoutes);
 
-// ✅ Y2Mate-style API routes (legacy)
-app.use("/api/y2mate", y2mateRoutes);
+// ✅ MP3 Juice-style API routes (legacy)
+app.use("/api/mp3juice", mp3juiceRoutes);
 
 // Legacy routes (deprecated)
 app.use("/api/video", videoRoutes);
@@ -374,12 +374,25 @@ if (isDevelopment) {
 }
 
 /* ----------------------------------------------------------
-   ⚠️ 404 HANDLER
+   🌐 SERVE FRONTEND DIST (Optional Production Mode)
 ---------------------------------------------------------- */
-app.all("*", (req, res, next) => {
-  logger.warn(`❌ 404 - Route not found: ${req.method} ${req.originalUrl}`);
-  next(new AppError(`Route ${req.originalUrl} not found`, 404));
-});
+const frontendDistPath = path.resolve(process.cwd(), "../frontend/dist");
+if (process.env.SERVE_FRONTEND === "true" && fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
+  app.get("*", (req, res, next) => {
+    if (req.originalUrl.startsWith("/api")) return next();
+    res.sendFile(path.join(frontendDistPath, "index.html"));
+  });
+  logger.info(`🌐 Serving frontend production build from: ${frontendDistPath}`);
+} else {
+  /* ----------------------------------------------------------
+     ⚠️ 404 HANDLER
+  ---------------------------------------------------------- */
+  app.all("*", (req, res, next) => {
+    logger.warn(`❌ 404 - Route not found: ${req.method} ${req.originalUrl}`);
+    next(new AppError(`Route ${req.originalUrl} not found`, 404));
+  });
+}
 
 /* ----------------------------------------------------------
    🧩 GLOBAL ERROR HANDLER

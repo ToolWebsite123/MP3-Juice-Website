@@ -46,7 +46,7 @@ export const searchHandler = async (req, res, next) => {
 
     logger.info(`🔎 Searching YouTube for: "${query}"`);
     
-    // 🔥 Y2MATE FAST: Search with timeout protection - always return results (even if empty)
+    // 🔥 MP3 JUICE FAST: Search with timeout protection - always return results (even if empty)
     const results = await searchYouTube(query, limit);
 
     // Always return results array (even if empty) - never block or throw
@@ -74,7 +74,7 @@ export const searchHandler = async (req, res, next) => {
     });
 
   } catch (err) {
-    // 🔥 Y2MATE FAST: Never block on errors - always return empty results
+    // 🔥 MP3 JUICE FAST: Never block on errors - always return empty results
     logger.warn(`⚠️ searchHandler error (returning empty results): ${err.message}`);
     
     // Return empty results instead of error to avoid blocking
@@ -272,7 +272,7 @@ export const getVideoInfo = async (req, res) => {
       relatedDownloads = []; // Fallback to empty array
     }
 
-    // 🔥 Y2MATE STYLE: Return ALL available formats separated into videoFormats and audioFormats
+    // 🔥 MP3 JUICE STYLE: Return ALL available formats separated into videoFormats and audioFormats
     const videoFormats = [];
     const audioFormats = [];
 
@@ -288,11 +288,11 @@ export const getVideoInfo = async (req, res) => {
         return true;
       });
 
-      // 🔥 Y2MATE MODE: Show ALL available qualities (progressive + DASH)
-      // Y2Mate shows: 2160p, 1440p, 1080p, 720p, 480p, 360p, 240p, 144p
-      const targetVideoQualities = [2160, 1440, 1080, 720, 480, 360, 240, 144];
+      // 🔥 MP3 JUICE MODE: Show ALL available qualities (progressive + DASH)
+      // MP3 Juice shows: 1080p, 720p, 480p, 360p, 240p, 144p
+      const targetVideoQualities = [1080, 720, 480, 360, 240, 144];
 
-      // 🔥 Y2MATE PERFORMANCE: Parallelize format extraction using Promise.all
+      // 🔥 MP3 JUICE PERFORMANCE: Parallelize format extraction using Promise.all
       // Process all qualities in parallel instead of sequential loop
       const formatPromises = targetVideoQualities.map(async (quality) => {
         try {
@@ -344,7 +344,7 @@ export const getVideoInfo = async (req, res) => {
             if (dashVideoFormat && dashAudioFormat && dashVideoFormat.url) {
               let filesize = null;
               if (info.duration) {
-                const mbPerMin = quality === 1080 ? 25 : quality === 1440 ? 40 : 50;
+                const mbPerMin = 25;
                 filesize = Math.round((info.duration / 60) * mbPerMin);
               }
 
@@ -387,7 +387,7 @@ export const getVideoInfo = async (req, res) => {
       if (audioOnlyFormats.length > 0) {
         const sortedAudio = audioOnlyFormats.sort((a, b) => (b.abr || 0) - (a.abr || 0));
         const bestAudio = sortedAudio[0];
-        // ✅ Y2MATE: Audio qualities in order: 320kbps > 256kbps > 192kbps > 128kbps > 64kbps (highest first)
+        // ✅ MP3 JUICE: Audio qualities in order: 320kbps > 256kbps > 192kbps > 128kbps > 64kbps (highest first)
         const targetAudioBitrates = [320, 256, 192, 128, 64];
 
         // Process audio bitrates in parallel
@@ -426,7 +426,7 @@ export const getVideoInfo = async (req, res) => {
       }
     }
 
-    logger.info(`📦 [Y2MATE] Built ${videoFormats.length} video formats, ${audioFormats.length} audio formats`);
+    logger.info(`📦 [MP3 JUICE] Built ${videoFormats.length} video formats, ${audioFormats.length} audio formats`);
 
     // Check if client still connected before sending response
     if (req.aborted || res.destroyed) {
@@ -440,7 +440,7 @@ export const getVideoInfo = async (req, res) => {
       return;
     }
 
-    // Return Y2Mate-style JSON structure (v1 API format)
+    // Return MP3 Juice-style JSON structure (v1 API format)
     return res.status(200).json({
       success: true,
       video: {

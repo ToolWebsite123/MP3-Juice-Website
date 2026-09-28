@@ -1,14 +1,14 @@
 // ═══════════════════════════════════════════════════════════════════════
-// 🎯 Y2MATE-STYLE API ROUTES
+// 🎯 MP3 JUICE-STYLE API ROUTES
 // ═══════════════════════════════════════════════════════════════════════
-// Routes that work exactly like Y2Mate:
+// Routes that work exactly like MP3 Juice:
 //   - Server never downloads/merges files
 //   - Returns JSON with direct YouTube CDN URLs
 //   - Only progressive MP4 and MP3 formats
 // ═══════════════════════════════════════════════════════════════════════
 
 import express from 'express';
-import { getY2MateInfo, healthCheck } from '../controllers/y2mateController.js';
+import { getMp3JuiceInfo, healthCheck } from '../controllers/mp3juiceController.js';
 import logger from '../utils/logger.js';
 
 const router = express.Router();
@@ -30,12 +30,12 @@ router.options('*', (req, res) => {
    🎬 GET VIDEO INFO WITH DIRECT URLs
 ---------------------------------------------------------- */
 
-// GET /api/y2mate/info?url=...
+// GET /api/mp3juice/info?url=...
 router.get('/info', async (req, res, next) => {
   try {
-    await getY2MateInfo(req, res);
+    await getMp3JuiceInfo(req, res);
   } catch (error) {
-    logger.error(`❌ [Y2MATE] GET /info error: ${error.message}`);
+    logger.error(`❌ [MP3 JUICE] GET /info error: ${error.message}`);
     if (!res.headersSent) {
       res.status(500).json({
         success: false,
@@ -46,12 +46,12 @@ router.get('/info', async (req, res, next) => {
   }
 });
 
-// POST /api/y2mate/info
+// POST /api/mp3juice/info
 router.post('/info', async (req, res, next) => {
   try {
-    await getY2MateInfo(req, res);
+    await getMp3JuiceInfo(req, res);
   } catch (error) {
-    logger.error(`❌ [Y2MATE] POST /info error: ${error.message}`);
+    logger.error(`❌ [MP3 JUICE] POST /info error: ${error.message}`);
     if (!res.headersSent) {
       res.status(500).json({
         success: false,
@@ -75,22 +75,22 @@ router.get('/health', healthCheck);
 router.get('/', (req, res) => {
   res.json({
     success: true,
-    service: 'Y2Mate API',
+    service: 'MP3 Juice API',
     version: '1.0.0',
     description: 'YouTube video info API - Returns direct playable URLs (no server-side downloads)',
     endpoints: {
       getInfo: {
         method: 'GET or POST',
-        path: '/api/y2mate/info',
+        path: '/api/mp3juice/info',
         params: {
           url: 'YouTube video URL (required)'
         },
-        example: '/api/y2mate/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        example: '/api/mp3juice/info?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         response: 'JSON with video info and direct CDN URLs'
       },
       health: {
         method: 'GET',
-        path: '/api/y2mate/health',
+        path: '/api/mp3juice/health',
         description: 'Service health check'
       }
     },

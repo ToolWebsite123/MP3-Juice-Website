@@ -15,6 +15,9 @@ export default function HomeFooter() {
           <Link to="/" className="hover:opacity-80 transition-opacity">
             MP3 Juice
           </Link>
+          <Link to="/about" className="hover:opacity-80 transition-opacity">
+            About
+          </Link>
           <Link to="/contact" className="hover:opacity-80 transition-opacity">
             Contact
           </Link>
@@ -24,10 +27,7 @@ export default function HomeFooter() {
           <Link to="/privacy" className="hover:opacity-80 transition-opacity">
             Privacy Policy
           </Link>
-          <Link to="/dmca" className="hover:opacity-80 transition-opacity">
-            SRA
-          </Link>
-          <Link to="/dmca" className="hover:opacity-80 transition-opacity">
+          <Link to="/terms" className="hover:opacity-80 transition-opacity">
             ToS
           </Link>
         </div>

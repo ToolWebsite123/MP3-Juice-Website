@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mp3juice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mp3juice_app
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - SERVE_FRONTEND=true
+      - ALLOWED_ORIGIN=*
+      - RATE_WINDOW_MS=60000
+      - RATE_MAX=100
+      - ENABLE_AUTO_CLEANUP=true
+    volumes:
+      - downloads_data:/app/backend/downloads
+
+volumes:
+  downloads_data:

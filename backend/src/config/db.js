@@ -143,8 +143,6 @@ const connectDB = async (options = {}) => {
       maxIdleTimeMS: 30000, // Close connections after 30s of inactivity
       // Heartbeat settings
       heartbeatFrequencyMS: 10000, // Check connection health every 10s
-      // Buffer settings (bufferMaxEntries is deprecated in newer Mongoose)
-      bufferCommands: false, // Don't buffer commands when disconnected
       // ✅ FIX: Add connection retry logic
       retryReads: true,
       retryWrites: true,

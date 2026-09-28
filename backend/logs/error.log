@@ -216,3 +216,786 @@ null
 [2026-01-11 11:18:13] [31MERROR[39M:    This indicates the requested quality is not available
 [2026-01-11 11:18:13] [31MERROR[39M: ❌ [URL] Failed: The requested quality (2160p) is not available for this video. Available qualities: 720p, 480p, 360p, 240p, 144p. Please try a different quality.
 [2026-01-11 11:18:13] [31MERROR[39M:    Quality: 2160, Format: mp4, Video ID: Zhv15cGQYcI
+[2026-09-27 09:03:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:58] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:03:58] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:04:00] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:04:00] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:04:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:05:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:05:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:46] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:46] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:47] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:47] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:48] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:48] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:49] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:49] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 09:06:54] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:49:59] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:49:59] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:00] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:00] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:03] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:06] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:06] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:50:09] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:12] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:12] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:12] [31MERROR[39M: ❌ [Stats] Failed to get cleanup stats: Cannot call `cleanup_history.find()` before initial connection is complete if `bufferCommands = false`. Make sure you `await mongoose.connect()` if you have `bufferCommands = false`.
+[2026-09-27 10:57:13] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:13] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:14] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:14] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:16] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:16] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:18] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:18] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:21] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:21] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:21] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 10:57:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:21] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 10:57:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:57:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:32] [31MERROR[39M: ❌ FFmpeg Health Check Failed: spawnSync C:\WINDOWS\system32\cmd.exe UNKNOWN
+[2026-09-27 10:59:32] [31MERROR[39M:    MP3 conversion and DASH video merging require FFmpeg.
+[2026-09-27 10:59:32] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:32] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:33] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:33] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:34] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:34] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:36] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:36] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:38] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:38] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 10:59:40] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:24] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:24] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:24] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:24] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:25] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:25] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:27] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:27] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:29] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:29] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:02:31] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:54] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:54] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:55] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:57] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:57] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:59] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:06:59] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:02] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:07:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:02] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:07:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:07:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:08:57] [31MERROR[39M: ❌ [Stats] Failed to get cleanup stats: Cannot call `cleanup_history.find()` before initial connection is complete if `bufferCommands = false`. Make sure you `await mongoose.connect()` if you have `bufferCommands = false`.
+[2026-09-27 11:13:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:51] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:52] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:52] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:54] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:54] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:56] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:58] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:58] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:58] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:13:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:58] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:13:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:13:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:14:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:32:09] [31MERROR[39M: 💥 [Worker] Uncaught Exception: keepAliveInterval is not defined
+[2026-09-27 11:33:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:02] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:03] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:03] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:05] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:05] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:07] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:07] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:33:09] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:30] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:30] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:31] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:31] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:32] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:32] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:34] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:34] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:36] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:36] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:38] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:34:38] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:18] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:18] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:19] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:19] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:20] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:20] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:22] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:23] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:25] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:25] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:25] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:37:25] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:25] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:37:25] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:25] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:37:48] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:15] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:15] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:16] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:16] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:17] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:19] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:19] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:21] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:21] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:23] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:24] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:24] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:38:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:24] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:38:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:32] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:38:32] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:38:32] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:38:32] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:38:32] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:38:32] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:38:33] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:33] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:38:45] [31MERROR[39M: ❌ [Stats] Failed to get cleanup stats: Cannot call `cleanup_history.find()` before initial connection is complete if `bufferCommands = false`. Make sure you `await mongoose.connect()` if you have `bufferCommands = false`.
+[2026-09-27 11:38:46] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:39:23] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:39:23] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:39:23] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:39:23] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:39:23] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:39:23] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:39:23] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:39:23] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:39:42] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:39:42] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:39:42] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:39:42] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:39:42] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:39:42] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:39:42] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:39:42] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:40] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:40] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:42] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:42] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:43] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:43] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:45] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:45] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:47] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:47] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:50] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:50] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:50] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:44:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:44:50] [31MERROR[39M: ❌ [Redis] Max retry attempts reached
+[2026-09-27 11:44:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:45:00] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:45:00] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:45:00] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:45:00] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:45:00] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:45:00] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:45:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:45:01] [31MERROR[39M: 🚨 [Queue] Queue error: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:45:58] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:45:58] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:45:58] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:45:58] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:45:58] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:45:58] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:46:31] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:46:31] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:46:31] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:46:31] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:46:31] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:46:31] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 11:47:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:47:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:47:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:53:24] [31MERROR[39M: ❌ [URL] Progressive quality mismatch: requested 720p, got 360p
+[2026-09-27 11:53:24] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-09-27 11:53:24] [31MERROR[39M: ❌ [URL] Failed: The requested quality (720p) is not available for this video. Available qualities: 2160p, 1440p, 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-09-27 11:53:24] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: dQw4w9WgXcQ
+[2026-09-27 11:57:23] [31MERROR[39M: ❌ Failed to load API v1 routes: missing ) after argument list
+[2026-09-27 11:57:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:44] [31MERROR[39M: ❌ Failed to load API v1 routes: missing ) after argument list
+[2026-09-27 11:57:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 11:57:59] [31MERROR[39M: ❌ Failed to load API v1 routes: missing ) after argument list
+[2026-09-27 11:57:59] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:57:59] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+[2026-09-27 11:57:59] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:57:59] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:57:59] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:57:59] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+[2026-09-27 11:58:47] [31MERROR[39M: ❌ Failed to load API v1 routes: missing ) after argument list
+[2026-09-27 11:58:47] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:58:47] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+[2026-09-27 11:58:47] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 11:58:47] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 11:58:47] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 11:58:47] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+[2026-09-27 12:01:04] [31MERROR[39M: ❌ Failed to load API v1 routes: missing ) after argument list
+[2026-09-27 12:01:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:01:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:01:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:01:41] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:01:41] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:01:41] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:01:41] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:01:41] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:01:41] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:02:04] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:02:04] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:02:04] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:13:32] [31MERROR[39M: ❌ [STREAM] Error:
+[2026-09-27 12:18:59] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:18:59] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:18:59] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:18:59] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:18:59] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:18:59] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:19:22] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:19:22] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:19:22] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:19:22] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:19:22] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:19:22] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:19:57] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:19:57] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:19:57] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:22:15] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:22:15] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:22:15] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:22:15] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:22:15] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:22:15] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:22:51] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1440p, got 1080p
+[2026-09-27 12:22:51] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-09-27 12:22:51] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1440p) is not available for this video. Available qualities: 1080p, 720p, 480p, 360p, 240p, 144p. Please try a different quality.
+[2026-09-27 12:22:51] [31MERROR[39M:    Quality: 1440, Format: mp4, Video ID: KkAJf_cfZaE
+[2026-09-27 12:23:15] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:23:15] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:23:15] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:23:15] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:23:15] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:23:15] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:31:30] [31MERROR[39M: ❌ Failed to load API v1 routes: Missing catch or finally after try
+[2026-09-27 12:31:30] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:31:30] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:31:30] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:31:30] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:31:30] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:31:30] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:33:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:33:38] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:33:38] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 12:33:40] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:33:40] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 12:33:40] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 12:33:40] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 12:33:40] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 12:33:40] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:12:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:12:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:12:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:36:55] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:36:55] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:36:55] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 17:36:55] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 17:36:55] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:36:55] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:37:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:37:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:37:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:39:27] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:39:27] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:39:27] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 17:39:27] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 17:39:27] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:39:27] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:39:50] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:39:50] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:39:50] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 17:39:50] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 17:39:50] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:39:50] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:40:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:40:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:40:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:40:21] [31MERROR[39M: 💥 [Worker] Uncaught Exception: listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:40:21] [31MERROR[39M:    Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:40:21] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-27 17:40:21] [31MERROR[39M: 💥 Uncaught Exception:
+[2026-09-27 17:40:21] [31MERROR[39M: 💥 uncaughtException → listen EADDRINUSE: address already in use :::5000
+[2026-09-27 17:40:21] [31MERROR[39M: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at app.listen (D:\Project\Mp3 Juice Tool\backend\node_modules\express\lib\application.js:635:24)
+    at startServer (file:///D:/Project/Mp3%20Juice%20Tool/backend/src/server.js:200:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-27 17:50:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:50:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:50:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:50:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:50:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:50:58] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:51:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:51:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:51:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:52:39] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:52:39] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:52:39] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:56:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-27 17:57:00] [31MERROR[39M: ❌ Port 5000 is occupied by another process.
+[2026-09-27 17:57:33] [31MERROR[39M: ❌ Port 5000 is occupied by another process.
+[2026-09-27 17:57:35] [31MERROR[39M: ❌ Port 5000 is occupied by another process.
+[2026-09-28 10:26:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:26:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:26:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:34:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:34:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:34:33] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:35:55] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:35:55] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:35:55] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:36:11] [31MERROR[39M: ❌ [STREAM] Error:
+[2026-09-28 10:47:27] [31MERROR[39M: 💥 [Worker] Uncaught Exception: logger is not defined
+[2026-09-28 10:47:27] [31MERROR[39M:    Stack: ReferenceError: logger is not defined
+    at file:///D:/Project/Mp3%20Juice%20Tool/backend/src/routes/download.js:18:3
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-28 10:47:27] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-28 10:47:30] [31MERROR[39M: ❌ [Worker] Shutdown error: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2026-09-28 10:47:57] [31MERROR[39M: 💥 [Worker] Uncaught Exception: logger is not defined
+[2026-09-28 10:47:57] [31MERROR[39M:    Stack: ReferenceError: logger is not defined
+    at file:///D:/Project/Mp3%20Juice%20Tool/backend/src/routes/download.js:18:3
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[2026-09-28 10:47:57] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-28 10:48:00] [31MERROR[39M: ❌ [Worker] Shutdown error: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2026-09-28 10:48:16] [31MERROR[39M: 💥 [Worker] Uncaught Exception: logger is not defined
+[2026-09-28 10:48:16] [31MERROR[39M:    Stack: ReferenceError: logger is not defined
+    at file:///D:/Project/Mp3%20Juice%20Tool/backend/src/routes/download.js:18:3
+[2026-09-28 10:48:16] [31MERROR[39M: 💥 [Worker] Critical error detected - shutting down...
+[2026-09-28 10:48:19] [31MERROR[39M: ❌ [Worker] Shutdown error: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2026-09-28 10:49:16] [31MERROR[39M: ❌ Failed to load API v1 routes: Unexpected token '}'
+[2026-09-28 10:49:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:49:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:49:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:50:48] [31MERROR[39M: ❌ Failed to load API v1 routes: Unexpected token '}'
+[2026-09-28 10:50:53] [31MERROR[39M: ❌ Port 5000 is occupied by another process.
+[2026-09-28 10:54:14] [31MERROR[39M: ❌ Failed to load API v1 routes: Unexpected token '}'
+[2026-09-28 10:54:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:54:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:54:22] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:55:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:55:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:55:24] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:56:14] [31MERROR[39M: ❌ Port 5000 is occupied by another process.
+[2026-09-28 10:59:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:59:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 10:59:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:02:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:02:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:02:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:03:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:03:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:03:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:04:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:04:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:04:31] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:06:40] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:06:40] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:06:40] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:10:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:10:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:10:02] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:13:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:13:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:13:52] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:15:28] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:15:28] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:15:28] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:16:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:16:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:16:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:18:10] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:18:10] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:18:10] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:19:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:19:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:19:08] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:20:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:20:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:20:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:24:46] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:24:46] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:24:46] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:27:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:27:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:27:12] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:55:54] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:55:54] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:55:54] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:56:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:56:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 11:56:51] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:02:38] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:02:38] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:02:38] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:34:05] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:34:05] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:34:05] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:40:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:40:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:40:21] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:42:26] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:42:26] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:42:26] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:54:24] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 12:54:24] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 12:54:24] [31MERROR[39M: ❌ [URL] Failed: The requested quality (720p) is not available for this video. Please try a different quality.
+[2026-09-28 12:54:24] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 12:54:44] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1080p, got 1012p
+[2026-09-28 12:54:44] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-09-28 12:54:44] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1080p) is not available for this video. Available qualities: 2026p, 1350p, 1012p, 676p, 450p, 338p, 224p, 136p. Please try a different quality.
+[2026-09-28 12:54:44] [31MERROR[39M:    Quality: 1080, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 12:54:58] [31MERROR[39M: ❌ [URL] yt-dlp failed for 360p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 12:54:58] [31MERROR[39M:    Format string: best[height=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=360][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 12:54:58] [31MERROR[39M: ❌ [URL] Failed: The requested quality (360p) is not available for this video. Please try a different quality.
+[2026-09-28 12:54:58] [31MERROR[39M:    Quality: 360, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 12:55:16] [31MERROR[39M: ❌ [URL] yt-dlp failed for 480p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=P4zyZAl30To --dump-single-json --format best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] P4zyZAl30To: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 12:55:16] [31MERROR[39M:    Format string: best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 12:55:16] [31MERROR[39M: ❌ [URL] Failed: The requested quality (480p) is not available for this video. Please try a different quality.
+[2026-09-28 12:55:16] [31MERROR[39M:    Quality: 480, Format: mp4, Video ID: P4zyZAl30To
+[2026-09-28 12:59:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:59:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 12:59:56] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:00:36] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 13:00:36] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 13:00:36] [31MERROR[39M: ❌ [URL] Failed: The requested quality (720p) is not available for this video. Please try a different quality.
+[2026-09-28 13:00:36] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 13:00:43] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1080p, got 1012p
+[2026-09-28 13:00:43] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-09-28 13:00:43] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1080p) is not available for this video. Available qualities: 2026p, 1350p, 1012p, 676p, 450p, 338p, 224p, 136p. Please try a different quality.
+[2026-09-28 13:00:43] [31MERROR[39M:    Quality: 1080, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 13:00:57] [31MERROR[39M: ❌ [URL] yt-dlp failed for 480p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=P4zyZAl30To --dump-single-json --format best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] P4zyZAl30To: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 13:00:57] [31MERROR[39M:    Format string: best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 13:00:57] [31MERROR[39M: ❌ [URL] Failed: The requested quality (480p) is not available for this video. Please try a different quality.
+[2026-09-28 13:00:57] [31MERROR[39M:    Quality: 480, Format: mp4, Video ID: P4zyZAl30To
+[2026-09-28 13:02:35] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:02:35] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:02:35] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:03:12] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 13:03:12] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 13:03:12] [31MERROR[39M: ❌ [URL] Failed: The requested quality (720p) is not available for this video. Please try a different quality.
+[2026-09-28 13:03:12] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 13:03:32] [31MERROR[39M: ❌ [URL] DASH quality mismatch: requested 1080p, got 1012p
+[2026-09-28 13:03:32] [31MERROR[39M:    This indicates the requested quality is not available
+[2026-09-28 13:03:32] [31MERROR[39M: ❌ [URL] Failed: The requested quality (1080p) is not available for this video. Available qualities: 2026p, 1350p, 1012p, 676p, 450p, 338p, 224p, 136p. Please try a different quality.
+[2026-09-28 13:03:32] [31MERROR[39M:    Quality: 1080, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 13:03:51] [31MERROR[39M: ❌ [URL] yt-dlp failed for 480p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=P4zyZAl30To --dump-single-json --format best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] P4zyZAl30To: Requested format is not available. Use --list-formats for a list of available formats
+null
+[2026-09-28 13:03:51] [31MERROR[39M:    Format string: best[height=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=480][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 13:03:51] [31MERROR[39M: ❌ [URL] Failed: The requested quality (480p) is not available for this video. Please try a different quality.
+[2026-09-28 13:03:51] [31MERROR[39M:    Quality: 480, Format: mp4, Video ID: P4zyZAl30To
+[2026-09-28 13:07:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:07:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:07:27] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:08:34] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:08:34] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:08:34] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:09:16] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:09:16] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:09:16] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:10:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:10:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:10:50] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:17:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:17:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 13:17:37] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379

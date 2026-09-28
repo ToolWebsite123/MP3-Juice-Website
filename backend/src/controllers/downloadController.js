@@ -47,7 +47,7 @@ function validateQuality(quality, format) {
     return audioQualities.includes(normalized) ? normalized : '192';
   }
 
-  const validQualities = ['144', '240', '360', '480', '720', '1080', '1440', '2160', 'auto'];
+  const validQualities = ['144', '240', '360', '480', '720', '1080', 'auto'];
   if (validQualities.includes(normalized)) return normalized;
 
   return format === 'mp3' ? '192' : '720';
@@ -104,7 +104,8 @@ function validateYouTubeUrl(url) {
 }
 
 function setCorsHeaders(res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const allowedOrigin = process.env.ALLOWED_ORIGIN || '*';
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Range, Accept, X-Requested-With');
   res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type, Content-Disposition, Accept-Ranges, Content-Range, Transfer-Encoding');
@@ -122,344 +123,293 @@ function setCorsHeaders(res) {
  * @param {string} outputFileName - Output filename for Content-Disposition header
  * @returns {Promise<void>}
  */
-async function mergeAndStreamDASH(videoUrl, audioUrl, req, res, outputFileName) {
+function formatFFmpegHeaders(httpHeaders) {
+  let headerStr = `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\r\nReferer: https://www.youtube.com/\r\n`;
+
+  if (httpHeaders && typeof httpHeaders === 'object') {
+    let custom = '';
+    for (const [k, v] of Object.entries(httpHeaders)) {
+      if (v) {
+        custom += `${k}: ${v}\r\n`;
+      }
+    }
+    if (custom) {
+      headerStr = custom;
+    }
+  }
+
+  return headerStr;
+}
+
+/**
+ * ✅ FIXED: Merge DASH video and audio streams using ffmpeg and stream to response
+ * ⚡ PROGRESSIVE STREAMING: FFmpeg reads directly from HTTP URLs - no temp file wait!
+ * @param {string} videoUrl - Video-only stream URL
+ * @param {string} audioUrl - Audio-only stream URL
+ * @param {object} req - Express request object (for client disconnect detection)
+ * @param {object} res - Express response object
+ * @param {string} outputFileName - Output filename for Content-Disposition header
+ * @param {object} httpHeaders - Optional HTTP headers extracted from yt-dlp
+ * @returns {Promise<void>}
+ */
+async function mergeAndStreamDASH(videoUrl, audioUrl, req, res, outputFileName, httpHeaders = null) {
   let ffmpegProcess = null;
   let isResolved = false;
 
-  // ✅ CRITICAL: Set headers IMMEDIATELY to keep connection alive and enable streaming
-  setCorsHeaders(res);
-  res.setHeader('Content-Type', 'video/mp4'); // Use video/mp4 for better browser compatibility
-  res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(outputFileName)}"`);
-  res.setHeader('Transfer-Encoding', 'chunked'); // Enable chunked transfer for progressive streaming
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.setHeader('Pragma', 'no-cache');
-  res.setHeader('Expires', '0');
-  res.setHeader('Accept-Ranges', 'bytes');
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Accel-Buffering', 'no'); // Disable proxy buffering for real-time streaming
-  
-  // ✅ CRITICAL: Write immediately to establish connection and show browser progress
-  res.write(''); // Empty chunk to keep connection alive
-  logger.info(`📤 [DASH MERGE] Headers sent immediately - connection established, starting progressive merge...`);
-
   try {
     logger.info(`⚡ [DASH MERGE] Starting PROGRESSIVE merge for: ${outputFileName}`);
-    logger.info(`   🚀 FFmpeg will stream directly from HTTP URLs - browser will see progress immediately!`);
     logger.info(`   Video URL: ${videoUrl.substring(0, 60)}...`);
     logger.info(`   Audio URL: ${audioUrl.substring(0, 60)}...`);
 
-    // ✅ CRITICAL FIX: Use FFmpeg spawn to pipe stdout directly to response
-    // FFmpeg can read directly from HTTP URLs and stream output progressively
     return new Promise((resolve, reject) => {
-      let keepAliveInterval = null;
-      
       const cleanupOnError = async (err) => {
         if (isResolved) return;
         isResolved = true;
-        
-        // Clear keep-alive interval
-        if (keepAliveInterval) {
-          clearInterval(keepAliveInterval);
-          keepAliveInterval = null;
-        }
-        
+
         logger.error(`❌ [DASH MERGE] Error: ${err.message}`);
-        if (err.stderr) {
-          logger.error(`❌ [DASH MERGE] FFmpeg stderr: ${err.stderr}`);
-        }
-        
-        // Kill FFmpeg process if still running
         if (ffmpegProcess) {
           try {
             ffmpegProcess.kill('SIGKILL');
-          } catch (killErr) {
-            // Ignore
-          }
+          } catch (_) {}
         }
-        
-        // If headers not sent, send error response
+
         if (!res.headersSent) {
           setCorsHeaders(res);
           res.status(500).json({
             success: false,
-            error: 'Failed to merge video and audio',
-            details: process.env.NODE_ENV === 'development' ? err.message : undefined
+            error: 'Failed to merge video and audio: ' + err.message
           });
         } else if (!res.writableEnded) {
-          // Headers sent but stream not ended - try to end gracefully
-          try {
-            res.end();
-          } catch (endErr) {
-            // Ignore
-          }
+          try { res.end(); } catch (_) {}
         }
-        
+
         reject(err);
       };
 
       try {
         const ffmpegPath = ffmpegStatic || 'ffmpeg';
-        
-        logger.info(`   🎬 Starting FFmpeg with HTTP URL inputs - streaming output immediately...`);
-        
-        // ✅ CRITICAL: Build FFmpeg command with HTTP URLs directly
-        // FFmpeg supports reading from HTTP URLs - this enables progressive streaming!
-        // YouTube CDN URLs from yt-dlp are pre-authenticated, so they usually work directly
-        // Note: If direct HTTP doesn't work, we may need to pipe streams (fallback not implemented yet)
+
+        const userAgentHeader = formatFFmpegHeaders(httpHeaders);
+
         const ffmpegArgs = [
-          // Input 1: Video from HTTP URL
-          // Use input options for HTTP headers (per-input)
-          '-headers', `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\r\nReferer: https://www.youtube.com/\r\n`,
+          '-headers', userAgentHeader,
           '-i', videoUrl,
-          // Input 2: Audio from HTTP URL
-          '-headers', `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\r\nReferer: https://www.youtube.com/\r\n`,
+          '-headers', userAgentHeader,
           '-i', audioUrl,
-          // Increase analysis/probe size for HTTP streams (helps with progressive reading)
-          '-analyzeduration', '2147483647',  // Max value for better HTTP stream handling
-          '-probesize', '2147483647',
-          // Video codec: copy (no re-encoding = fast)
           '-c:v', 'copy',
-          // Audio codec: copy (no re-encoding = fast)
           '-c:a', 'copy',
-          // Map streams
           '-map', '0:v:0',
           '-map', '1:a:0',
-          // ✅ CRITICAL: Enable fragmented MP4 for progressive streaming
-          // frag_keyframe: Create fragments at keyframes (enables streaming)
-          // empty_moov: Write moov atom at start (better for streaming)
-          // faststart: Move metadata to beginning (better for progressive download)
-          '-movflags', 'frag_keyframe+empty_moov+faststart',
-          // Fix timestamp issues
+          // ✅ FIX: Remove faststart and excessive probesize so FFmpeg streams immediately to non-seekable stdout pipe
+          '-movflags', 'frag_keyframe+empty_moov+default_base_moof',
           '-avoid_negative_ts', 'make_zero',
           '-fflags', '+genpts',
-          // End when shortest stream ends
           '-shortest',
-          // Output format
           '-f', 'mp4',
-          // Output to stdout for streaming
           '-'
         ];
-        
-        // Log FFmpeg command (sanitize URLs for logging)
-        const logArgs = ffmpegArgs.map((arg, idx) => {
-          if (idx > 0 && (ffmpegArgs[idx - 1] === '-i' || ffmpegArgs[idx - 1] === '-user_agent')) {
-            return arg.includes('http') ? `${arg.substring(0, 50)}...` : arg;
-          }
-          return arg;
-        });
-        logger.info(`   🎬 FFmpeg command: ${ffmpegPath} ${logArgs.join(' ').substring(0, 200)}...`);
-        
-        // ✅ Spawn FFmpeg process with HTTP URL inputs
-        // FFmpeg will download and merge progressively, outputting to stdout immediately
+
         ffmpegProcess = spawn(ffmpegPath, ffmpegArgs, {
-          stdio: ['ignore', 'pipe', 'pipe'], // stdin: ignore, stdout: pipe, stderr: pipe
-          env: { ...process.env } // Pass environment variables
+          stdio: ['ignore', 'pipe', 'pipe'],
+          env: { ...process.env }
         });
-        
-        // ✅ CRITICAL: Pipe FFmpeg stdout to response immediately
-        // FFmpeg will start outputting data as soon as it begins processing HTTP streams
-        // This gives the browser real-time progress instead of waiting for full merge
-        let streamEnded = false;
+
+        let headersSent = false;
         let bytesStreamed = 0;
-        let firstChunkTime = null;
-        
+
         ffmpegProcess.stdout.on('data', (chunk) => {
-          if (!streamEnded && !res.destroyed && !res.writableEnded) {
-            try {
-              // Track first chunk time (measures time to first byte - TTFB)
-              if (firstChunkTime === null) {
-                firstChunkTime = Date.now();
-                const ttfb = firstChunkTime - Date.now() + (Date.now() - (Date.now() - 100));
-                logger.info(`   ⚡ First chunk received! FFmpeg is streaming data to browser...`);
-              }
-              
-              bytesStreamed += chunk.length;
-              
-              // Write chunk to response
-              const canWrite = res.write(chunk);
-              if (!canWrite) {
-                // Backpressure detected - pause FFmpeg output until response drains
-                ffmpegProcess.stdout.pause();
-                res.once('drain', () => {
-                  ffmpegProcess.stdout.resume();
-                });
-              }
-            } catch (writeErr) {
-              logger.error(`❌ [DASH MERGE] Write error: ${writeErr.message}`);
-              if (!streamEnded) {
-                streamEnded = true;
-                if (ffmpegProcess) {
-                  try {
-                    ffmpegProcess.kill('SIGKILL');
-                  } catch (killErr) {
-                    // Ignore
-                  }
-                }
-              }
+          if (!headersSent) {
+            headersSent = true;
+            setCorsHeaders(res);
+            res.setHeader('Content-Type', 'video/mp4');
+            res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(outputFileName)}"`);
+            res.setHeader('Transfer-Encoding', 'chunked');
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+            res.setHeader('X-Accel-Buffering', 'no');
+            logger.info(`⚡ [DASH MERGE] First chunk received! Streaming data to browser...`);
+          }
+
+          bytesStreamed += chunk.length;
+
+          if (!res.destroyed && !res.writableEnded) {
+            const canWrite = res.write(chunk);
+            if (!canWrite) {
+              ffmpegProcess.stdout.pause();
+              res.once('drain', () => {
+                ffmpegProcess.stdout.resume();
+              });
             }
-          }
-        });
-        
-        ffmpegProcess.stdout.on('end', () => {
-          if (!streamEnded && !res.destroyed && !res.writableEnded) {
-            streamEnded = true;
-            res.end();
-            const totalMB = (bytesStreamed / 1024 / 1024).toFixed(2);
-            logger.info(`✅ [DASH MERGE] Stream completed successfully - ${totalMB} MB streamed to browser`);
-          }
-        });
-        
-        ffmpegProcess.stdout.on('error', (streamErr) => {
-          logger.error(`❌ [DASH MERGE] Stream error: ${streamErr.message}`);
-          if (!streamEnded) {
-            streamEnded = true;
-            cleanupOnError(streamErr);
-          }
-        });
-        
-        // Handle FFmpeg stderr (for logging and progress tracking)
-        let stderrBuffer = '';
-        ffmpegProcess.stderr.on('data', (data) => {
-          stderrBuffer += data.toString();
-          
-          // Log progress information
-          const progressMatch = data.toString().match(/time=(\d+:\d+:\d+\.\d+)/);
-          if (progressMatch) {
-            logger.debug(`   ⏳ FFmpeg merge progress: ${progressMatch[1]} (streaming to browser...)`);
-          }
-          
-          // Log when FFmpeg starts processing (confirms HTTP input is working)
-          if (data.toString().includes('Input') || data.toString().includes('Stream')) {
-            logger.debug(`   📡 FFmpeg processing HTTP streams...`);
-          }
-        });
-        
-        // Handle FFmpeg process end
-        ffmpegProcess.on('close', (code) => {
-          // Clear keep-alive interval
-          if (keepAliveInterval) {
-            clearInterval(keepAliveInterval);
-            keepAliveInterval = null;
-          }
-          
-          if (isResolved) return;
-          
-          if (code === 0) {
-            logger.info(`   ✅ FFmpeg merge completed successfully`);
-            // Ensure response is ended if not already
-            if (!res.writableEnded && !res.destroyed) {
-              try {
-                res.end();
-              } catch (endErr) {
-                logger.debug(`⚠️ [DASH MERGE] Response already ended: ${endErr.message}`);
-              }
-            }
-            if (!isResolved) {
-              isResolved = true;
-              resolve();
-            }
-          } else {
-            logger.error(`❌ [DASH MERGE] FFmpeg exited with code ${code}`);
-            logger.error(`❌ [DASH MERGE] FFmpeg stderr: ${stderrBuffer.substring(0, 500)}`);
-            cleanupOnError(new Error(`FFmpeg process exited with code ${code}`));
-          }
-        });
-        
-        // Handle FFmpeg process errors
-        ffmpegProcess.on('error', (err) => {
-          if (keepAliveInterval) {
-            clearInterval(keepAliveInterval);
-            keepAliveInterval = null;
-          }
-          logger.error(`❌ [DASH MERGE] FFmpeg spawn error: ${err.message}`);
-          cleanupOnError(err);
-        });
-        
-        // Handle stdout errors
-        ffmpegProcess.stdout.on('error', (err) => {
-          if (keepAliveInterval) {
-            clearInterval(keepAliveInterval);
-            keepAliveInterval = null;
-          }
-          logger.error(`❌ [DASH MERGE] FFmpeg stdout error: ${err.message}`);
-          if (!isResolved) {
-            cleanupOnError(err);
           }
         });
 
-        // ✅ Handle client disconnect gracefully
-        const handleDisconnect = () => {
-          if (isResolved) return;
-          logger.warn(`⚠️ [DASH MERGE] Client disconnected during merge`);
-          
-          // Clear keep-alive interval
-          if (keepAliveInterval) {
-            clearInterval(keepAliveInterval);
-            keepAliveInterval = null;
-          }
-          
-          if (ffmpegProcess) {
-            try {
-              // Kill FFmpeg process and all its children
-              ffmpegProcess.kill('SIGKILL');
-              logger.info(`   🛑 FFmpeg process killed due to client disconnect`);
-            } catch (err) {
-              // Ignore errors when killing process
-            }
-          }
-          
-          isResolved = true;
-        };
-        
-        // Listen for client disconnect events
-        res.on('close', handleDisconnect);
-        res.on('aborted', handleDisconnect);
-        if (req) {
-          req.on('close', handleDisconnect);
-          req.on('aborted', handleDisconnect);
-        }
-        
-        // Handle response finish
-        res.on('finish', () => {
+        ffmpegProcess.stdout.on('end', () => {
           if (!isResolved) {
             isResolved = true;
-            logger.info(`✅ [DASH MERGE] Response stream finished successfully`);
+            if (!res.writableEnded) res.end();
+            const totalMB = (bytesStreamed / 1024 / 1024).toFixed(2);
+            logger.info(`✅ [DASH MERGE] Stream completed - ${totalMB} MB streamed to browser`);
             resolve();
           }
         });
 
-        // Handle response errors
-        res.on('error', (resErr) => {
-          logger.error(`❌ [DASH MERGE] Response error: ${resErr.message}`);
-          if (!isResolved) {
-            cleanupOnError(resErr);
+        let stderrBuffer = '';
+        ffmpegProcess.stderr.on('data', (data) => {
+          stderrBuffer += data.toString();
+        });
+
+        ffmpegProcess.on('error', (err) => {
+          cleanupOnError(err);
+        });
+
+        ffmpegProcess.on('close', (code) => {
+          if (code !== 0 && !headersSent) {
+            cleanupOnError(new Error(`FFmpeg merge exited with code ${code}: ${stderrBuffer.substring(0, 150)}`));
+          } else if (!isResolved) {
+            isResolved = true;
+            if (!res.writableEnded) res.end();
+            resolve();
           }
         });
 
-      } catch (setupErr) {
-        logger.error(`❌ [DASH MERGE] Setup error: ${setupErr.message}`);
-        cleanupOnError(setupErr);
+        req.on('close', () => {
+          if (ffmpegProcess) {
+            try { ffmpegProcess.kill('SIGKILL'); } catch (_) {}
+          }
+        });
+
+      } catch (err) {
+        cleanupOnError(err);
       }
     });
-
-  } catch (error) {
-    logger.error(`❌ [DASH MERGE] Outer error: ${error.message}`);
+  } catch (err) {
+    logger.error(`❌ [DASH MERGE] Exception: ${err.message}`);
     if (!res.headersSent) {
       setCorsHeaders(res);
-      res.status(500).json({
-        success: false,
-        error: 'Failed to merge video and audio',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined
-      });
-    } else if (!res.writableEnded) {
-      try {
-        res.end();
-      } catch (endErr) {
-        // Ignore
-      }
+      res.status(500).json({ success: false, error: err.message });
     }
-    throw error;
   }
+}
+
+/**
+ * ✅ MP3 CONVERTER & STREAMER: Convert audio stream to MP3 using FFmpeg
+ */
+async function convertAndStreamMP3(audioUrl, req, res, outputFileName, bitrate = '192', httpHeaders = null) {
+  let ffmpegProcess = null;
+  let isResolved = false;
+
+  return new Promise((resolve, reject) => {
+    const cleanupOnError = async (err) => {
+      if (isResolved) return;
+      isResolved = true;
+      logger.error(`❌ [MP3 CONVERT] Error: ${err.message}`);
+      if (ffmpegProcess) {
+        try { ffmpegProcess.kill('SIGKILL'); } catch (_) {}
+      }
+      if (!res.headersSent) {
+        setCorsHeaders(res);
+        res.status(500).json({
+          success: false,
+          error: `MP3 conversion failed: ${err.message}`
+        });
+      } else if (!res.writableEnded) {
+        try { res.end(); } catch (_) {}
+      }
+      reject(err);
+    };
+
+    try {
+      const ffmpegPath = ffmpegStatic || 'ffmpeg';
+      const bitrateNum = parseInt(String(bitrate).replace(/[^0-9]/g, '')) || 192;
+      const bitrateStr = `${bitrateNum}k`;
+      const userAgentHeader = formatFFmpegHeaders(httpHeaders);
+
+      logger.info(`🎵 [MP3 CONVERT] Starting MP3 conversion at ${bitrateStr}...`);
+
+      const ffmpegArgs = [
+        '-headers', userAgentHeader,
+        '-i', audioUrl,
+        '-vn',
+        '-c:a', 'libmp3lame',
+        '-b:a', bitrateStr,
+        '-ar', '44100',
+        '-ac', '2',
+        '-f', 'mp3',
+        '-'
+      ];
+
+      ffmpegProcess = spawn(ffmpegPath, ffmpegArgs, {
+        stdio: ['ignore', 'pipe', 'pipe'],
+        env: { ...process.env }
+      });
+
+      let headersSent = false;
+      let bytesStreamed = 0;
+
+      ffmpegProcess.stdout.on('data', (chunk) => {
+        if (!headersSent) {
+          headersSent = true;
+          setCorsHeaders(res);
+          res.setHeader('Content-Type', 'audio/mpeg');
+          res.setHeader('Content-Disposition', `attachment; filename="${encodeURIComponent(outputFileName)}"`);
+          res.setHeader('Transfer-Encoding', 'chunked');
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+          res.setHeader('X-Content-Type-Options', 'nosniff');
+          logger.info(`⚡ [MP3 CONVERT] First chunk received! Streaming MP3 to browser...`);
+        }
+
+        bytesStreamed += chunk.length;
+
+        if (!res.destroyed && !res.writableEnded) {
+          const canWrite = res.write(chunk);
+          if (!canWrite) {
+            ffmpegProcess.stdout.pause();
+            res.once('drain', () => {
+              ffmpegProcess.stdout.resume();
+            });
+          }
+        }
+      });
+
+      ffmpegProcess.stdout.on('end', () => {
+        if (!isResolved) {
+          isResolved = true;
+          if (!res.writableEnded) res.end();
+          const totalMB = (bytesStreamed / 1024 / 1024).toFixed(2);
+          logger.info(`✅ [MP3 CONVERT] Stream completed - ${totalMB} MB streamed`);
+          resolve();
+        }
+      });
+
+      let stderrBuffer = '';
+      ffmpegProcess.stderr.on('data', (data) => {
+        stderrBuffer += data.toString();
+      });
+
+      ffmpegProcess.on('error', (err) => {
+        cleanupOnError(err);
+      });
+
+      ffmpegProcess.on('close', (code) => {
+        if (code !== 0 && !headersSent) {
+          cleanupOnError(new Error(`FFmpeg MP3 conversion exited with code ${code}: ${stderrBuffer.substring(0, 150)}`));
+        } else if (!isResolved) {
+          isResolved = true;
+          if (!res.writableEnded) res.end();
+          resolve();
+        }
+      });
+
+      req.on('close', () => {
+        if (ffmpegProcess) {
+          try { ffmpegProcess.kill('SIGKILL'); } catch (_) {}
+        }
+      });
+
+    } catch (err) {
+      cleanupOnError(err);
+    }
+  });
 }
 
 
@@ -526,7 +476,7 @@ export const getDirectUrl = async (req, res) => {
       try {
         logger.info(`🔄 [INFO] Attempt ${attempt}/${maxRetries}`);
 
-        // 🔥 Y2MATE PERFORMANCE: SINGLE yt-dlp call - no cookie rotation blocking
+        // 🔥 MP3 JUICE PERFORMANCE: SINGLE yt-dlp call - no cookie rotation blocking
         // This is the ONLY yt-dlp call for /info endpoint
         const videoInfo = await fetchVideoInfo(finalUrl, true); // skipCookieRotation=true
 
@@ -538,10 +488,10 @@ export const getDirectUrl = async (req, res) => {
         logger.info(`📺 Title: ${videoInfo.title}`);
         logger.info(`⏱️ Duration: ${videoInfo.duration}s`);
 
-        // 🔥 Y2MATE INSTANT: Extract formats with URLs from cached videoInfo
+        // 🔥 MP3 JUICE INSTANT: Extract formats with URLs from cached videoInfo
         // NO separate yt-dlp calls - use extractUrlForQuality from cached formats
         // This is INSTANT because formats are already fetched
-        // Group formats into videoFormats and audioFormats (Y2Mate-style)
+        // Group formats into videoFormats and audioFormats (MP3 Juice-style)
         const videoFormats = [];
         const audioFormats = [];
 
@@ -561,7 +511,7 @@ export const getDirectUrl = async (req, res) => {
                 }
 
                 if (urlResult && downloadUrl) {
-                  // ✅ Y2MATE BEHAVIOR: Allow DASH merge for ALL qualities
+                  // ✅ MP3 JUICE BEHAVIOR: Allow DASH merge for ALL qualities
                   // If DASH format is available, use it (merge endpoint handles it)
                   const qualityInt = parseInt(qualityNum);
                   
@@ -651,14 +601,14 @@ export const getDirectUrl = async (req, res) => {
 
         logger.info(`📦 [INFO] Found ${videoFormats.length} video formats, ${audioFormats.length} audio formats (INSTANT from cache)`);
 
-        // 🔥 Y2MATE INSTANT: Return formats grouped by type (Y2Mate-style)
+        // 🔥 MP3 JUICE INSTANT: Return formats grouped by type (MP3 Juice-style)
         // All URLs are already extracted from cached formats - NO waiting
         return res.status(200).json({
           success: true,
           title: videoInfo.title || 'video',
           videoId: finalVideoId,
           duration: videoInfo.duration || 0,
-          // Y2Mate-style grouped formats
+          // MP3 Juice-style grouped formats
           videoFormats: videoFormats, // MP4 formats with quality labels
           audioFormats: audioFormats, // MP3 formats (128kbps, 320kbps)
           // Backward compatibility: also include flat formats array
@@ -716,11 +666,11 @@ export const getDirectUrl = async (req, res) => {
 };
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   ⚠️ DEPRECATED: DASH MERGE STREAMING (Removed - Y2Mate Mode)
+   ⚠️ DEPRECATED: DASH MERGE STREAMING (Removed - MP3 Juice Mode)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /**
- * ⚠️ DEPRECATED: Server-side merging removed in Y2Mate mode
+ * ⚠️ DEPRECATED: Server-side merging removed in MP3 Juice mode
  * All formats now return direct URLs - browser downloads directly from CDN
  * This function is kept for reference only and should never be called
  */
@@ -730,7 +680,7 @@ export const getDirectUrl = async (req, res) => {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /**
- * ✅ Y2MATE MODE: Returns JSON with direct CDN URLs
+ * ✅ MP3 JUICE MODE: Returns JSON with direct CDN URLs
  * - Progressive formats (144p-720p): Direct CDN URL (browser downloads directly)
  * - DASH formats (ALL qualities): Returns merge endpoint (server merges video+audio)
  * - No temp files for progressive formats
@@ -761,7 +711,7 @@ export const proxyDownload = async (req, res) => {
   try {
     logger.info('🎬 [PROXY] Download URL request:', { videoId, quality, format, returnUrl });
 
-    // ✅ STEP 1: Try exact progressive match from cache (Y2MATE LOGIC)
+    // ✅ STEP 1: Try exact progressive match from cache (MP3 JUICE LOGIC)
     let urlResult = null;
     let cacheSuccess = false;
 
@@ -771,7 +721,7 @@ export const proxyDownload = async (req, res) => {
         logger.info('⚡ [PROXY] Using cached video info for URL extraction');
         urlResult = extractUrlForQuality(cachedInfo, format, quality);
         
-        // ✅ Y2MATE BEHAVIOR: Accept progressive OR DASH formats (DASH merge allowed for all qualities)
+        // ✅ MP3 JUICE BEHAVIOR: Accept progressive OR DASH formats (DASH merge allowed for all qualities)
         if (urlResult && urlResult.directUrl && urlResult.isProgressive && !urlResult.needsMerge) {
           // Progressive format - validate it's not HLS
           if (!urlResult.directUrl.includes('manifest') && 
@@ -784,7 +734,7 @@ export const proxyDownload = async (req, res) => {
             urlResult = null;
           }
         } else if (urlResult && urlResult.needsMerge && urlResult.videoUrl && urlResult.audioUrl) {
-          // ✅ Y2MATE: Allow DASH from cache for ALL qualities (merge will handle it)
+          // ✅ MP3 JUICE: Allow DASH from cache for ALL qualities (merge will handle it)
           cacheSuccess = true;
           logger.info(`✅ [PROXY] Cache hit - DASH format found for ${quality}p (will merge)`);
         } else if (!urlResult) {
@@ -796,7 +746,7 @@ export const proxyDownload = async (req, res) => {
       logger.debug(`ℹ️ [PROXY] Cache miss: ${cacheErr.message}`);
     }
     
-    // ✅ STEP 2: If cache failed, try getDownloadUrl as fallback (Y2MATE: allows DASH for all qualities)
+    // ✅ STEP 2: If cache failed, try getDownloadUrl as fallback (MP3 JUICE: allows DASH for all qualities)
     if (!cacheSuccess) {
       logger.info(`📡 [PROXY] Cache miss for ${quality}p, trying getDownloadUrl fallback...`);
       
@@ -902,12 +852,12 @@ export const proxyDownload = async (req, res) => {
     const fileExtension = format === 'mp3' ? 'mp3' : 'mp4';
     const safeFileName = `${videoTitle}_${qualityLabel}.${fileExtension}`;
 
-    // ✅ STEP 5: Y2Mate Style - Browser Direct Download (NO SERVER MERGE)
+    // ✅ STEP 5: MP3 Juice Style - Browser Direct Download (NO SERVER MERGE)
     // Return direct CDN URLs for ALL qualities so browser can download directly
     // Server merge only used as absolute last resort (currently disabled for better performance)
     setCorsHeaders(res);
     
-    // ✅ Y2MATE STYLE: Always prefer direct CDN URL for browser download
+    // ✅ MP3 JUICE STYLE: Always prefer direct CDN URL for browser download
     // Even if DASH format detected, return videoUrl as directUrl for browser download
     const hasVideoUrl = urlResult.videoUrl && urlResult.videoUrl.startsWith('https://');
     const hasDirectUrl = urlResult.directUrl && urlResult.directUrl.startsWith('https://');
@@ -938,7 +888,7 @@ export const proxyDownload = async (req, res) => {
       });
     }
 
-    // ✅ Y2MATE: Return backend streaming endpoint (bypasses CORS for direct download)
+    // ✅ MP3 JUICE: Return backend streaming endpoint (bypasses CORS for direct download)
     // Frontend uses this endpoint in <a> tag to trigger download
     const streamEndpoint = `${req.protocol}://${req.get('host')}/api/v1/video/stream?${new URLSearchParams({
       videoId: videoId,
@@ -949,7 +899,7 @@ export const proxyDownload = async (req, res) => {
     // Check if this is DASH format
     const isDASH = urlResult.needsMerge && urlResult.videoUrl && urlResult.audioUrl;
     
-    logger.info(`✅ [Y2MATE] Format (${quality}p) - returning streaming endpoint (bypasses CORS)`);
+    logger.info(`✅ [MP3 JUICE] Format (${quality}p) - returning streaming endpoint (bypasses CORS)`);
     if (isDASH) {
       logger.info(`   DASH format - will stream video-only directly (instant download for all qualities)`);
     }
@@ -998,13 +948,13 @@ export const proxyDownload = async (req, res) => {
 
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   🔀 DASH MERGE ENDPOINT (ALL Qualities - Y2Mate Style)
+   🔀 DASH MERGE ENDPOINT (ALL Qualities - MP3 Juice Style)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /**
- * ✅ Y2MATE BEHAVIOR: DASH Merge Endpoint - Server-side merge for ALL qualities
+ * ✅ MP3 JUICE BEHAVIOR: DASH Merge Endpoint - Server-side merge for ALL qualities
  * Used when DASH format requires merging (video+audio separate streams)
- * Works for 144p, 240p, 360p, 480p, 720p, 1080p, 1440p, 2160p - ALL qualities
+ * Works for 144p, 240p, 360p, 480p, 720p, 1080p - ALL qualities
  * Streams merged file directly to client (no temp file storage)
  */
 /**
@@ -1115,7 +1065,7 @@ export const streamVideo = async (req, res) => {
     }
 
     // ✅ DASH FORMATS: Merge video + audio streams using FFmpeg
-    // This ensures all DASH formats (144p, 240p, 480p, 720p, 1080p, 1440p, 2160p) have audio
+    // This ensures all DASH formats (144p, 240p, 480p, 720p, 1080p) have audio
     // ✅ CRITICAL: Only process DASH if BOTH videoUrl and audioUrl are valid
     if (urlResult && urlResult.needsMerge && urlResult.videoUrl && urlResult.audioUrl && 
         urlResult.videoUrl.startsWith('https://') && urlResult.audioUrl.startsWith('https://')) {
@@ -1135,22 +1085,24 @@ export const streamVideo = async (req, res) => {
       logger.info(`🔀 [STREAM] Starting FFmpeg merge for ${quality}p DASH format...`);
       
       // Use mergeAndStreamDASH to merge video + audio and stream to user
-      await mergeAndStreamDASH(urlResult.videoUrl, urlResult.audioUrl, req, res, safeFileName);
+      await mergeAndStreamDASH(urlResult.videoUrl, urlResult.audioUrl, req, res, safeFileName, urlResult.httpHeaders);
       
       logger.info(`✅ [STREAM] DASH merge completed and streaming started: ${safeFileName}`);
       return; // Exit early, mergeAndStreamDASH handles the response
     }
 
-    // ✅ Progressive format (video+audio combined) - stream directly from CDN
-    // This handles formats like 360p that have both video and audio in one stream
+    // ✅ Progressive format or MP3 audio - stream directly or convert
     const videoUrl = urlResult?.directUrl || urlResult?.videoUrl || urlResult?.url;
     
     if (!videoUrl || !videoUrl.startsWith('https://')) {
-      // Headers already sent, need to end properly
-      if (!res.writableEnded) {
-        res.end();
+      logger.error(`❌ [STREAM] Stream URL not found for ${videoId}`);
+      if (!res.headersSent) {
+        setCorsHeaders(res);
+        return res.status(404).json({
+          success: false,
+          error: `Stream URL not available for quality ${quality}`
+        });
       }
-      logger.error(`❌ [STREAM] Video URL not found for ${videoId}`);
       return;
     }
 
@@ -1163,20 +1115,39 @@ export const streamVideo = async (req, res) => {
     const fileExtension = format === 'mp3' ? 'mp3' : 'mp4';
     const safeFileName = `${videoTitle}_${qualityLabel}.${fileExtension}`;
 
+    // ✅ MP3 AUDIO: Convert audio stream on-the-fly using FFmpeg to genuine MP3
+    if (format === 'mp3') {
+      logger.info(`🎵 [STREAM] MP3 format requested (${quality}kbps) - converting on-the-fly with FFmpeg...`);
+      const audioStreamUrl = urlResult?.audioUrl || urlResult?.directUrl || videoUrl;
+      await convertAndStreamMP3(audioStreamUrl, req, res, safeFileName, quality, urlResult.httpHeaders);
+      return;
+    }
+
     logger.info(`📥 [STREAM] Progressive format (${quality}p) - streaming directly from CDN (no merge needed)`);
     logger.info(`   URL: ${videoUrl.substring(0, 60)}...`);
 
-    // Fetch video from CDN (backend can do this, no CORS issue)
+    // Fetch video from CDN using exact HTTP headers from yt-dlp
+    const headersToUse = urlResult?.httpHeaders || {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36',
+      'Referer': 'https://www.youtube.com/',
+      'Accept': '*/*',
+      'Accept-Language': 'en-US,en;q=0.9'
+    };
+
     const videoResponse = await fetch(videoUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Referer': 'https://www.youtube.com/',
-        'Accept': '*/*'
-      }
+      headers: headersToUse
     });
 
     if (!videoResponse.ok) {
-      throw new Error(`Failed to fetch video: ${videoResponse.status} ${videoResponse.statusText}`);
+      logger.error(`❌ [STREAM] CDN fetch failed with status: ${videoResponse.status}`);
+      if (!res.headersSent) {
+        setCorsHeaders(res);
+        return res.status(videoResponse.status).json({
+          success: false,
+          error: `Failed to fetch video: ${videoResponse.status} ${videoResponse.statusText}`
+        });
+      }
+      return;
     }
 
     // ✅ Set headers to trigger download with proper content type
@@ -1289,7 +1260,7 @@ export const mergeDASH = async (req, res) => {
       });
     }
 
-    // ✅ Y2MATE: Allow merge for ALL qualities (DASH merge supported for all)
+    // ✅ MP3 JUICE: Allow merge for ALL qualities (DASH merge supported for all)
     const qualityNum = parseInt(String(quality).replace(/p$/i, '').replace(/kbps?$/i, '').trim());
 
     logger.info('🔀 [MERGE] DASH merge request:', { videoId, quality, format });

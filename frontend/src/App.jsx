@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import DMCA from "./pages/DMCA";
 import Privacy from "./pages/Privacy";
+import About from "./pages/About";
+import Terms from "./pages/Terms";
 import Downloader from "./pages/Downloader";
 import ConvertPage from "./pages/ConvertPage";
 import SearchResults from "./pages/SearchResult";
@@ -27,12 +29,14 @@ function App() {
             
             <Route element={<Layout />}>
               <Route index element={<Home />} />
-              {/* ✅ FIXED: Clean URLs - ab query parameters nahi dikhenge */}
+              {/* ✅ FIXED: Clean URLs */}
               <Route path="/search" element={<SearchResults />} />
               <Route path="/download" element={<Downloader />} />
               <Route path="/convert" element={<ConvertPage />} />
               <Route path="/downloader" element={<Downloader />} />
            
+              <Route path="/about" element={<About />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/faq" element={<Contact />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/dmca" element={<DMCA />} />

@@ -1,5 +1,5 @@
-// ✅ Download Routes - JSON Only (No Server Streaming/File Serving)
 import express from 'express';
+import logger from '../utils/logger.js';
 
 // Controller import
 let controllerAvailable = false;
@@ -14,9 +14,8 @@ try {
   downloadFile = controller.downloadFile;
   getDownloadStatus = controller.getDownloadStatus;
   controllerAvailable = true;
-  console.log('✅ Controller loaded successfully');
 } catch (err) {
-  console.warn('⚠️ Controller not found:', err.message);
+  logger.warn?.('⚠️ Controller not found:', err.message) || console.warn('⚠️ Controller not found:', err.message);
   controllerAvailable = false;
 }
 
@@ -154,21 +153,5 @@ if (controllerAvailable) {
   if (downloadFile) router.get('/file/:downloadId', downloadFile);
   if (getDownloadStatus) router.get('/status/:downloadId', getDownloadStatus);
 }
-
-/* ----------------------------------------------------------
-   📊 STARTUP INFO
----------------------------------------------------------- */
-console.log('\n✅ Download Routes Ready (Y2Mate Mode - Direct CDN URLs):');
-console.log(`   ${controllerAvailable ? '🎯' : '⚠️'} Controller: ${controllerAvailable ? 'Active' : 'Not Available'}`);
-console.log('   📋 GET  /api/download/info      (Get title + formats with URLs)');
-console.log('   🔗 GET  /api/download/proxy    (Get single format direct URL - JSON)');
-console.log('   🔀 GET  /api/download/merge     (Server-side merge for 1080p+ DASH)');
-console.log('   🏥 GET  /api/download/health    (Health check)');
-console.log('\n🎯 Mode: Y2Mate Style - Direct CDN Downloads');
-console.log('   ✅ Progressive formats (144p-720p): Direct CDN URLs');
-console.log('   ✅ DASH formats (1080p+): Server merge endpoint');
-console.log('   ✅ No temp files for progressive formats');
-console.log('   ✅ All responses are JSON with direct URLs');
-console.log('');
 
 export default router;

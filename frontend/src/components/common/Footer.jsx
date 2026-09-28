@@ -13,19 +13,19 @@ export default function Footer() {
 
         {/* Links - Responsive */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-0 sm:space-x-6 text-xs sm:text-sm text-[#000814]">
-          <Link to="/About" className="hover:text-red-600 px-1">
+          <Link to="/about" className="hover:text-red-600 px-1">
             About
           </Link>
           <span className="hidden sm:inline">·</span>
-          <Link to="/Contact" className="hover:text-[#a4161a] px-1">
+          <Link to="/contact" className="hover:text-[#a4161a] px-1">
             Contact
           </Link>
           <span className="hidden sm:inline">·</span>
-          <Link to="/Terms" className="hover:text-[#a4161a] px-1">
+          <Link to="/terms" className="hover:text-[#a4161a] px-1">
             Terms
           </Link>
           <span className="hidden sm:inline">·</span>
-          <Link to="/Privacy" className="hover:text-[#a4161a] px-1">
+          <Link to="/privacy" className="hover:text-[#a4161a] px-1">
             Privacy
           </Link>
         </div>

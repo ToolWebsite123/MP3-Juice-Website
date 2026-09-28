@@ -29,11 +29,6 @@ export const startCleanupScheduler = () => {
 
     // Cron pattern: every X minutes
     const cronPattern = `*/${CLEANUP_INTERVAL} * * * *`;
-    
-    logger.info(`⏰ [Scheduler] Starting cleanup scheduler...`);
-    logger.info(`   ├─ Interval: Every ${CLEANUP_INTERVAL} minutes`);
-    logger.info(`   ├─ Pattern: ${cronPattern}`);
-    logger.info(`   └─ Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`);
 
     schedulers.cleanup = cron.schedule(
       cronPattern,
@@ -79,7 +74,7 @@ export const startCleanupScheduler = () => {
       }
     );
 
-    logger.info(`✅ [Scheduler] Cleanup scheduler started successfully`);
+    // Cleanup scheduler ready
     
     // Run initial cleanup after 10 seconds
     setTimeout(async () => {
@@ -107,10 +102,6 @@ export const startStorageMonitor = () => {
 
     // Check storage every X minutes
     const cronPattern = `*/${STORAGE_CHECK_INTERVAL} * * * *`;
-    
-    logger.info(`💾 [Scheduler] Starting storage monitor...`);
-    logger.info(`   ├─ Interval: Every ${STORAGE_CHECK_INTERVAL} minutes`);
-    logger.info(`   └─ Pattern: ${cronPattern}`);
 
     schedulers.storage = cron.schedule(
       cronPattern,
@@ -138,7 +129,7 @@ export const startStorageMonitor = () => {
       }
     );
 
-    logger.info(`✅ [Scheduler] Storage monitor started successfully`);
+    // Storage monitor ready
     
     // Run initial storage check immediately
     setTimeout(async () => {
@@ -159,16 +150,11 @@ export const startStorageMonitor = () => {
 ---------------------------------------------------------- */
 export const startAllSchedulers = () => {
   try {
-    logger.info(`🚀 [Scheduler] Initializing all schedulers...`);
-    
     const cleanupStarted = startCleanupScheduler();
     const storageStarted = startStorageMonitor();
 
     if (cleanupStarted && storageStarted) {
-      logger.info(`✅ [Scheduler] All schedulers started successfully`);
-      logger.info(`📋 [Scheduler] Active schedulers:`);
-      logger.info(`   ├─ Cleanup: Every ${CLEANUP_INTERVAL} min`);
-      logger.info(`   └─ Storage Monitor: Every ${STORAGE_CHECK_INTERVAL} min`);
+      logger.info(`✅ [Scheduler] Schedulers active (Cleanup: ${CLEANUP_INTERVAL}m, Storage: ${STORAGE_CHECK_INTERVAL}m)`);
       return true;
     } else {
       logger.error(`❌ [Scheduler] Some schedulers failed to start`);

@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import SearchBar from "../components/search/SearchBar";
 import SocialShareWidget from "../components/home/SocialShareWidget";
 import HomeFooter from "../components/home/HomeFooter";
+import SEO from "../components/common/SEO";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-[#1676C2] flex flex-col relative">
+      <SEO 
+        title="Privacy Policy - MP3Juice"
+        description="MP3Juice Privacy Policy. Information regarding user data protection and privacy policies."
+      />
       {/* Social Share Widget - Fixed on left side */}
       <SocialShareWidget />
 

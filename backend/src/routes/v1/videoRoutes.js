@@ -147,7 +147,7 @@ router.get('/', (req, res) => {
         '/api/download/proxy': '→ GET /api/v1/video/download',
         '/api/video/search': '→ GET /api/v1/video/search',
         '/api/video/suggestions': '→ GET /api/v1/video/suggestions',
-        '/api/y2mate/info': '→ POST /api/v1/video/info',
+        '/api/mp3juice/info': '→ POST /api/v1/video/info',
         '/api/info': '→ POST /api/v1/video/info'
       }
     }

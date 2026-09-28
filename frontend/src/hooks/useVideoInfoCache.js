@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef } from "react";
 const DEFAULT_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 /**
- * ✅ Y2MATE CACHE KEY STRATEGY:
+ * ✅ MP3 JUICE CACHE KEY STRATEGY:
  * - PRIMARY: Use videoId (most reliable, same video = same ID)
  * - FALLBACK: Use URL if videoId not available
  * - WHY: Prevents duplicate cache entries for same video
@@ -69,7 +69,7 @@ export default function useVideoInfoCache(ttlMs = DEFAULT_TTL_MS) {
     };
 
     /**
-     * ✅ Y2MATE BEHAVIOR: Get or fetch video info with SINGLE-FLIGHT protection
+     * ✅ MP3 JUICE BEHAVIOR: Get or fetch video info with SINGLE-FLIGHT protection
      * 
      * WHY SINGLE-FLIGHT:
      * - Multiple components might request same video simultaneously

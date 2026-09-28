@@ -1,8 +1,8 @@
 // ═══════════════════════════════════════════════════════════════════════
-// ⚠️ DEPRECATED FOR Y2MATE MODE: Video Worker
+// ⚠️ DEPRECATED FOR MP3 JUICE MODE: Video Worker
 // ═══════════════════════════════════════════════════════════════════════
-// 🎯 Y2MATE MODE: This worker should NOT be used
-//    - Y2Mate architecture uses direct URLs only
+// 🎯 MP3 JUICE MODE: This worker should NOT be used
+//    - MP3 Juice architecture uses direct URLs only
 //    - All formats return direct URLs (even 1080p+)
 //    - No server-side downloads or file storage
 //    - User browser downloads directly from YouTube CDN
@@ -10,7 +10,7 @@
 // ⚠️ This worker is kept for backward compatibility only
 //    - It still uses downloadToFile (deprecated)
 //    - Should be refactored to generate direct URLs if needed
-//    - For Y2Mate mode, use getDownloadUrl() instead
+//    - For MP3 Juice mode, use getDownloadUrl() instead
 //
 // FEATURES (Legacy):
 //    1. Heavy downloads only (1080p+, high bitrate MP3, long videos)
@@ -46,26 +46,8 @@ for (const envPath of envPaths) {
   if (!result.error) {
     envLoaded = true;
     loadedPath = envPath;
-    console.log("✅ [Worker] .env loaded from:", envPath);
-    break;
   }
 }
-
-if (!envLoaded) {
-  // Last resort: try default location (current directory)
-  const defaultResult = dotenv.config();
-  if (!defaultResult.error) {
-    envLoaded = true;
-    loadedPath = "default (process.cwd())";
-    console.log("✅ [Worker] .env loaded from default location");
-  } else {
-    console.error("⚠️ [Worker] .env file not found. Tried paths:");
-    envPaths.forEach(p => console.error(`   - ${p}`));
-  }
-}
-
-// Verify environment loaded
-console.log("WORKER ENV:", !!process.env.MONGODB_URI);
 
 // Now import other modules (they can safely use process.env)
 import Queue from "bull";
@@ -226,12 +208,9 @@ const videoQueue = new Queue("video-processing", {
     password: hasRedisPassword ? redisPassword : undefined,
     retryStrategy(times) {
       if (times > MAX_RETRY_ATTEMPTS) {
-        logger.error('❌ [Redis] Max retry attempts reached');
-        return null;
+        return false;
       }
-      const delay = Math.min(times * 500, REDIS_RETRY_DELAY);
-      logger.warn(`🔁 [Redis] Reconnecting in ${delay}ms... (attempt ${times}/${MAX_RETRY_ATTEMPTS})`);
-      return delay;
+      return Math.min(times * 500, REDIS_RETRY_DELAY);
     },
     enableOfflineQueue: true,
     maxRetriesPerRequest: 3,
@@ -547,9 +526,9 @@ videoQueue.process(WORKER_CONCURRENCY, async (job) => {
       }
     };
 
-    // 6. ⚠️ DEPRECATED: Server-side download (Y2Mate mode should use direct URLs)
-    // In Y2Mate mode, this should NOT be called - use getDownloadUrl() instead
-    logger.warn(`⚠️ [Worker] Using deprecated downloadToFile (Y2Mate mode should use direct URLs)`);
+    // 6. ⚠️ DEPRECATED: Server-side download (MP3 Juice mode should use direct URLs)
+    // In MP3 Juice mode, this should NOT be called - use getDownloadUrl() instead
+    logger.warn(`⚠️ [Worker] Using deprecated downloadToFile (MP3 Juice mode should use direct URLs)`);
     logger.info(`🚀 [Worker] Initiating heavy download with videoService...`);
 
     const result = await videoService.downloadAndConvert(
@@ -715,6 +694,9 @@ videoQueue
   })
 
   .on("error", (err) => {
+    if (err.message && err.message.includes("ECONNREFUSED")) {
+      return;
+    }
     logger.error(`🚨 [Queue] Queue error: ${err.message}`);
   })
 
@@ -879,41 +861,9 @@ process.on("unhandledRejection", (reason, promise) => {
 
 (async () => {
   try {
-    logger.info("═══════════════════════════════════════════════");
-    logger.info("🎧 VIDEO PROCESSING WORKER v2.0.0");
-    logger.info("═══════════════════════════════════════════════");
-    logger.info(`📊 Concurrency: ${WORKER_CONCURRENCY} parallel job(s)`);
-    logger.info(`🔴 Redis: ${process.env.REDIS_HOST || '127.0.0.1'}:${process.env.REDIS_PORT || 6379}`);
-    logger.info(`⚖️ Heavy Download Thresholds:`);
-    logger.info(`   - Video: ${HEAVY_QUALITY_THRESHOLD}p+`);
-    logger.info(`   - Audio: ${HEAVY_BITRATE_THRESHOLD}kbps+`);
-    logger.info(`   - Duration: ${LONG_VIDEO_THRESHOLD}s+ (10min)`);
-    logger.info(`⚙️ Environment: ${process.env.NODE_ENV || 'development'}`);
-
-    // OPTIONAL: Connect to MongoDB (worker continues even if unavailable)
-    logger.info(`🗄️ [Worker] Connecting to MongoDB (optional)...`);
     await connectMongo();
-
-    // Log connection status
-    if (isMongoConnected) {
-      const mongoHost = getMongoHost() || mongoose.connection.host || "unknown-host";
-      logger.info(`✅ [Worker] MongoDB connected (host: ${mongoHost})`);
-      logger.info("   Job history persistence: ENABLED");
-    } else {
-      logger.warn(`⚠️ [Worker] MongoDB unavailable`);
-      logger.warn("   Job history persistence: DISABLED");
-      logger.warn("   Downloads will continue without job tracking");
-    }
-    
-    logger.info("═══════════════════════════════════════════════");
-    logger.info("✅ Worker ready - processing HEAVY download jobs");
-    logger.info("═══════════════════════════════════════════════");
-
+    logger.info("✅ [Worker] Heavy download queue active");
   } catch (err) {
-    logger.error("═══════════════════════════════════════════════");
-    logger.error(`💥 [Worker] Startup error: ${err.message}`);
-    logger.error("   Worker will attempt to continue...");
-    logger.error("═══════════════════════════════════════════════");
     // Don't exit - allow worker to continue without MongoDB
   }
 })();

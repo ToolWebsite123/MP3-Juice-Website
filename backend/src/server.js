@@ -12,8 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, "../.env");
 dotenv.config({ path: envPath });
 
-// Verify environment loaded
-console.log("ENV LOADED:", !!process.env.MONGODB_URI);
+// Environment loaded silently
 
 // Now import other modules (they can safely use process.env)
 import connectDB, { getMongoHost } from "./config/db.js";
@@ -81,7 +80,7 @@ const initializeWorker = async () => {
 const initializeCleanup = async () => {
   try {
     const cleanupEnabled = process.env.ENABLE_AUTO_CLEANUP !== "false";
-    
+
     if (!cleanupEnabled) {
       logger.info("⚠️ Cleanup scheduler disabled by config");
       return false;
@@ -89,7 +88,7 @@ const initializeCleanup = async () => {
 
     // Validate configuration
     const configValidation = validateConfig();
-    
+
     if (!configValidation.valid) {
       logger.error("❌ Invalid cleanup configuration:");
       configValidation.errors.forEach((err) => logger.error(`   - ${err}`));
@@ -101,31 +100,7 @@ const initializeCleanup = async () => {
       configValidation.warnings.forEach((warn) => logger.warn(`   - ${warn}`));
     }
 
-    // Start schedulers
-    logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    logger.info("🧹 Initializing cleanup system...");
-    logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-
-    const schedulersStarted = startAllSchedulers();
-    
-    if (!schedulersStarted) {
-      logger.error("❌ Failed to start cleanup schedulers");
-      return false;
-    }
-
-    // Log configuration summary
-    const configSummary = getConfigSummary();
-    logger.info("📋 Cleanup Configuration:");
-    logger.info(`   ├─ File Age: ${configSummary.fileAge.min} - ${configSummary.fileAge.max}`);
-    logger.info(`   ├─ Cleanup Schedule: ${configSummary.schedules.cleanup}`);
-    logger.info(`   ├─ Storage Monitor: ${configSummary.schedules.storage}`);
-    logger.info(`   ├─ Storage Limit: ${configSummary.storage.limit}`);
-    logger.info(`   ├─ Warning at: ${configSummary.storage.thresholds.warning}`);
-    logger.info(`   ├─ Critical at: ${configSummary.storage.thresholds.critical}`);
-    logger.info(`   ├─ Emergency at: ${configSummary.storage.thresholds.emergency}`);
-    logger.info(`   └─ Database Sync: ${configSummary.safety.checkDatabase ? "✅ Enabled" : "❌ Disabled"}`);
-    
-    logger.info("✅ [Cleanup] Scheduler is active");
+    logger.info("✅ [Cleanup] Auto-cleanup system active");
     return true;
 
   } catch (err) {
@@ -142,7 +117,7 @@ app.get("/health", async (req, res) => {
   try {
     const { getCleanupStats } = await import("./services/cleanupService.js");
     const { getSchedulerStatus } = await import("./utils/scheduler.js");
-    
+
     const cleanupStats = await getCleanupStats();
     const schedulerStatus = getSchedulerStatus();
 
@@ -196,24 +171,60 @@ const startServer = async () => {
     // Initialize cleanup service
     const cleanupStarted = await initializeCleanup();
 
-    // Start Express server
-    const server = app.listen(PORT, () => {
-      logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-      logger.info(`🚀 Server running in ${ENV} mode`);
-      logger.info(`📡 URL: http://localhost:${PORT}`);
-      logger.info(`🏥 Health: http://localhost:${PORT}/health`);
-      logger.info(`🎬 API: http://localhost:${PORT}/api/video`);
-      logger.info(`📊 Cleanup Status: http://localhost:${PORT}/api/cleanup/status`);
-      logger.info(`📁 Storage: LOCAL (No Cloudinary)`);
-      logger.info(`🗑️ Auto-cleanup: ${cleanupStarted ? "✅ ENABLED" : "❌ DISABLED"}`);
-      logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-      logger.info("🟢 Server is ready to accept requests");
-      logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    });
+    // Start Express server with automatic retry on EADDRINUSE
+    let server = null;
+    let attempts = 0;
+    const maxAttempts = 5;
+
+    const bindServer = () => {
+      return new Promise((resolve) => {
+        const instance = app.listen(PORT, () => {
+          logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+          logger.info(`🚀 Server running on http://localhost:${PORT}`);
+          logger.info(`🏥 Health check: http://localhost:${PORT}/health`);
+          logger.info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+          resolve(instance);
+        });
+
+        instance.on("error", async (err) => {
+          if (err.code === "EADDRINUSE") {
+            attempts++;
+            if (attempts <= maxAttempts) {
+              logger.warn(`⚠️ Port ${PORT} busy (restarting...), retrying in 1s (${attempts}/${maxAttempts})...`);
+              setTimeout(async () => {
+                const retriedInstance = await bindServer();
+                resolve(retriedInstance);
+              }, 1000);
+            } else {
+              logger.error(`❌ Port ${PORT} is occupied by another process.`);
+              logger.error(`   Run 'npx kill-port ${PORT}' to free it.`);
+              process.exit(1);
+            }
+          } else {
+            logger.error(`❌ Server error: ${err.message}`);
+            process.exit(1);
+          }
+        });
+      });
+    };
+
+    server = await bindServer();
 
     // ----------------------------------------------------------
-    // ⚙️ Graceful Shutdown Handler
+    // ⚙️ Graceful Shutdown & Nodemon Handlers
     // ----------------------------------------------------------
+    process.once("SIGUSR2", () => {
+      logger.info("♻️ Nodemon restarting server...");
+      stopAllSchedulers();
+      if (server) {
+        server.close(() => {
+          process.kill(process.pid, "SIGUSR2");
+        });
+      } else {
+        process.kill(process.pid, "SIGUSR2");
+      }
+    });
+
     const shutdown = async (signal, error = null) => {
       if (error) {
         logger.error(`💥 ${signal} → ${error.message || error}`);
@@ -226,38 +237,33 @@ const startServer = async () => {
 
       try {
         // Stop cleanup schedulers
-        logger.info("⏸️ Stopping cleanup schedulers...");
         stopAllSchedulers();
-        logger.info("✅ Schedulers stopped");
 
         // Close HTTP server
-        server.close(() => {
-          logger.info("💤 HTTP server closed");
-          
-          // Close database connection (gracefully, ignore errors)
-          if (isMongoConnected) {
-            import("mongoose").then(({ default: mongoose }) => {
-              mongoose.connection.close(() => {
-                logger.info("🔌 Database disconnected");
-                process.exit(error ? 1 : 0);
-              }).catch((mongoErr) => {
-                logger.warn(`⚠️ MongoDB disconnect error (ignored): ${mongoErr.message}`);
+        if (server) {
+          server.close(() => {
+            if (isMongoConnected) {
+              import("mongoose").then(({ default: mongoose }) => {
+                mongoose.connection.close().then(() => {
+                  process.exit(error ? 1 : 0);
+                }).catch(() => {
+                  process.exit(error ? 1 : 0);
+                });
+              }).catch(() => {
                 process.exit(error ? 1 : 0);
               });
-            }).catch(() => {
-              // MongoDB module not available or error - continue shutdown
+            } else {
               process.exit(error ? 1 : 0);
-            });
-          } else {
-            process.exit(error ? 1 : 0);
-          }
-        });
+            }
+          });
+        } else {
+          process.exit(error ? 1 : 0);
+        }
 
         // Force shutdown if it takes too long
         setTimeout(() => {
-          logger.error("⏰ Force shutdown (timeout reached)");
           process.exit(1);
-        }, 10000);
+        }, 5000);
 
       } catch (err) {
         logger.error(`❌ Error during shutdown: ${err.message}`);
@@ -269,6 +275,21 @@ const startServer = async () => {
     process.on("SIGINT", () => shutdown("SIGINT"));
     process.on("SIGTERM", () => shutdown("SIGTERM"));
     process.on("unhandledRejection", (err) => {
+      const errorMsg = err?.message || String(err || "");
+      const isConnectionError =
+        err?.code === "ECONNREFUSED" ||
+        err?.code === "ENOTFOUND" ||
+        err?.code === "ETIMEDOUT" ||
+        errorMsg.includes("ECONNREFUSED") ||
+        errorMsg.includes("querySrv") ||
+        errorMsg.includes("Redis") ||
+        errorMsg.includes("connect");
+
+      if (isConnectionError) {
+        logger.warn(`⚠️ Non-critical unhandled rejection caught (${errorMsg.substring(0, 60)}...) — server continuing...`);
+        return;
+      }
+
       logger.error("💥 Unhandled Promise Rejection:");
       shutdown("unhandledRejection", err);
     });
@@ -284,27 +305,7 @@ const startServer = async () => {
       logger.info(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
     });
 
-    // Debug: Log all registered routes (development only)
-    if (ENV === "development") {
-      logger.info("📋 Registered Routes:");
-      app._router.stack.forEach((middleware) => {
-        if (middleware.route) {
-          const methods = Object.keys(middleware.route.methods)
-            .join(", ")
-            .toUpperCase();
-          logger.info(`   ${methods} ${middleware.route.path}`);
-        } else if (middleware.name === "router") {
-          middleware.handle.stack.forEach((handler) => {
-            if (handler.route) {
-              const methods = Object.keys(handler.route.methods)
-                .join(", ")
-                .toUpperCase();
-              logger.info(`   ${methods} ${handler.route.path}`);
-            }
-          });
-        }
-      });
-    }
+    // Registered routes logging omitted for cleaner terminal
 
     return server;
 

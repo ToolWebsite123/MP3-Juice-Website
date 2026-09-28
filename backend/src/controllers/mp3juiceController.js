@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════════
-// 🎯 Y2MATE-STYLE API CONTROLLER
+// 🎯 MP3 JUICE-STYLE API CONTROLLER
 // ═══════════════════════════════════════════════════════════════════════
 // RULES:
 //   1. Server NEVER downloads or merges files
@@ -30,14 +30,14 @@ const areCookiesEnabled = () => {
 };
 
 /**
- * 🔥 Y2MATE API: Get video info with direct playable URLs
+ * 🔥 MP3 JUICE API: Get video info with direct playable URLs
  * Returns JSON with progressive MP4 and MP3 formats only
  * 
- * @route GET/POST /api/y2mate/info
+ * @route GET/POST /api/mp3juice/info
  * @param {string} url - YouTube video URL
  * @returns {Object} JSON with video info and direct URLs
  */
-export const getY2MateInfo = async (req, res) => {
+export const getMp3JuiceInfo = async (req, res) => {
   try {
     const url = (req.query.url || req.body.url || '').trim();
 
@@ -50,7 +50,7 @@ export const getY2MateInfo = async (req, res) => {
       });
     }
 
-    logger.info(`🎯 [Y2MATE] Video info request: ${url.substring(0, 50)}...`);
+    logger.info(`🎯 [MP3 JUICE] Video info request: ${url.substring(0, 50)}...`);
 
     // Validate YouTube URL
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
@@ -74,7 +74,7 @@ export const getY2MateInfo = async (req, res) => {
       });
     }
 
-    // 🔥 Y2MATE MODE: Fetch video info (cookies optional)
+    // 🔥 MP3 JUICE MODE: Fetch video info (cookies optional)
     let videoInfo = null;
     let cookieAttempts = 0;
     const maxCookieAttempts = areCookiesEnabled() ? 3 : 1; // Only try cookies if enabled
@@ -86,7 +86,7 @@ export const getY2MateInfo = async (req, res) => {
           cookieAttempts = attempt + 1;
           const cookiesPath = fsSync.existsSync(COOKIES_PATH) ? COOKIES_PATH : null;
           
-          logger.info(`🔄 [Y2MATE] Attempt ${cookieAttempts}/${maxCookieAttempts} - Fetching video info...`);
+          logger.info(`🔄 [MP3 JUICE] Attempt ${cookieAttempts}/${maxCookieAttempts} - Fetching video info...`);
 
           const infoOpts = {
             dumpSingleJson: true,
@@ -102,13 +102,13 @@ export const getY2MateInfo = async (req, res) => {
           // Add cookies if available
           if (cookiesPath && fsSync.existsSync(cookiesPath)) {
             infoOpts.cookies = cookiesPath;
-            logger.debug(`✅ [Y2MATE] Using cookies: ${cookiesPath}`);
+            logger.debug(`✅ [MP3 JUICE] Using cookies: ${cookiesPath}`);
           }
 
           videoInfo = await ytdlp(url, infoOpts);
 
           if (videoInfo && videoInfo.title) {
-            logger.info(`✅ [Y2MATE] Video info fetched successfully (attempt ${cookieAttempts})`);
+            logger.info(`✅ [MP3 JUICE] Video info fetched successfully (attempt ${cookieAttempts})`);
             break;
           }
         } catch (err) {
@@ -116,7 +116,7 @@ export const getY2MateInfo = async (req, res) => {
           
           // If cookies failed, try without cookies
           if (errorMsg.includes('age') || errorMsg.includes('restricted') || errorMsg.includes('private')) {
-            logger.warn(`⚠️ [Y2MATE] Cookie attempt ${cookieAttempts} failed: ${errorMsg}`);
+            logger.warn(`⚠️ [MP3 JUICE] Cookie attempt ${cookieAttempts} failed: ${errorMsg}`);
             if (attempt < maxCookieAttempts - 1) {
               continue; // Try next cookie or without cookies
             }
@@ -128,7 +128,7 @@ export const getY2MateInfo = async (req, res) => {
             });
           } else {
             // Other errors - try without cookies as fallback
-            logger.warn(`⚠️ [Y2MATE] Error on attempt ${cookieAttempts}: ${errorMsg}`);
+            logger.warn(`⚠️ [MP3 JUICE] Error on attempt ${cookieAttempts}: ${errorMsg}`);
             if (attempt < maxCookieAttempts - 1) {
               continue;
             }
@@ -140,7 +140,7 @@ export const getY2MateInfo = async (req, res) => {
     // Final attempt without cookies (fallback or if cookies disabled)
     if (!videoInfo || !videoInfo.title) {
       try {
-        logger.info(`🔄 [Y2MATE] ${areCookiesEnabled() ? 'Fallback: ' : ''}Trying without cookies...`);
+        logger.info(`🔄 [MP3 JUICE] ${areCookiesEnabled() ? 'Fallback: ' : ''}Trying without cookies...`);
         videoInfo = await ytdlp(url, {
           dumpSingleJson: true,
           skipDownload: true,
@@ -152,7 +152,7 @@ export const getY2MateInfo = async (req, res) => {
           noWarnings: true
         });
       } catch (err) {
-        logger.error(`❌ [Y2MATE] All attempts failed: ${err.message}`);
+        logger.error(`❌ [MP3 JUICE] All attempts failed: ${err.message}`);
         return res.status(500).json({
           success: false,
           error: 'FETCH_FAILED',
@@ -170,9 +170,9 @@ export const getY2MateInfo = async (req, res) => {
       });
     }
 
-    logger.info(`✅ [Y2MATE] Video: "${videoInfo.title}"`);
+    logger.info(`✅ [MP3 JUICE] Video: "${videoInfo.title}"`);
 
-    // 🔥 Y2MATE MODE: Extract ONLY progressive formats (skip DASH)
+    // 🔥 MP3 JUICE MODE: Extract ONLY progressive formats (skip DASH)
     const { videoFormats, audioFormats } = extractFormats(videoInfo);
 
     // 🔥 RELATED VIDEOS: Fetch similar videos using video title (non-blocking with timeout)
@@ -226,7 +226,7 @@ export const getY2MateInfo = async (req, res) => {
       relatedDownloads = []; // Fallback to empty array
     }
 
-    // Build response in Y2Mate format
+    // Build response in MP3 Juice format
     const response = {
       success: true,
       video: {
@@ -251,7 +251,7 @@ export const getY2MateInfo = async (req, res) => {
             url: f.directUrl, // Direct YouTube CDN URL
             hasAudio: f.hasAudio !== false,
             codec: f.codec || 'unknown',
-            // Y2Mate-style metadata
+            // MP3 Juice-style metadata
             format: 'mp4',
             type: 'video',
             available: true
@@ -267,7 +267,7 @@ export const getY2MateInfo = async (req, res) => {
             filesizeMB: f.fileSizeMB || null,
             url: f.directUrl, // Direct YouTube CDN URL
             bitrate: f.bitrate || null,
-            // Y2Mate-style metadata
+            // MP3 Juice-style metadata
             format: 'mp3',
             type: 'audio',
             available: true
@@ -283,12 +283,12 @@ export const getY2MateInfo = async (req, res) => {
       }
     };
 
-    logger.info(`📦 [Y2MATE] Returning ${response.formats.video.length} video formats, ${response.formats.audio.length} audio formats, ${relatedDownloads.length} related downloads`);
+    logger.info(`📦 [MP3 JUICE] Returning ${response.formats.video.length} video formats, ${response.formats.audio.length} audio formats, ${relatedDownloads.length} related downloads`);
 
     return res.status(200).json(response);
 
   } catch (err) {
-    logger.error(`❌ [Y2MATE] Error: ${err.message}`);
+    logger.error(`❌ [MP3 JUICE] Error: ${err.message}`);
     
     if (!res.headersSent) {
       return res.status(500).json({
@@ -302,9 +302,9 @@ export const getY2MateInfo = async (req, res) => {
 };
 
 /**
- * 🔥 Y2MATE API: Health check
+ * 🔥 MP3 JUICE API: Health check
  * 
- * @route GET /api/y2mate/health
+ * @route GET /api/mp3juice/health
  */
 export const healthCheck = async (req, res) => {
   try {
@@ -328,7 +328,7 @@ export const healthCheck = async (req, res) => {
     res.json({
       success: true,
       status: 'healthy',
-      service: 'Y2Mate API',
+      service: 'MP3 Juice API',
       version: '1.0.0',
       timestamp: new Date().toISOString(),
       system: {
@@ -348,12 +348,12 @@ export const healthCheck = async (req, res) => {
         asyncJobs: false // Can be enabled for large videos
       },
       endpoints: {
-        getInfo: 'GET/POST /api/y2mate/info?url=...',
-        health: 'GET /api/y2mate/health'
+        getInfo: 'GET/POST /api/mp3juice/info?url=...',
+        health: 'GET /api/mp3juice/health'
       }
     });
   } catch (err) {
-    logger.error(`❌ [Y2MATE] Health check error: ${err.message}`);
+    logger.error(`❌ [MP3 JUICE] Health check error: ${err.message}`);
     res.status(500).json({
       success: false,
       error: 'HEALTH_CHECK_FAILED',

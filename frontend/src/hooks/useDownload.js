@@ -193,7 +193,7 @@ export default function useDownload() {
         type
       }));
 
-      // ✅ Y2MATE STYLE: Backend returns JSON with direct CDN URL for progressive formats
+      // ✅ MP3 JUICE STYLE: Backend returns JSON with direct CDN URL for progressive formats
       // Backend streams for DASH formats (1080p+)
       const USE_V1_API = true;
       const downloadEndpoint = USE_V1_API 
@@ -315,7 +315,7 @@ export default function useDownload() {
         throw new Error(data.error || 'Failed to get download URL');
       }
 
-      // ✅ Y2MATE BEHAVIOR: Check response type
+      // ✅ MP3 JUICE BEHAVIOR: Check response type
       // needsMerge: true → Merge endpoint (use iframe to trigger download)
       // needsMerge: false → Direct CDN URL (use window.location.href)
       if (data.needsMerge && data.mergeEndpoint) {
@@ -437,7 +437,7 @@ export default function useDownload() {
   }, []);
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     🌐 BROWSER DOWNLOAD (Y2MATE STYLE)
+     🌐 BROWSER DOWNLOAD (MP3 JUICE STYLE)
      
      Direct CDN URLs: Use programmatic <a> download (forces download, no playback)
      Merge endpoints: Use hidden iframe to trigger download
@@ -483,42 +483,41 @@ export default function useDownload() {
         isDownloading: true
       }));
 
-      // ✅ Y2MATE BEHAVIOR: Handle based on download method
+      // ✅ MP3 JUICE BEHAVIOR: Handle based on download method
       if (downloadMethod === 'merge' || directUrl.includes('/api/') || directUrl.includes('/download')) {
-        // Merge endpoint (DASH format) - use hidden iframe to trigger download
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.style.width = '0';
-        iframe.style.height = '0';
-        iframe.style.border = 'none';
-        iframe.src = directUrl; // Merge endpoint URL
-        
-        document.body.appendChild(iframe);
+        // Stream / merge endpoint - trigger native download via <a> tag
+        const link = document.createElement('a');
+        link.href = directUrl;
+        link.download = fileName || 'video.mp4';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
 
-        // Cleanup iframe after download starts
         setTimeout(() => {
           try {
-            if (iframe.parentNode) {
-              document.body.removeChild(iframe);
+            if (link.parentNode) {
+              document.body.removeChild(link);
             }
-          } catch (cleanupErr) {
-            // Ignore cleanup errors
-          }
-        }, 5000);
+          } catch (_) {}
+        }, 1000);
 
         showSuccessMessage();
         return { success: true, method: 'merge', fileName: fileName || 'video.mp4' };
       } else {
-        // ✅ CRITICAL FIX: Direct CDN URL - use programmatic <a> download
-        // NEVER use window.location.href (opens video instead of downloading)
-        // ✅ FORCE DOWNLOAD: Create <a> element with download attribute
+        // ✅ Direct CDN URL - use programmatic <a> download
         const link = document.createElement('a');
         link.href = directUrl;
-        link.download = fileName || 'video.mp4'; // Force download with filename
-        link.style.display = 'none'; // Hide the link
+        link.download = fileName || 'video.mp4';
+        link.style.display = 'none';
         document.body.appendChild(link);
-        link.click(); // Trigger download
-        document.body.removeChild(link); // Cleanup
+        link.click();
+        setTimeout(() => {
+          try {
+            if (link.parentNode) {
+              document.body.removeChild(link);
+            }
+          } catch (_) {}
+        }, 1000);
 
         showSuccessMessage();
         return { success: true, method: 'direct', fileName: fileName || 'video.mp4' };

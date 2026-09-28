@@ -1,4 +1,4 @@
-// ✅ PROFESSIONAL: api.js - Complete API with Y2mate Support
+// ✅ PROFESSIONAL: api.js - Complete API with MP3 Juice Support
 
 /* ----------------------------------------------------------
    🌐 API BASE URLS
@@ -80,7 +80,7 @@ async function safeFetch(url, options = {}, timeout = 30000) {
 
   } catch (err) {
     clearTimeout(timer);
-    
+
     // Handle abort errors gracefully
     if (err.name === 'AbortError') {
       // Check if external signal was aborted
@@ -108,7 +108,7 @@ async function safeFetch(url, options = {}, timeout = 30000) {
 }
 
 /* ----------------------------------------------------------
-   🎯 GET DIRECT DOWNLOAD URL (Y2mate Style - Step 1)
+   🎯 GET DIRECT DOWNLOAD URL (MP3 Juice Style - Step 1)
    
    ✅ This gets the direct YouTube CDN URL
    ✅ Does NOT download file to server
@@ -149,7 +149,7 @@ export async function getDirectDownloadUrl({
 
     // ✅ CRITICAL: Use /url endpoint (NOT /direct)
     // /url returns JSON with directUrl
-    // /direct returns file blob (wrong for Y2mate flow!)
+    // /direct returns file blob (wrong for MP3 Juice flow!)
     const response = await safeFetch(
       `${DOWNLOAD_API}/url?${queryParams.toString()}`,
       { method: 'GET' },
@@ -179,7 +179,7 @@ export async function getDirectDownloadUrl({
     };
 
   } catch (error) {
-    console.error('❌ [Y2mate Step 1] Error:', error);
+    console.error('❌ [MP3 Juice Step 1] Error:', error);
 
     return {
       success: false,
@@ -211,28 +211,28 @@ export async function getDownloadInfo(url, videoId = null, options = {}) {
 
     // ✅ Use v1 API endpoint (POST method)
     const USE_V1_API = true;
-    const infoEndpoint = USE_V1_API 
+    const infoEndpoint = USE_V1_API
       ? `${VIDEO_API_V1}/info`
       : `${DOWNLOAD_API}/info`;
-    
+
     // v1 API uses POST, legacy uses GET
     const fetchOptions = USE_V1_API
       ? {
-          method: 'POST',
-          body: JSON.stringify({ url: finalUrl, videoId: finalVideoId }),
-          headers: { 'Content-Type': 'application/json' },
-          signal: options.signal
-        }
+        method: 'POST',
+        body: JSON.stringify({ url: finalUrl, videoId: finalVideoId }),
+        headers: { 'Content-Type': 'application/json' },
+        signal: options.signal
+      }
       : {
-          method: 'GET',
-          signal: options.signal
-        };
-    
-    const fetchUrl = USE_V1_API 
+        method: 'GET',
+        signal: options.signal
+      };
+
+    const fetchUrl = USE_V1_API
       ? infoEndpoint
       : `${infoEndpoint}?${queryParams.toString()}`;
-    
-    // Fetches ALL formats in parallel (144p-2160p + audio) - needs longer timeout
+
+    // Fetches ALL formats in parallel (144p-1080p + audio) - needs longer timeout
     const res = await safeFetch(
       fetchUrl,
       fetchOptions,
@@ -243,9 +243,9 @@ export async function getDownloadInfo(url, videoId = null, options = {}) {
 
     // Backend v1 returns {success, video: {...}, videoFormats: [...], audioFormats: [...]}
     // Legacy returns {success, title, formats} or {title, formats}
-    
+
     let title, formats = [], returnVideoId = finalVideoId, duration = 0;
-    
+
     if (data.success && data.video) {
       // v1 API response structure
       title = data.video.title;
@@ -295,10 +295,10 @@ export async function searchVideos(query, options = {}) {
     const trimmedQuery = query.trim();
     // ✅ Use v1 API endpoint
     const USE_V1_API = true;
-    const searchEndpoint = USE_V1_API 
+    const searchEndpoint = USE_V1_API
       ? `${VIDEO_API_V1}/search`
       : `${VIDEO_API}/search`;
-    
+
     // Request 20 results by default (fast MP3Juice-style), cap handled server-side
     const url = `${searchEndpoint}?query=${encodeURIComponent(trimmedQuery)}&limit=20`;
 
@@ -345,13 +345,13 @@ export async function getVideoInfo(url, options = {}) {
 
     // ✅ Try new API v1 first, fallback to legacy
     const useV1 = options.useV1 !== false; // Default to v1
-    
-    const apiUrl = useV1 
+
+    const apiUrl = useV1
       ? `${VIDEO_API_V1}/info`
       : `${VIDEO_API}/info`;
 
     /**
-     * ✅ Y2MATE API CALL STRATEGY:
+     * ✅ MP3 JUICE API CALL STRATEGY:
      * - Try v1 API first (30s timeout - backend needs time for yt-dlp + format processing)
      * - If v1 succeeds → return immediately (NO fallback)
      * - If v1 fails → single fallback to legacy API (60s timeout)
@@ -373,7 +373,7 @@ export async function getVideoInfo(url, options = {}) {
     // WHY: Long videos need more time (backend timeout is 45s)
     // RESULT: Prevents ERR_EMPTY_RESPONSE for long videos
     const timeout = useV1 ? 60000 : 90000; // v1: 60s (increased from 30s), legacy: 90s
-    
+
     try {
       // ✅ CRITICAL: NO signal - let request complete even if component unmounts
       // WHY: Component unmount ≠ cancel request (cache result for next mount)
@@ -383,7 +383,7 @@ export async function getVideoInfo(url, options = {}) {
         // ✅ NO signal: options.signal removed - request completes always
       }, timeout);
 
-      // ✅ Y2MATE: v1 succeeded, return immediately (NO fallback)
+      // ✅ MP3 JUICE: v1 succeeded, return immediately (NO fallback)
       const rawData = await res.json();
 
       let videoData, audioFormats = [], videoFormats = [], relatedDownloads = [];
@@ -423,19 +423,19 @@ export async function getVideoInfo(url, options = {}) {
         relatedDownloads: relatedDownloads || [] // ✅ Include related downloads
       };
     } catch (err) {
-      // ✅ Y2MATE: Only fallback if v1 was used AND it failed
+      // ✅ MP3 JUICE: Only fallback if v1 was used AND it failed
       // WHY: Single fallback, no retry loop - prevents duplicate fetches
       // Check for timeout, network errors, or abort errors (timeout abort)
       const shouldFallback = useV1 && (
-        err.message?.includes('timeout') || 
-        err.message?.includes('Failed to fetch') || 
+        err.message?.includes('timeout') ||
+        err.message?.includes('Failed to fetch') ||
         err.message?.includes('Cannot connect') ||
         err.name === 'AbortError' // Timeout abort from safeFetch
       );
-      
+
       if (shouldFallback) {
-        
-        // ✅ Y2MATE: Fallback to legacy API (single fallback, no retry loop)
+
+        // ✅ MP3 JUICE: Fallback to legacy API (single fallback, no retry loop)
         // ✅ CRITICAL: NO signal - let fallback complete even if component unmounts
         // WHY: Fallback request must also complete to cache result
         const legacyRes = await safeFetch(`${VIDEO_API}/info`, {
@@ -483,8 +483,8 @@ export async function getVideoInfo(url, options = {}) {
           relatedDownloads: relatedDownloads || [] // ✅ Include related downloads
         };
       }
-      
-      // ✅ Y2MATE: Re-throw error if not a v1 timeout/fetch error
+
+      // ✅ MP3 JUICE: Re-throw error if not a v1 timeout/fetch error
       throw err;
     }
 
@@ -537,9 +537,9 @@ function processVideoFormats(formats) {
 /* ----------------------------------------------------------
    🚀 START DOWNLOAD (Background Processing with Progress)
    
-   ⚠️ This is different from Y2mate flow!
+   ⚠️ This is different from MP3 Juice flow!
    This downloads file to server then user downloads from server
-   Use getDirectDownloadUrl() for Y2mate flow instead!
+   Use getDirectDownloadUrl() for MP3 Juice flow instead!
 ---------------------------------------------------------- */
 export async function startDownload({
   url,
@@ -833,10 +833,10 @@ export async function getSuggestions(query) {
   try {
     // ✅ Use v1 API endpoint
     const USE_V1_API = true;
-    const suggestionEndpoint = USE_V1_API 
+    const suggestionEndpoint = USE_V1_API
       ? `${VIDEO_API_V1}/suggestions`
       : `${SUGGESTION_API}`;
-    
+
     const res = await safeFetch(
       `${suggestionEndpoint}?q=${encodeURIComponent(query)}`,
       {},
@@ -921,7 +921,7 @@ export default {
   searchVideos,
   getSuggestions,
 
-  // Download Functions - Y2mate Style
+  // Download Functions - MP3 Juice Style
   getDownloadInfo,         // ✅ Get formats with direct URLs (30s timeout)
   getDirectDownloadUrl,    // ✅ PRIMARY: Get direct URL (Step 1)
   startDownload,           // Background download with progress

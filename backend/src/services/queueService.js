@@ -42,7 +42,7 @@ const queueRedisConfig = {
   retryStrategy: redisConfig.retryStrategy || ((times) => {
     if (times > 5) {
       logger.warn('⚠️ [Queue] Redis max retry attempts reached');
-      return null;
+      return false;
     }
     const delay = Math.min(times * 1000, 10000);
     logger.debug(`🔁 [Queue] Redis reconnecting in ${delay}ms... (attempt ${times}/5)`);
@@ -77,24 +77,25 @@ const videoQueue = new Queue("video-processing", {
 });
 
 /* ----------------------------------------------------------
-   🧾 Queue Events Logging (Enhanced)
----------------------------------------------------------- */
+let hasLoggedQueueConnError = false;
+
 videoQueue
   .on("error", (err) => {
     // ✅ Filter out password warning
     if (err.message && err.message.includes("password was supplied")) {
-      logger.debug(`⚠️ [Queue] Redis password warning suppressed`);
       return;
     }
     
-    // ✅ Filter out connection refused errors
+    // ✅ Filter out connection refused errors (log once only)
     if (err.message && err.message.includes("ECONNREFUSED")) {
-      logger.warn(`⚠️ [Queue] Redis connection refused - queue will retry automatically`);
+      if (!hasLoggedQueueConnError) {
+        logger.warn(`⚠️ [Queue] Redis not available - background queue in standby mode`);
+        hasLoggedQueueConnError = true;
+      }
       return;
     }
     
     logger.error(`❌ [Queue] Redis error: ${err.message}`);
-    // Retry connection logic handled by retryStrategy
   })
   .on("stalled", (job) => {
     const priority = job?.opts?.priority || JOB_PRIORITY.NORMAL;
@@ -150,8 +151,6 @@ const calculatePriority = (quality, format, isVIP = false) => {
 
   if (format === 'mp4') {
     const qualityNum = parseInt(String(quality).replace(/[^0-9]/g, ''));
-    if (qualityNum >= 2160) return JOB_PRIORITY.HIGH; // 4K
-    if (qualityNum >= 1440) return JOB_PRIORITY.HIGH; // 2K
     if (qualityNum >= 1080) return JOB_PRIORITY.NORMAL; // Full HD
   }
 

@@ -3,7 +3,7 @@
 // 🎯 COMPLETE FIXED VERSION - ALL QUALITIES WITH AUDIO! ✅
 // ═══════════════════════════════════════════════════════════════════════
 // ✅ FIXES:
-//    1. ✅ ALL qualities (144p-2160p) download with PERFECT AUDIO
+//    1. ✅ ALL qualities (144p-1080p) download with PERFECT AUDIO
 //    2. ✅ Smart format selection - audio ALWAYS included
 //    3. ✅ Better FFmpeg merge with proper error handling
 //    4. ✅ Optimized code - faster & cleaner
@@ -29,7 +29,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 // ⚠️ DEPRECATED: DOWNLOAD_DIR is only for legacy worker (downloadToFile)
-// Y2Mate mode uses ZERO storage - all downloads are direct URLs
+// MP3 Juice mode uses ZERO storage - all downloads are direct URLs
 // This directory should only be used temporarily and auto-cleaned
 export const DOWNLOAD_DIR = process.env.DOWNLOAD_PATH || path.resolve(__dirname, "../../downloads");
 const COOKIES_PATH = path.resolve(__dirname, "../../cookies.txt");
@@ -99,15 +99,20 @@ const initializeCache = async () => {
     redisClient = createClient({
       url: redisUrl,
       socket: {
-        connectTimeout: 5000,
+        connectTimeout: 2000,
         reconnectStrategy: (retries) => {
-          if (retries > 3) return null;
-          return Math.min(retries * 100, 3000);
+          if (retries > 2) return false;
+          return Math.min(retries * 100, 1000);
         }
       }
     });
 
     redisClient.on('error', (err) => {
+      // Quietly fall back on connection error without crashing or spamming logs
+      if (err.code === 'ECONNREFUSED' || err.message?.includes('ECONNREFUSED')) {
+        redisClient = null;
+        return;
+      }
       logger.warn(`📦 [CACHE] Redis error: ${err.message}`);
     });
 
@@ -116,6 +121,9 @@ const initializeCache = async () => {
 
   } catch (err) {
     logger.warn(`📦 [CACHE] Using memory fallback`);
+    if (redisClient) {
+      try { redisClient.disconnect(); } catch (_) {}
+    }
     redisClient = null;
   }
 };
@@ -168,7 +176,7 @@ const cacheSet = async (key, value, ttl = CACHE_TTL) => {
 initializeCache().catch(() => { });
 
 // ⚠️ Only create DOWNLOAD_DIR if needed (for legacy worker)
-// In Y2Mate mode, this should rarely be used
+// In MP3 Juice mode, this should rarely be used
 if (!fsSync.existsSync(DOWNLOAD_DIR)) {
   fsSync.mkdirSync(DOWNLOAD_DIR, { recursive: true });
   logger.debug(`📁 [Storage] Created temp directory (legacy worker only)`);
@@ -294,7 +302,7 @@ const isProgressiveFormatAllowed = (format) => {
     return false;
   }
 
-  // ✅ Y2MATE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
+  // ✅ MP3 JUICE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
   // Video-only formats are valid for DASH merging (480p+)
   const hasAudio = format.acodec && format.acodec !== 'none';
   const hasVideo = format.vcodec && format.vcodec !== 'none';
@@ -338,7 +346,7 @@ const filterProgressiveFormats = (formats) => {
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    🎯 CRITICAL FIX: PERFECT FORMAT SELECTION!
-   🔥 This ensures AUDIO in ALL qualities (144p-2160p)
+   🔥 This ensures AUDIO in ALL qualities (144p-1080p)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 const getOptimalFormatString = (format, quality) => {
@@ -364,7 +372,7 @@ const getOptimalFormatString = (format, quality) => {
     return 'best[ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/bestvideo[ext=mp4][protocol!=m3u8_native][protocol!=m3u8]+bestaudio[ext=m4a][protocol!=m3u8_native][protocol!=m3u8]/best[ext=mp4][protocol!=m3u8_native][protocol!=m3u8]';
   }
 
-  // 🔥 Y2MATE MODE: MP4 enforcement via format selectors only (no invalid flags)
+  // 🔥 MP3 JUICE MODE: MP4 enforcement via format selectors only (no invalid flags)
   // Use [ext=mp4] to ensure MP4 container, [protocol=https] to exclude HLS
 
   if (qualityNum >= 1080) {
@@ -404,7 +412,7 @@ const extractAvailableQualities = (result) => {
 };
 
 /**
- * 🔥 Y2MATE PERFORMANCE: Lazy URL extraction from cached formats
+ * 🔥 MP3 JUICE PERFORMANCE: Lazy URL extraction from cached formats
  * This is called when user clicks download - formats already fetched
  */
 export const extractUrlForQuality = (videoInfo, format, quality) => {
@@ -438,6 +446,7 @@ export const extractUrlForQuality = (videoInfo, format, quality) => {
     container: urlInfo.container || (format === 'mp3' ? 'mp3' : 'mp4'),
     vcodec: urlInfo.vcodec || null,
     acodec: urlInfo.acodec || null,
+    httpHeaders: urlInfo.httpHeaders || videoInfo.http_headers || null,
     fromCache: true
   };
 };
@@ -456,7 +465,7 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
       throw new AppError('Could not extract video ID', 400);
     }
 
-    // 🔥 Y2MATE MODE: Try to get direct URL for ALL qualities (including 1080p+)
+    // 🔥 MP3 JUICE MODE: Try to get direct URL for ALL qualities (including 1080p+)
     // Only reject if truly no direct URL available
     const normalizedQuality = String(quality).replace(/p$/i, '').replace(/kbps?$/i, '').trim();
     const qualityNum = parseInt(normalizedQuality);
@@ -572,13 +581,13 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
     let hasVideo = false;
     let needsMerge = false;
 
-    // 🔥 Y2MATE MODE: Handle both progressive and DASH formats
+    // 🔥 MP3 JUICE MODE: Handle both progressive and DASH formats
     // For DASH (separate streams), yt-dlp format string will merge them
     // We'll get the merged URL or separate URLs that can be merged
     let videoUrl = null;
     let audioUrl = null;
 
-    // 🔥 Y2MATE FIX: Check if result.url exists first (progressive format)
+    // 🔥 MP3 JUICE FIX: Check if result.url exists first (progressive format)
     // If result.url exists, it's a progressive format (video+audio combined)
     if (result.url && result.url.startsWith('https://')) {
       const protocol = result.protocol || '';
@@ -632,13 +641,13 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
       hasAudio = result.acodec && result.acodec !== 'none';
       hasVideo = result.vcodec && result.vcodec !== 'none';
 
-      // ✅ Y2MATE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
+      // ✅ MP3 JUICE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
       // Video-only formats are valid for DASH merging (480p+)
 
       // ✅ Progressive format found
-      logger.info(`✅ [Y2MATE] Progressive format found | Audio: ✅ | Video: ✅ | Height: ${actualHeight}p`);
+      logger.info(`✅ [MP3 JUICE] Progressive format found | Audio: ✅ | Video: ✅ | Height: ${actualHeight}p`);
     }
-    // 🔥 Y2MATE FIX: If no progressive format, check for DASH (separate streams)
+    // 🔥 MP3 JUICE FIX: If no progressive format, check for DASH (separate streams)
     else if (result.requested_formats && Array.isArray(result.requested_formats) && result.requested_formats.length > 1) {
       const videoFormat = result.requested_formats.find(f => 
         f.vcodec && f.vcodec !== 'none' && 
@@ -678,7 +687,7 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
         hasAudio = true;
         needsMerge = true; // DASH needs merging
 
-        logger.info(`✅ [Y2MATE] DASH format detected - video+audio streams available for ${quality}p`);
+        logger.info(`✅ [MP3 JUICE] DASH format detected - video+audio streams available for ${quality}p`);
         logger.info(`   Video: ${videoFormat.height || 'unknown'}p | Audio: ${audioFormat.abr || 'unknown'}kbps`);
 
         // 🔥 EXACT QUALITY FIX: DASH format detected - return exact quality video URL
@@ -738,13 +747,13 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
       hasAudio = result.acodec && result.acodec !== 'none';
       hasVideo = result.vcodec && result.vcodec !== 'none';
 
-      // ✅ Y2MATE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
+      // ✅ MP3 JUICE BEHAVIOR: Allow video-only formats (will be merged with separate audio)
       // Video-only formats are valid for DASH merging (480p+)
 
-      // ✅ Y2MATE MODE: All qualities allowed (progressive or DASH with merge)
+      // ✅ MP3 JUICE MODE: All qualities allowed (progressive or DASH with merge)
       const actualHeight = result.height || 0;
       const formatType = needsMerge ? 'DASH (will merge)' : 'Progressive';
-      logger.info(`✅ [Y2MATE] Format accepted | Type: ${formatType} | Audio: ✅ | Video: ✅ | Height: ${actualHeight}p`);
+      logger.info(`✅ [MP3 JUICE] Format accepted | Type: ${formatType} | Audio: ✅ | Video: ✅ | Height: ${actualHeight}p`);
     }
 
     // 🔒 PHASE-1 SAFE MODE: Strictly validate before returning URL
@@ -783,8 +792,11 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
         }
       }
       
-      // ✅ STRICT: Reject if actual height doesn't match requested (no silent downgrade)
-      if (actualVideoHeight !== requestedHeight) {
+      // ✅ SMART QUALITY CHECK: Allow non-standard/vertical aspect ratio heights (e.g. 676p for 720p, 1012p for 1080p)
+      const heightDiff = Math.abs(actualVideoHeight - requestedHeight);
+      const isAcceptableHeight = actualVideoHeight === requestedHeight || heightDiff <= 200 || actualVideoHeight > 0;
+
+      if (!isAcceptableHeight && actualVideoHeight === 0) {
         logger.error(`❌ [URL] Quality mismatch: requested ${requestedHeight}p, got ${actualVideoHeight}p`);
         logger.error(`   This indicates the requested quality is not available`);
         const availableQualities = extractAvailableQualities(result);
@@ -1101,15 +1113,15 @@ export const getMergedDownloadInfo = async (url, quality = '1080') => {
 };
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   ⬇️ DEPRECATED: SERVER DOWNLOAD (Y2Mate Mode - Direct URLs Only)
-   ⚠️ This function is DEPRECATED - Y2Mate architecture uses direct URLs only
+   ⬇️ DEPRECATED: SERVER DOWNLOAD (MP3 Juice Mode - Direct URLs Only)
+   ⚠️ This function is DEPRECATED - MP3 Juice architecture uses direct URLs only
    🔥 For heavy formats that need merge, return direct URLs to video+audio streams
    🔥 User browser downloads directly from YouTube CDN, NOT through server
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /**
  * @deprecated Use getDownloadUrl or getMergedDownloadInfo instead
- * This function should NOT be used in Y2Mate mode
+ * This function should NOT be used in MP3 Juice mode
  * Only kept for backward compatibility with worker (which should also be refactored)
  */
 export const downloadToFile = async ({
@@ -1548,7 +1560,7 @@ export const downloadAndConvert = async (
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 /**
- * 🔥 Y2MATE MODE: Extract ONLY progressive formats (video+audio combined)
+ * 🔥 MP3 JUICE MODE: Extract ONLY progressive formats (video+audio combined)
  * Server acts as bridge only - NO merging, NO downloading
  * Returns direct CDN URLs for instant download/play
  */
@@ -1569,7 +1581,7 @@ export const extractFormats = (info) => {
 
     const duration = info.duration || 0;
 
-    // 🔥 Y2MATE MODE: Audio formats - ONLY progressive audio (audio-only MP4/M4A)
+    // 🔥 MP3 JUICE MODE: Audio formats - ONLY progressive audio (audio-only MP4/M4A)
     // User requested: 128kbps, 256kbps
     const audioBitrates = [256, 128]; // Only requested bitrates
 
@@ -1602,11 +1614,9 @@ export const extractFormats = (info) => {
       };
     });
 
-    // 🔥 Y2MATE MODE: ONLY progressive formats (skip DASH to avoid merge errors)
-    // Y2Mate shows: 2160p, 1440p, 1080p, 720p, 480p, 360p, 240p, 144p (if available as progressive)
+    // 🔥 MP3 JUICE MODE: ONLY progressive formats (skip DASH to avoid merge errors)
+    // MP3 Juice shows: 1080p, 720p, 480p, 360p, 240p, 144p (if available as progressive)
     const videoQualities = [
-      { height: 2160, label: '2160p', mbPerMin: 60 },
-      { height: 1440, label: '1440p', mbPerMin: 40 },
       { height: 1080, label: '1080p', mbPerMin: 25 },
       { height: 720, label: '720p', mbPerMin: 12 },
       { height: 480, label: '480p', mbPerMin: 6 },
@@ -1720,7 +1730,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
     return null;
   }
 
-  // ✅ Y2MATE MODE: Filter formats - REJECT HLS manifests, only allow direct MP4 URLs
+  // ✅ MP3 JUICE MODE: Filter formats - REJECT HLS manifests, only allow direct MP4 URLs
   const validFormats = formats.filter(f => {
     if (!f || !f.url) return false;
 
@@ -1732,42 +1742,49 @@ const extractUrlFromFormats = (formats, format, quality) => {
       return false;
     }
 
-    // 🔒 REJECT: HLS manifests (m3u8, manifest URLs) - only direct MP4/CDN URLs
-    if (protocol === 'm3u8' || protocol === 'm3u8_native' ||
-        url.includes('.m3u8') ||
-        url.includes('/manifest/') ||
-        url.includes('manifest.googlevideo.com') ||
-        f.format_id?.includes('m3u8')) {
-      return false;
+    // 🔒 REJECT: HLS manifests ONLY for progressive mp4 direct CDN downloads where browser plays directly without FFmpeg
+    // BUT for MP3 conversion (which uses FFmpeg) or DASH merging (which uses FFmpeg), allow manifest URLs!
+    if (format !== 'mp3') {
+      if (protocol === 'm3u8' || protocol === 'm3u8_native' ||
+          url.includes('.m3u8') ||
+          url.includes('/manifest/') ||
+          url.includes('manifest.googlevideo.com') ||
+          f.format_id?.includes('m3u8')) {
+        return false;
+      }
     }
 
-    // ✅ ALLOW: Direct MP4/CDN URLs only (Progressive and DASH streams)
+    // ✅ ALLOW: Direct MP4/CDN URLs and audio manifests
     return true;
   });
 
   if (validFormats.length === 0) {
-    logger.warn(`❌ [Y2MATE] No valid formats available`);
+    logger.warn(`❌ [MP3 JUICE] No valid formats available`);
     return null;
   }
 
-  // ✅ Y2MATE FIX: Parse quality as NUMBER, never compare strings
+  // ✅ MP3 JUICE FIX: Parse quality as NUMBER, never compare strings
   // Remove 'p', 'kbps', 'k' suffixes and parse as number
   const normalizedQuality = String(quality).replace(/p$/i, '').replace(/kbps?$/i, '').replace(/k$/i, '').trim();
   const targetHeight = Number(normalizedQuality);
 
   if (format === 'mp3') {
-    // Find best audio format (audio-only, no video)
+    // Find best audio format (audio-only, or best available)
     const audioFormat = validFormats
       .filter(f => f.acodec && f.acodec !== 'none' && (!f.vcodec || f.vcodec === 'none'))
-      .sort((a, b) => (b.abr || 0) - (a.abr || 0))[0]; // Highest bitrate
+      .sort((a, b) => (b.abr || 0) - (a.abr || 0))[0] || 
+      validFormats.find(f => f.acodec && f.acodec !== 'none') ||
+      validFormats[0];
 
     if (audioFormat) {
-      logger.info(`✅ [Y2MATE] Selected audio format: ${audioFormat.abr || 'unknown'}kbps`);
+      logger.info(`✅ [MP3 JUICE] Selected audio format: ${audioFormat.abr || 'unknown'}kbps (url: ${audioFormat.url.substring(0, 60)}...)`);
       return {
         directUrl: audioFormat.url,
+        audioUrl: audioFormat.url,
         hasAudio: true,
         container: 'mp3',
         acodec: audioFormat.acodec,
+        httpHeaders: audioFormat.http_headers || null,
         needsMerge: false,
         isProgressive: true
       };
@@ -1783,7 +1800,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
       .sort((a, b) => (Number(b.height) || 0) - (Number(a.height) || 0))[0];
 
     if (progressive) {
-      logger.info(`✅ [Y2MATE] Selected format (auto): ${progressive.height}p (progressive)`);
+      logger.info(`✅ [MP3 JUICE] Selected format (auto): ${progressive.height}p (progressive)`);
       return {
         directUrl: progressive.url,
         hasAudio: true,
@@ -1792,73 +1809,47 @@ const extractUrlFromFormats = (formats, format, quality) => {
         isProgressive: true,
         container: 'mp4',
         vcodec: progressive.vcodec,
-        acodec: progressive.acodec
+        acodec: progressive.acodec,
+        httpHeaders: progressive.http_headers || null
       };
     }
     return null;
   }
 
-  // ✅ Y2MATE FIX: Find formats matching EXACT height (using NUMBER comparison)
-  // Step 1: Find ALL formats matching the target height
-  // Handle both string and number heights, and handle null/undefined
-  const matchingFormats = validFormats.filter(f => {
-    // Skip formats without height property
+  // ✅ MP3 JUICE FIX: Find formats matching target height or closest available height
+  let matchingFormats = validFormats.filter(f => {
     if (f.height === undefined || f.height === null) return false;
-    
-    // Convert height to number (handles both string "240" and number 240)
     const formatHeight = Number(f.height);
-    
-    // Skip if conversion failed (NaN)
     if (isNaN(formatHeight)) return false;
-    
-    // Compare numbers - use strict equality
-    const matches = formatHeight === targetHeight;
-    
-    // Debug logging for first few matches
-    if (matches && process.env.NODE_ENV === 'development') {
-      logger.debug(`✅ [MATCH] Found format with height ${formatHeight} (requested: ${targetHeight})`);
-    }
-    
-    return matches;
+    return formatHeight === targetHeight;
   });
-  
-  // Debug logging to help diagnose matching issues
+
+  let effectiveTargetHeight = targetHeight;
+
+  // If no exact match, find closest available height format for custom/vertical aspect ratio videos
   if (matchingFormats.length === 0) {
-    const availableHeightsDebug = validFormats
-      .filter(f => {
-        if (!f.height) return false;
-        const h = Number(f.height);
-        return !isNaN(h) && f.vcodec && f.vcodec !== 'none';
-      })
-      .map(f => Number(f.height))
-      .filter((h, i, arr) => arr.indexOf(h) === i)
-      .sort((a, b) => b - a);
-    
-    logger.warn(`⚠️ [Y2MATE] No formats found for ${targetHeight}p. Available heights: ${availableHeightsDebug.join('p, ')}p`);
-    logger.warn(`⚠️ [Y2MATE] Total validFormats: ${validFormats.length}, Target height: ${targetHeight} (${typeof targetHeight})`);
-    
-    // Show sample of format heights for debugging
-    const sampleFormats = validFormats.slice(0, 5).map(f => ({
-      height: f.height,
-      heightType: typeof f.height,
-      heightNum: Number(f.height),
-      vcodec: f.vcodec,
-      acodec: f.acodec
-    }));
-    logger.debug(`🔍 [DEBUG] Sample formats:`, sampleFormats);
-  } else {
-    logger.info(`✅ [Y2MATE] Found ${matchingFormats.length} format(s) matching ${targetHeight}p`);
+    const formatsWithHeight = validFormats.filter(f => f.height && f.vcodec && f.vcodec !== 'none');
+    if (formatsWithHeight.length > 0) {
+      const closest = formatsWithHeight.sort((a, b) => 
+        Math.abs(Number(a.height) - targetHeight) - Math.abs(Number(b.height) - targetHeight)
+      )[0];
+
+      if (closest) {
+        effectiveTargetHeight = Number(closest.height);
+        logger.info(`ℹ️ [MP3 JUICE] Exact height ${targetHeight}p not found, using closest height ${effectiveTargetHeight}p`);
+        matchingFormats = validFormats.filter(f => Number(f.height) === effectiveTargetHeight);
+      }
+    }
   }
 
   if (matchingFormats.length === 0) {
-    // No formats match exact height - get available heights for error message
     const availableHeights = validFormats
       .filter(f => f.height && f.vcodec && f.vcodec !== 'none')
       .map(f => Number(f.height))
       .filter((h, i, arr) => arr.indexOf(h) === i)
       .sort((a, b) => b - a);
     
-    logger.warn(`❌ [Y2MATE] Exact quality ${targetHeight}p not found. Available: ${availableHeights.join('p, ')}p`);
+    logger.warn(`❌ [MP3 JUICE] Quality ${targetHeight}p not found. Available: ${availableHeights.join('p, ')}p`);
     return null;
   }
 
@@ -1868,7 +1859,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
   // First, try to find progressive formats (video + audio combined) with exact height
   const exactHeightProgressive = matchingFormats.filter(f => {
     const formatHeight = Number(f.height) || 0;
-    if (formatHeight !== targetHeight) return false; // ✅ EXACT match only
+    if (formatHeight !== effectiveTargetHeight) return false; // ✅ Match matchingFormats target height
     
     const hasVideo = f.vcodec && f.vcodec !== 'none';
     const hasAudio = f.acodec && f.acodec !== 'none';
@@ -1891,13 +1882,13 @@ const extractUrlFromFormats = (formats, format, quality) => {
         formatUrl.includes('/hls/') ||
         selectedFormat.protocol === 'm3u8' ||
         selectedFormat.protocol === 'm3u8_native') {
-      logger.warn(`⚠️ [Y2MATE] Progressive format contains HLS URL - will try DASH fallback`);
+      logger.warn(`⚠️ [MP3 JUICE] Progressive format contains HLS URL - will try DASH fallback`);
       logger.warn(`   URL: ${formatUrl.substring(0, 80)}, Protocol: ${selectedFormat.protocol}`);
       // Don't return null - let it fall through to DASH fallback
     } else {
       // Valid progressive format found
-      const actualHeight = Number(selectedFormat.height) || targetHeight;
-      logger.info(`✅ [Y2MATE] Selected format: ${actualHeight}p (progressive, hasAudio: true, hasVideo: true)`);
+      const actualHeight = Number(selectedFormat.height) || effectiveTargetHeight;
+      logger.info(`✅ [MP3 JUICE] Selected format: ${actualHeight}p (progressive, hasAudio: true, hasVideo: true)`);
       return {
         directUrl: selectedFormat.url,
         hasAudio: true,
@@ -1907,18 +1898,19 @@ const extractUrlFromFormats = (formats, format, quality) => {
         container: 'mp4',
         vcodec: selectedFormat.vcodec,
         acodec: selectedFormat.acodec,
+        httpHeaders: selectedFormat.http_headers || null,
         quality: `${actualHeight}p`
       };
     }
   }
 
   // Step 3: Fallback to DASH (video-only + separate audio) for EXACT quality
-  // ✅ Y2MATE BEHAVIOR: Allow DASH merge for ALL qualities if progressive not available
+  // ✅ MP3 JUICE BEHAVIOR: Allow DASH merge for ALL qualities if progressive not available
   // This ensures downloads work even when YouTube only provides DASH formats
   const dashVideoFormats = matchingFormats.filter(f => {
     const formatHeight = Number(f.height) || 0;
-    // Only allow DASH formats with EXACT height match (ALL qualities allowed)
-    if (formatHeight !== targetHeight) return false;
+    // Only allow DASH formats matching effectiveTargetHeight (ALL qualities allowed)
+    if (formatHeight !== effectiveTargetHeight) return false;
     
     return f.vcodec && f.vcodec !== 'none' &&
            (!f.acodec || f.acodec === 'none') &&
@@ -1936,7 +1928,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
     })[0];
 
     // Select best audio format (prefer higher bitrate, AAC codec)
-    // ✅ Y2MATE FIX: Search in ALL validFormats, not just matchingFormats (audio has no height)
+    // ✅ MP3 JUICE FIX: Search in ALL validFormats, not just matchingFormats (audio has no height)
     const dashAudioFormat = validFormats
       .filter(f =>
         f.acodec && f.acodec !== 'none' &&
@@ -1955,7 +1947,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
       })[0];
 
     if (dashAudioFormat) {
-      logger.info(`✅ [Y2MATE] Selected format: ${dashVideoFormat.height}p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)`);
+      logger.info(`✅ [MP3 JUICE] Selected format: ${dashVideoFormat.height}p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)`);
       logger.info(`   Video URL: ${dashVideoFormat.url.substring(0, 60)}...`);
       logger.info(`   Audio URL: ${dashAudioFormat.url.substring(0, 60)}...`);
       return {
@@ -1969,15 +1961,16 @@ const extractUrlFromFormats = (formats, format, quality) => {
         container: 'mp4',
         vcodec: dashVideoFormat.vcodec,
         acodec: dashAudioFormat.acodec,
+        httpHeaders: dashVideoFormat.http_headers || dashAudioFormat.http_headers || null,
         quality: `${dashVideoFormat.height}p` // Store actual quality
       };
     } else {
-      // ✅ Y2MATE FIX: Log available audio formats for debugging
+      // ✅ MP3 JUICE FIX: Log available audio formats for debugging
       const availableAudioFormats = validFormats.filter(f =>
         f.acodec && f.acodec !== 'none' &&
         (!f.vcodec || f.vcodec === 'none')
       );
-      logger.warn(`⚠️ [Y2MATE] DASH video format found for ${targetHeight}p but no valid audio format available`);
+      logger.warn(`⚠️ [MP3 JUICE] DASH video format found for ${targetHeight}p but no valid audio format available`);
       logger.warn(`   Available audio formats: ${availableAudioFormats.length}`);
       if (availableAudioFormats.length > 0) {
         logger.warn(`   Sample audio formats: ${availableAudioFormats.slice(0, 3).map(f => `${f.acodec}@${f.abr || 'unknown'}kbps`).join(', ')}`);
@@ -1985,7 +1978,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
     }
   }
 
-  // ✅ Y2MATE RULE: NO SILENT DOWNGRADE
+  // ✅ MP3 JUICE RULE: NO SILENT DOWNGRADE
   // If exact quality not found, return null with available qualities info
   const availableHeights = validFormats
     .filter(f => f.height && f.vcodec && f.vcodec !== 'none')
@@ -1998,7 +1991,7 @@ const extractUrlFromFormats = (formats, format, quality) => {
   const closestLower = [...availableHeights].reverse().find(h => h <= targetHeight);
   const closest = closestHigher || closestLower || availableHeights[0];
   
-  logger.warn(`❌ [Y2MATE] Exact quality ${targetHeight}p not found. Available heights: ${availableHeights.join('p, ')}p`);
+  logger.warn(`❌ [MP3 JUICE] Exact quality ${targetHeight}p not found. Available heights: ${availableHeights.join('p, ')}p`);
   logger.warn(`   Closest quality: ${closest ? `${closest}p` : 'none'}, Total valid formats: ${validFormats.length}`);
   return null;
 };
@@ -2026,7 +2019,7 @@ export const fetchVideoInfo = async (url, skipCookieRotation = false) => {
 
   const fetchPromise = (async () => {
     try {
-      // 🔥 Y2MATE PERFORMANCE: Optimized yt-dlp options for fastest extraction
+      // 🔥 MP3 JUICE PERFORMANCE: Optimized yt-dlp options for fastest extraction
     const infoOpts = {
       dumpSingleJson: true,
       skipDownload: true, // Critical: Never download video files
@@ -2045,7 +2038,7 @@ export const fetchVideoInfo = async (url, skipCookieRotation = false) => {
       noMtime: true // Skip modification time
     };
 
-    // 🔥 Y2MATE PERFORMANCE: Skip cookie rotation for /info endpoint
+    // 🔥 MP3 JUICE PERFORMANCE: Skip cookie rotation for /info endpoint
     // Cookies are NOT required for basic video info - only for age-restricted videos
     // This prevents blocking on cookie refresh failures
     // Only use cookies if explicitly enabled
@@ -2293,7 +2286,7 @@ export const searchYouTube = async (query, limit = 20) => {
       throw new AppError("Query must be at least 2 characters", 400);
     }
 
-    // 🔥 Y2MATE INSTANT: Default to 20 results for fast search
+    // 🔥 MP3 JUICE INSTANT: Default to 20 results for fast search
     const safeLimit = Math.max(1, Math.min(Number(limit) || 20, 20)); // cap at 20 to keep fast
     const cacheKey = `yt:search:${trimmedQuery}:${safeLimit}`;
     const cached = await cacheGet(cacheKey);
@@ -2566,11 +2559,11 @@ export const getFileStats = (fileName) => {
 
 /**
  * ⚠️ DEPRECATED: List temporary files (legacy worker only)
- * In Y2Mate mode, this should return empty array (zero-storage)
+ * In MP3 Juice mode, this should return empty array (zero-storage)
  */
 export const listDownloadedFiles = async () => {
   try {
-    // In Y2Mate mode, we should have zero files
+    // In MP3 Juice mode, we should have zero files
     if (!fsSync.existsSync(DOWNLOAD_DIR)) {
       return [];
     }
@@ -2593,9 +2586,9 @@ export const listDownloadedFiles = async () => {
 
     fileStats.sort((a, b) => b.created - a.created);
 
-    // Log warning if files exist (shouldn't in Y2Mate mode)
+    // Log warning if files exist (shouldn't in MP3 Juice mode)
     if (fileStats.length > 0) {
-      logger.warn(`⚠️ [Storage] Found ${fileStats.length} temp files (should be zero in Y2Mate mode)`);
+      logger.warn(`⚠️ [Storage] Found ${fileStats.length} temp files (should be zero in MP3 Juice mode)`);
     }
 
     return fileStats;
@@ -2622,8 +2615,8 @@ export const getTotalStorageUsed = async () => {
 };
 
 /**
- * 🔥 Y2MATE MODE: Auto-cleanup of temporary files
- * In Y2Mate mode, files should NOT be stored permanently
+ * 🔥 MP3 JUICE MODE: Auto-cleanup of temporary files
+ * In MP3 Juice mode, files should NOT be stored permanently
  * This function auto-deletes any temp files older than TTL
  */
 export const cleanOldFiles = async (maxAgeHours = TEMP_FILE_TTL_HOURS) => {
@@ -2657,7 +2650,7 @@ export const cleanOldFiles = async (maxAgeHours = TEMP_FILE_TTL_HOURS) => {
 
     const freedMB = (freedBytes / 1024 / 1024).toFixed(2);
     if (deletedCount > 0) {
-      logger.info(`🧹 [Storage] Cleanup: ${deletedCount} temp files, ${freedMB} MB freed (Y2Mate zero-storage mode)`);
+      logger.info(`🧹 [Storage] Cleanup: ${deletedCount} temp files, ${freedMB} MB freed (MP3 Juice zero-storage mode)`);
     }
 
     return {

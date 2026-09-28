@@ -4,14 +4,14 @@ import SocialShareWidget from "../components/home/SocialShareWidget";
 import HomeFooter from "../components/home/HomeFooter";
 import SEO from "../components/common/SEO";
 
-export default function Contact() {
+export default function About() {
   return (
     <div className="min-h-screen bg-[#1676C2] flex flex-col relative">
       <SEO 
-        title="Contact Us & FAQ - MP3Juice"
-        description="Contact MP3Juice team or check Frequently Asked Questions (FAQ) about downloading music and videos."
+        title="About Us - MP3Juice"
+        description="Learn about MP3Juice - your trusted free online music search engine and MP3/MP4 audio converter."
       />
-      {/* Social Share Widget - Fixed on left side */}
+      {/* Social Share Widget */}
       <SocialShareWidget />
 
       {/* MP3 Juice Style Header */}
@@ -33,30 +33,22 @@ export default function Contact() {
                 Contact
               </Link>
             </div>
-            {/* Horizontal Line Separator */}
             <div className="border-t border-white/20 mt-4"></div>
           </div>
         </nav>
 
-        {/* Waveform Graphic and Logo */}
+        {/* Logo Section */}
         <div className="flex flex-col items-center justify-center px-4 py-8">
           <div className="w-full max-w-3xl">
-            {/* Waveform Graphic - Audio Equalizer Style */}
             <div className="flex justify-center items-center mb-6 relative w-full">
               <div className="relative flex items-center">
-                {/* Horizontal line extending from both sides */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-80 sm:w-96 border-t border-white/50"></div>
-                
-                {/* Vertical bars */}
                 <div className="flex items-end gap-1.5 relative z-10">
-                  {/* Left side bars */}
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '18px' }}></div>
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '28px' }}></div>
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '22px' }}></div>
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '32px' }}></div>
-                  {/* Central peak */}
                   <div className="w-2 bg-white rounded-t" style={{ height: '48px' }}></div>
-                  {/* Right side bars */}
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '32px' }}></div>
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '22px' }}></div>
                   <div className="w-1.5 bg-white rounded-t" style={{ height: '28px' }}></div>
@@ -65,7 +57,6 @@ export default function Contact() {
               </div>
             </div>
             
-            {/* Logo Text with superscript 3 */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center mb-8">
               Mp<sup className="text-2xl sm:text-3xl md:text-4xl font-bold">3</sup>Juice
             </h1>
@@ -73,37 +64,38 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Main Content - Contact Section */}
+      {/* Main Content */}
       <div className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-8">
-          {/* Contact Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-6">
-            Contact
+          <h1 className="text-3xl sm:text-4xl font-bold text-white text-center mb-8">
+            About MP3Juice
           </h1>
 
-          {/* Contact Instructions */}
-          <div className="text-white space-y-6 text-base sm:text-lg leading-relaxed text-center">
+          <div className="text-white space-y-6 text-base sm:text-lg leading-relaxed">
             <p>
-              if you have a question or want to report any error write to email us. keep in mind the below note before writing an email
+              Welcome to <strong>MP3Juice</strong>, your premier online music search engine and audio converter. Our platform is designed to provide users with a fast, intuitive, and efficient way to discover and stream music content.
             </p>
 
-            {/* Numbered Instructions */}
-            <ol className="list-decimal list-inside space-y-3 text-left max-w-2xl mx-auto">
-              <li>Write Email-only in the English Language</li>
-              <li>Describe in depth Any Query and Suggestions,</li>
-            </ol>
+            <h2 className="text-2xl sm:text-3xl font-bold mt-6 mb-4">Our Mission</h2>
+            <p>
+              Our goal is to make audio accessibility seamless across all modern devices. Whether you are on desktop, tablet, or smartphone, MP3Juice delivers high-quality format options with zero hassle and no software installation required.
+            </p>
 
-            {/* Additional Note */}
-            <p className="mt-6">
-              Before Sending Email Check our listed question and answer on this page -{" "}
-              <Link to="/faq" className="underline hover:opacity-80 font-semibold">
-                FAQ
+            <h2 className="text-2xl sm:text-3xl font-bold mt-6 mb-4">Key Features</h2>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Instant search across millions of tracks</li>
+              <li>High-speed MP3 audio and MP4 video format support</li>
+              <li>Clean, responsive interface optimized for all screens</li>
+              <li>No registration or personal information needed</li>
+            </ul>
+
+            <h2 className="text-2xl sm:text-3xl font-bold mt-6 mb-4">Intellectual Property & Respect</h2>
+            <p>
+              MP3Juice respects the intellectual property rights of copyright holders. If you are a copyright owner and wish to request removal of specific search listings, please visit our{" "}
+              <Link to="/dmca" className="underline hover:opacity-80">
+                DMCA Page
               </Link>
-            </p>
-
-            {/* Thanks */}
-            <p className="mt-8 text-xl font-semibold">
-              Thanks
+              .
             </p>
           </div>
         </div>

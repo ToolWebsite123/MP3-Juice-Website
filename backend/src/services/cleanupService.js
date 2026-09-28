@@ -779,14 +779,19 @@ export const getCleanupStats = async () => {
   try {
     const storage = await checkStorageUsage();
 
-    // Get recent history from database
-    const recentHistory = await CleanupHistory.getRecent(10);
+    let recentHistory = [];
+    let weekStats = null;
+    let todayCleanups = [];
 
-    // Get statistics for last 7 days
-    const weekStats = await CleanupHistory.getStatistics(7);
-
-    // Get today's cleanups
-    const todayCleanups = await CleanupHistory.getToday();
+    if (isMongoDBConnected()) {
+      try {
+        recentHistory = await CleanupHistory.getRecent(10);
+        weekStats = await CleanupHistory.getStatistics(7);
+        todayCleanups = await CleanupHistory.getToday();
+      } catch (dbErr) {
+        logger.debug(`⚠️ [Cleanup] DB stats skipped: ${dbErr.message}`);
+      }
+    }
 
     return {
       success: true,

@@ -26,9 +26,9 @@ const FormatTable = ({
 
   if (videoFormats.length > 0 || audioFormats.length > 0) {
     // 🔥 MP3 JUICE MODE: Show all quality options like MP3 JUICE
-    // Video: 144p, 240p, 360p, 480p, 720p, 1080p, 1440p, 2160p
+    // Video: 144p, 240p, 360p, 480p, 720p, 1080p
     // Audio: 320kbps, 256kbps, 192kbps, 128kbps, 64kbps (highest quality first)
-    const allowedVideoQualities = ['144p', '240p', '360p', '480p', '720p', '1080p', '1440p', '2160p'];
+    const allowedVideoQualities = ['144p', '240p', '360p', '480p', '720p', '1080p'];
     const allowedAudioBitrates = [320, 256, 192, 128, 64]; // ✅ Sort: 320 > 256 > 192 > 128 > 64 (highest first)
     
     processedVideoFormats = videoFormats
@@ -48,9 +48,9 @@ const FormatTable = ({
         needsMerge: f.needsMerge || false // Backend handles merging for 1080p+
       }))
       .sort((a, b) => {
-        // ✅ Sort: 2160p FIRST (top), then 1440p, 1080p, 720p, 480p, 360p, 240p, 144p
-        // WHY: Highest quality first (2160p at top)
-        const order = { '2160p': 0, '1440p': 1, '1080p': 2, '720p': 3, '480p': 4, '360p': 5, '240p': 6, '144p': 7 };
+        // ✅ Sort: 1080p FIRST (top), then 720p, 480p, 360p, 240p, 144p
+        // WHY: Highest quality first (1080p at top)
+        const order = { '1080p': 0, '720p': 1, '480p': 2, '360p': 3, '240p': 4, '144p': 5 };
         const aQuality = (a.qualityLabel || a.quality || '').toLowerCase().replace(/[^0-9p]/g, '');
         const bQuality = (b.qualityLabel || b.quality || '').toLowerCase().replace(/[^0-9p]/g, '');
         const aOrder = order[aQuality] ?? 99;
@@ -89,7 +89,7 @@ const FormatTable = ({
       .sort((a, b) => b.bitrate - a.bitrate); // ✅ Sort: 320kbps > 256kbps > 192kbps > 128kbps > 64kbps (highest quality first)
   } else {
     // Legacy structure: formats array with type field
-    const allowedVideoQualities = ['144p', '240p', '360p', '480p', '720p', '1080p', '1440p', '2160p'];
+    const allowedVideoQualities = ['144p', '240p', '360p', '480p', '720p', '1080p'];
     const allowedAudioBitrates = [320, 256, 192, 128, 64]; // ✅ Sort: 320 > 256 > 192 > 128 > 64 (highest first)
     
     processedVideoFormats = formats
@@ -99,9 +99,9 @@ const FormatTable = ({
         return allowedVideoQualities.includes(quality.toLowerCase());
       })
       .sort((a, b) => {
-        // ✅ Sort: 2160p FIRST (top), then 1440p, 1080p, 720p, 480p, 360p, 240p, 144p
-        // WHY: Highest quality first (2160p at top)
-        const order = { '2160p': 0, '1440p': 1, '1080p': 2, '720p': 3, '480p': 4, '360p': 5, '240p': 6, '144p': 7 };
+        // ✅ Sort: 1080p FIRST (top), then 720p, 480p, 360p, 240p, 144p
+        // WHY: Highest quality first (1080p at top)
+        const order = { '1080p': 0, '720p': 1, '480p': 2, '360p': 3, '240p': 4, '144p': 5 };
         const aQuality = (a.qualityLabel || a.quality || '').toLowerCase().replace(/[^0-9p]/g, '');
         const bQuality = (b.qualityLabel || b.quality || '').toLowerCase().replace(/[^0-9p]/g, '');
         const aOrder = order[aQuality] ?? 99;
