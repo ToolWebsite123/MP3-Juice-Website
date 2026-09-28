@@ -23005,3 +23005,41 @@ null
 [2026-09-28 19:24:45] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
 [2026-09-28 19:24:45] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
 [2026-09-28 19:25:08] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 19:28:01] [32MINFO[39M: ℹ️ [DB] MongoDB is disabled via DISABLE_MONGODB flag
+[2026-09-28 19:28:01] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 19:28:02] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 19:28:02] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 19:28:02] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 19:28:02] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 19:28:02] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 19:28:02] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:28:02] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 19:28:02] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:28:02] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 19:28:02] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:28:02] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 19:28:02] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 19:28:02] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:28:02] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 19:28:02] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:28:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:28:32] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 19:29:50] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-09-28 19:29:50] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=9fuiFIyeZpY
+[2026-09-28 19:30:00] [32MINFO[39M: ✅ [INFO] Success (single yt-dlp call)
+[2026-09-28 19:30:00] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-09-28 19:30:00] [32MINFO[39M: ℹ️ [MP3 JUICE] Exact height 720p not found, using closest height 338p
+[2026-09-28 19:30:00] [32MINFO[39M: ✅ [MP3 JUICE] Selected format: 338p (progressive, hasAudio: true, hasVideo: true)
+[2026-09-28 19:30:00] [32MINFO[39M: ✅ [PROXY] Cache hit - exact progressive format found for 720p
+[2026-09-28 19:30:00] [32MINFO[39M: ✅ [MP3 JUICE] Format (720p) - returning streaming endpoint (bypasses CORS)
+[2026-09-28 19:30:00] [32MINFO[39M: 📺 Title: Mitti De Baway Ep 03 (Teaser) 25 Sep 26 | Associated by Vince | Wahaj Ali - Mahira Khan | Green TV
+[2026-09-28 19:30:00] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=9fuiFIyeZpY&quality=720&format...
+[2026-09-28 19:33:01] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.

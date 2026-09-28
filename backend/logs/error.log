@@ -1034,3 +1034,6 @@ null
 [2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
 [2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
 [2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:28:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
