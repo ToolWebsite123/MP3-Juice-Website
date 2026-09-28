@@ -30,21 +30,19 @@ const ENV = process.env.NODE_ENV || "development";
 let isMongoConnected = false;
 
 const initializeMongoDB = async () => {
+  if (process.env.DISABLE_MONGODB === "true" || process.env.DISABLE_MONGODB === "1") {
+    return;
+  }
   try {
     const result = await connectDB();
     if (result) {
       isMongoConnected = true;
       const mongoHost = getMongoHost() || "unknown-host";
       logger.info(`✅ MongoDB connected successfully (host: ${mongoHost})`);
-    } else {
-      isMongoConnected = false;
-      logger.warn("⚠️ MongoDB not available - server will continue without database");
     }
   } catch (err) {
     // NEVER throw - MongoDB is optional
     isMongoConnected = false;
-    logger.warn(`⚠️ MongoDB connection failed: ${err.message}`);
-    logger.warn("   Server will continue without MongoDB - downloads will work normally");
   }
 };
 
@@ -52,12 +50,14 @@ const initializeMongoDB = async () => {
 // 🔴 Redis Connection (Optional - with error handling)
 // ----------------------------------------------------------
 const initializeRedis = async () => {
+  if (process.env.DISABLE_REDIS === "true" || process.env.DISABLE_REDIS === "1") {
+    return;
+  }
   try {
     await import("./config/redis.js");
     logger.info("✅ Redis connected successfully");
   } catch (err) {
-    logger.warn(`⚠️ Redis connection failed: ${err.message}`);
-    logger.warn("⚠️ Server will continue without Redis caching");
+    // Optional - ignore silent failure
   }
 };
 
@@ -65,12 +65,14 @@ const initializeRedis = async () => {
 // 👷 Background Worker (Optional - with error handling)
 // ----------------------------------------------------------
 const initializeWorker = async () => {
+  if (process.env.DISABLE_WORKER === "true" || process.env.DISABLE_WORKER === "1") {
+    return;
+  }
   try {
     await import("./workers/videoWorker.js");
     logger.info("✅ Background worker initialized");
   } catch (err) {
-    logger.warn(`⚠️ Worker initialization failed: ${err.message}`);
-    logger.warn("⚠️ Background jobs may not work - start worker separately");
+    // Optional - ignore silent failure
   }
 };
 

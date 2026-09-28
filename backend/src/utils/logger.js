@@ -14,7 +14,7 @@ const logFormat = winston.format.printf(({ level, message, timestamp, stack }) =
 
 // Winston logger instance
 const logger = winston.createLogger({
-  level: process.env.NODE_ENV === "production" ? "info" : "debug",
+  level: process.env.LOG_LEVEL || "info",
   format: winston.format.combine(
     winston.format.colorize(),
     winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
@@ -22,12 +22,15 @@ const logger = winston.createLogger({
     logFormat
   ),
   transports: [
-    // Console (for development)
-    new winston.transports.Console(),
+    // Console (Clean output: shows warnings and errors only by default)
+    new winston.transports.Console({
+      level: process.env.CONSOLE_LOG_LEVEL || "warn"
+    }),
 
-    // File logs (for all levels)
+    // File logs (detailed history for all info/debug messages)
     new winston.transports.File({
       filename: path.join(logDir, "combined.log"),
+      level: "info",
       maxsize: 5 * 1024 * 1024, // 5 MB
       maxFiles: 5,
     }),

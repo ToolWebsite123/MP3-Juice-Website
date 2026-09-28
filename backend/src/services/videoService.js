@@ -496,12 +496,11 @@ export const getDownloadUrl = async (url, format = 'mp4', quality = '720') => {
       preferFreeFormats: true,
       mergeOutputFormat: 'mp4', // Merge DASH to MP4
       quiet: true,
-      // Additional options to prevent blocking
-      userAgent: process.env.YTDLP_USER_AGENT || undefined, // Custom UA if set
+      // ✅ DATACENTER BINDING & IP BLOCK BYPASS: Use android,web client API
+      extractorArgs: 'youtube:player_client=android,web',
+      userAgent: process.env.YTDLP_USER_AGENT || 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
       referer: 'https://www.youtube.com/', // Proper referer
       noWarnings: true
-      // Note: MP4 enforcement is done via format selectors, not flags
-      // Removed invalid flags: preferMp4, noHlsVideo (not supported by yt-dlp)
     };
 
     // Get cookies path with rotation and fallback (only if enabled)
@@ -2029,6 +2028,10 @@ export const fetchVideoInfo = async (url, skipCookieRotation = false) => {
       retries: 2, // ✅ Increased for long videos (was 1)
       quiet: true,
       noWarnings: true, // Skip warnings for faster processing
+      // ✅ DATACENTER BINDING & IP BLOCK BYPASS: Use android,web client API
+      extractorArgs: 'youtube:player_client=android,web',
+      userAgent: process.env.YTDLP_USER_AGENT || 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36',
+      referer: 'https://www.youtube.com/',
       writeInfoJson: false, // Don't write info JSON file
       writeDescription: false, // Don't write description
       writeThumbnail: false, // Don't download thumbnail

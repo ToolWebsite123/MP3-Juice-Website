@@ -22618,3 +22618,390 @@ null
 [2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
 [2026-09-28 16:07:49] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
 [2026-09-28 16:07:49] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 16:07:52] [34MDEBUG[39M: ℹ️ [VideoService] Cookies disabled by default - set ENABLE_COOKIES=true to enable
+[2026-09-28 16:07:52] [34MDEBUG[39M: 🗄️ [Worker] Attempting MongoDB connection (optional)...
+[2026-09-28 16:07:52] [34MDEBUG[39M: 🔄 [DB] Attempting MongoDB connection (attempt 1)...
+[2026-09-28 16:07:53] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 16:07:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 16:07:53] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 16:07:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 16:07:53] [34MDEBUG[39M: ⏳ [DB] Connection attempt already in progress...
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ MongoDB connected successfully (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ Redis connected successfully
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ Background worker initialized
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 16:07:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 16:07:53] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 16:07:53] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 16:07:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 16:07:53] [34MDEBUG[39M: ♻️ [Redis] Reconnecting...
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [DB] MongoDB disconnected - downloads continue without database
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [Worker] MongoDB disconnected - downloads will continue without history persistence
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:07:53] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 16:07:53] [34MDEBUG[39M: ⚠️ [Worker] MongoDB connection unavailable - continuing without database
+[2026-09-28 16:07:53] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:07:53] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:07:53] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 16:07:55] [34MDEBUG[39M: ♻️ [Redis] Reconnecting...
+[2026-09-28 16:07:59] [34MDEBUG[39M: ♻️ [Redis] Reconnecting...
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 16:08:00] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 16:08:03] [34MDEBUG[39M: 🔄 [DB] Attempting MongoDB connection (attempt 2)...
+[2026-09-28 16:08:03] [34MDEBUG[39M: 🗄️ [Worker] Attempting MongoDB connection (optional)...
+[2026-09-28 16:08:03] [34MDEBUG[39M: ⏳ [DB] Connection attempt already in progress...
+[2026-09-28 16:08:03] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 16:08:03] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:08:03] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 16:08:03] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:08:03] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:08:05] [34MDEBUG[39M: ♻️ [Redis] Reconnecting...
+[2026-09-28 16:08:13] [34MDEBUG[39M: ♻️ [Redis] Reconnecting...
+[2026-09-28 16:08:23] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 16:08:23] [34MDEBUG[39M: 🔄 [DB] Attempting MongoDB connection (attempt 3)...
+[2026-09-28 16:08:23] [34MDEBUG[39M: 🗄️ [Worker] Attempting MongoDB connection (optional)...
+[2026-09-28 16:08:23] [34MDEBUG[39M: ⏳ [DB] Connection attempt already in progress...
+[2026-09-28 16:08:23] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 16:08:23] [34MDEBUG[39M: ⚠️ [DB] Stopping reconnection attempts - MongoDB unavailable
+[2026-09-28 16:08:23] [34MDEBUG[39M: ⚠️ [Worker] Stopping reconnection attempts - MongoDB unavailable
+[2026-09-28 16:08:23] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:08:23] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 16:08:23] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:08:23] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 16:09:47] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-09-28 16:09:47] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=9fuiFIyeZpY
+[2026-09-28 16:09:47] [34MDEBUG[39M: ℹ️ [INFO] Cookie rotation skipped for fast response
+[2026-09-28 16:09:54] [32MINFO[39M: ✅ [INFO] Success (single yt-dlp call)
+[2026-09-28 16:09:54] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-09-28 16:09:54] [32MINFO[39M: ℹ️ [MP3 JUICE] Exact height 720p not found, using closest height 676p
+[2026-09-28 16:09:54] [32MINFO[39M: ✅ [MP3 JUICE] Selected format: 676p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-09-28 16:09:54] [32MINFO[39M:    Video URL: https://rr2---sn-avbpohxpo-at26.googlevideo.com/videoplaybac...
+[2026-09-28 16:09:54] [32MINFO[39M:    Audio URL: https://rr2---sn-avbpohxpo-at26.googlevideo.com/videoplaybac...
+[2026-09-28 16:09:54] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 720p (will merge)
+[2026-09-28 16:09:54] [32MINFO[39M: ✅ [MP3 JUICE] Format (720p) - returning streaming endpoint (bypasses CORS)
+[2026-09-28 16:09:54] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-09-28 16:09:54] [32MINFO[39M: 📺 Title: Mitti De Baway Ep 03 (Teaser) 25 Sep 26 | Associated by Vince | Wahaj Ali - Mahira Khan | Green TV
+[2026-09-28 16:09:54] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=9fuiFIyeZpY&quality=720&format...
+[2026-09-28 16:09:54] [32MHTTP[39M: [0mGET /api/v1/video/download?videoId=9fuiFIyeZpY&quality=720&format=mp4 [32m200[0m 7665.453 ms - 658[0m
+[2026-09-28 16:12:52] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 16:17:52] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 16:22:52] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 16:27:52] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 16:50:30] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 16:55:29] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 17:00:29] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:13:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:18:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:23:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:28:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:33:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:38:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:43:56] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:45:10] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 18:45:10] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:45:10] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 18:45:10] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ MongoDB connected successfully (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ Redis connected successfully
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ Background worker initialized
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 18:45:10] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:45:10] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 18:45:10] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 18:45:10] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [DB] MongoDB disconnected - downloads continue without database
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [Worker] MongoDB disconnected - downloads will continue without history persistence
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:10] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:45:10] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:10] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:11] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:45:18] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:45:20] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:45:20] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:20] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:45:20] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:20] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:40] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 18:45:40] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:45:40] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:40] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:45:40] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:45:40] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:01] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 18:46:01] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:46:01] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 18:46:01] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ MongoDB connected successfully (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ Redis connected successfully
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ Background worker initialized
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 18:46:01] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:46:01] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 18:46:01] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 18:46:01] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [DB] MongoDB disconnected - downloads continue without database
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [Worker] MongoDB disconnected - downloads will continue without history persistence
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:01] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:46:01] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:01] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:02] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:46:09] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:46:11] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:46:11] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:11] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:46:11] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:11] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:31] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 18:46:32] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:46:32] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:32] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:46:32] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:32] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:46:39] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-09-28 18:46:39] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=9fuiFIyeZpY
+[2026-09-28 18:46:45] [32MINFO[39M: ✅ [INFO] Success (single yt-dlp call)
+[2026-09-28 18:46:45] [32MINFO[39M: ⚡ [PROXY] Using cached video info for URL extraction
+[2026-09-28 18:46:45] [32MINFO[39M: ℹ️ [MP3 JUICE] Exact height 720p not found, using closest height 676p
+[2026-09-28 18:46:45] [32MINFO[39M: ✅ [MP3 JUICE] Selected format: 676p (DASH, hasAudio: true, hasVideo: true, needsMerge: true)
+[2026-09-28 18:46:45] [32MINFO[39M:    Video URL: https://rr2---sn-avbpohxpo-at26.googlevideo.com/videoplaybac...
+[2026-09-28 18:46:45] [32MINFO[39M:    Audio URL: https://rr2---sn-avbpohxpo-at26.googlevideo.com/videoplaybac...
+[2026-09-28 18:46:45] [32MINFO[39M: ✅ [PROXY] Cache hit - DASH format found for 720p (will merge)
+[2026-09-28 18:46:45] [32MINFO[39M: ✅ [MP3 JUICE] Format (720p) - returning streaming endpoint (bypasses CORS)
+[2026-09-28 18:46:45] [32MINFO[39M:    DASH format - will stream video-only directly (instant download for all qualities)
+[2026-09-28 18:46:45] [32MINFO[39M: 📺 Title: Mitti De Baway Ep 03 (Teaser) 25 Sep 26 | Associated by Vince | Wahaj Ali - Mahira Khan | Green TV
+[2026-09-28 18:46:45] [32MINFO[39M:    Stream endpoint: http://localhost:5000/api/v1/video/stream?videoId=9fuiFIyeZpY&quality=720&format...
+[2026-09-28 18:49:06] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 18:49:06] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:49:06] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 18:49:06] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ MongoDB connected successfully (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ Redis connected successfully
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ Background worker initialized
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 18:49:06] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:49:06] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 18:49:06] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 18:49:06] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [DB] MongoDB disconnected - downloads continue without database
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [Worker] MongoDB disconnected - downloads will continue without history persistence
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:06] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:49:06] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:06] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:07] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:49:14] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:49:16] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:49:16] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:16] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:49:16] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:16] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:36] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:49:36] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 18:49:36] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:36] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:49:36] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:49:36] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:54:06] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 18:55:15] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 18:55:15] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:55:15] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 18:55:15] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ MongoDB connected successfully (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ Redis connected successfully
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ Background worker initialized
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 18:55:15] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:55:15] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 18:55:15] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 18:55:15] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [DB] MongoDB disconnected - downloads continue without database
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [Worker] MongoDB disconnected - downloads will continue without history persistence
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:15] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:55:15] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:15] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:16] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 18:55:23] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 18:55:25] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:55:25] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:25] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:55:25] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:25] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:45] [32MINFO[39M: ✅ [Worker] MongoDB connected (host: cluster0.w2h65tt.mongodb.net)
+[2026-09-28 18:55:45] [33MWARN[39M: ⚠️ [DB] MongoDB connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:45] [33MWARN[39M:    Downloads will continue without database - history persistence disabled
+[2026-09-28 18:55:45] [33MWARN[39M: ⚠️ [DB] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:45] [33MWARN[39M: ⚠️ [Worker] MongoDB error: querySrv ECONNREFUSED _mongodb._tcp.cluster0.w2h65tt.mongodb.net
+[2026-09-28 18:55:45] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 18:57:07] [32MINFO[39M: 💾 [Storage] ✅ 0.00 GB (0.0%) - 0 files
+[2026-09-28 19:00:14] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 19:05:14] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 19:10:14] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 19:13:52] [32MINFO[39M: ℹ️ [DB] MongoDB is disabled via DISABLE_MONGODB flag
+[2026-09-28 19:13:53] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 19:13:54] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 19:13:54] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 19:13:54] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 19:13:54] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 19:13:54] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 19:13:54] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:13:54] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 19:13:54] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:13:54] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 19:13:54] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:13:54] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 19:13:54] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 19:13:54] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:13:54] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 19:13:54] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:14:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:14:24] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 19:14:52] [32MINFO[39M: ℹ️ [DB] MongoDB is disabled via DISABLE_MONGODB flag
+[2026-09-28 19:14:52] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 19:14:53] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 19:14:53] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 19:14:53] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 19:14:53] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 19:14:53] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 19:14:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:14:53] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 19:14:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:14:53] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 19:14:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:14:53] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 19:14:53] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 19:14:53] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:14:53] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 19:14:53] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:15:01] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:15:23] [33MWARN[39M: ⚠️ [Redis] Connection closed
+[2026-09-28 19:16:24] [32MINFO[39M: 🎬 [PROXY] Download URL request:
+[2026-09-28 19:16:24] [32MINFO[39M: 🔍 [INFO] Starting new fetch for: https://www.youtube.com/watch?v=9fuiFIyeZpY
+[2026-09-28 19:16:31] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --extractor-args youtube:player_client=ios,web --user-agent Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 --referer https://www.youtube.com/ --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] 9fuiFIyeZpY: This video is DRM protected
+null
+[2026-09-28 19:16:31] [32MINFO[39M: 📡 [PROXY] Cache miss for 720p, trying getDownloadUrl fallback...
+[2026-09-28 19:16:31] [32MINFO[39M: 🔗 [URL] Fetching: mp4/720
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --extractor-args youtube:player_client=ios,web --user-agent Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: This video is DRM protected
+null
+[2026-09-28 19:16:38] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-09-28 19:16:38] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-09-28 19:16:38] [31MERROR[39M:    VideoId: 9fuiFIyeZpY, Quality: 720, Format: mp4
+[2026-09-28 19:19:52] [33MWARN[39M: ⚠️ [Health] Status check failed: Connection is closed.
+[2026-09-28 19:24:37] [32MINFO[39M: ℹ️ [DB] MongoDB is disabled via DISABLE_MONGODB flag
+[2026-09-28 19:24:37] [32MINFO[39M: ✅ [Worker] Heavy download queue active
+[2026-09-28 19:24:38] [32MINFO[39M: 📁 Downloads directory: D:\Project\Mp3 Juice Tool\backend\downloads
+[2026-09-28 19:24:38] [32MINFO[39M: ✅ API v1 routes registered
+[2026-09-28 19:24:38] [32MINFO[39M: ✅ API v1 routes registered: /api/v1
+[2026-09-28 19:24:38] [32MINFO[39M: ✅ All routes registered successfully
+[2026-09-28 19:24:38] [32MINFO[39M: ✅ Direct download route: /api/download/direct
+[2026-09-28 19:24:38] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:24:38] [32MINFO[39M: 🚀 Starting server...
+[2026-09-28 19:24:38] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:24:38] [32MINFO[39M: ✅ [Cleanup] Auto-cleanup system active
+[2026-09-28 19:24:38] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:24:38] [32MINFO[39M: 🚀 Server running on http://localhost:5000
+[2026-09-28 19:24:38] [32MINFO[39M: 🏥 Health check: http://localhost:5000/health
+[2026-09-28 19:24:38] [32MINFO[39M: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-09-28 19:24:38] [33MWARN[39M: ⚠️ [Redis] Server not running locally - continuing with in-memory fallback
+[2026-09-28 19:24:38] [33MWARN[39M: 📦 [CACHE] Using memory fallback
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ [Worker] Non-critical rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) - continuing operation...
+[2026-09-28 19:24:45] [33MWARN[39M: ⚠️ Non-critical unhandled rejection caught (connect ECONNREFUSED 127.0.0.1:6379...) — server continuing...
+[2026-09-28 19:25:08] [33MWARN[39M: ⚠️ [Redis] Connection closed

@@ -123,13 +123,16 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 // Compression
 app.use(compression());
 
-// Logging
+// Logging (Clean output: log errors and warnings by default to avoid terminal clutter)
 app.use(
   morgan(isDevelopment ? "dev" : "combined", {
     stream: {
       write: (message) => logger.http(message.trim()),
     },
-    skip: (req) => req.url === "/health" || req.url === "/",
+    skip: (req, res) => {
+      if (process.env.SHOW_HTTP_LOGS === "true") return false;
+      return req.url === "/health" || req.url === "/" || res.statusCode < 400;
+    },
   })
 );
 

@@ -999,3 +999,38 @@ null
 [2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
 [2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
 [2026-09-28 16:07:49] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 16:08:00] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:45:18] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:46:09] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:49:14] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 18:55:23] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:14:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:15:01] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:16:31] [31MERROR[39M: ❌ [INFO] Error: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --skip-download --no-check-certificates --no-playlist --socket-timeout 30 --retries 2 --quiet --no-warnings --extractor-args youtube:player_client=ios,web --user-agent Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 --referer https://www.youtube.com/ --no-write-info-json --no-write-description --no-write-thumbnail --no-write-automatic-sub --no-write-sub --no-color --no-mtime
+ERROR: [youtube] 9fuiFIyeZpY: This video is DRM protected
+null
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [URL] yt-dlp failed for 720p: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-dlp.exe https://www.youtube.com/watch?v=9fuiFIyeZpY --dump-single-json --format best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8] --no-check-certificates --no-playlist --skip-download --socket-timeout 30 --retries 3 --prefer-free-formats --merge-output-format mp4 --quiet --extractor-args youtube:player_client=ios,web --user-agent Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 --referer https://www.youtube.com/ --no-warnings
+ERROR: [youtube] 9fuiFIyeZpY: This video is DRM protected
+null
+[2026-09-28 19:16:38] [31MERROR[39M:    Format string: best[height=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]/best[height<=720][ext=mp4][acodec!=none][vcodec!=none][protocol!=m3u8_native][protocol!=m3u8]
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [URL] Failed: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-09-28 19:16:38] [31MERROR[39M:    Quality: 720, Format: mp4, Video ID: 9fuiFIyeZpY
+[2026-09-28 19:16:38] [31MERROR[39M: ❌ [PROXY] Failed to get URL: Failed to fetch video format: Command failed with exit code 1: D:\Project\Mp3 Juice Tool\backend\node_modules\yt-dlp-exec\bin\yt-d
+[2026-09-28 19:16:38] [31MERROR[39M:    VideoId: 9fuiFIyeZpY, Quality: 720, Format: mp4
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
+[2026-09-28 19:24:45] [31MERROR[39M: 💥 [Worker] Unhandled Promise Rejection: connect ECONNREFUSED 127.0.0.1:6379
